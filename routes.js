@@ -184,12 +184,25 @@ module.exports = router => {
             fetchRequests.fetchrequest(email)
 
                 .then(result => {
+                     var activeRequest=[];
+				 //  console.log("length of result array"+result.campaignlist.body.campaignlist.length);
+                    for(let i=0;i<result.notifications.length;i++){
+	 
+	         if(result.notifications[i].status==="approved"){
+     
+		 activeRequest.push(result.notifications[i]);
+			
 
-                    res.status(result.status).json({
+	} else if (result.notifications[i].status !=="active") {
+
+        return res.json({status:409,message:'requests not found'});
+
+                    
+                    }
+                }res.status(result.status).json({
                         message: result.message,
-                       
-                    })
-                })
+                        requests:activeRequest
+                       })})
 
                 .catch(err => res.status(err.status).json({
                     message: err.message
