@@ -2,7 +2,7 @@
 'use strict';
 
 //const user = require('../models/user');
-const doc = require('./models/doc')
+const doc = require('../models/doc')
 var bcSdk = require('../src/blockchain/blockchain_sdk');
 const users = 'risabh.s';
 
