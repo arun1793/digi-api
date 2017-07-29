@@ -4,6 +4,8 @@ var cors = require('cors');
 const jwt = require('jsonwebtoken');
 var fs = require('fs');
 
+const auditUser = require('./functions/auditUser')
+const approvedReject = require('./functions/approvedReject')
 const requestDocs = require('./functions/requestDocs');
 const register = require('./functions/register');
 const doc = require('./functions/addDoc');
@@ -168,6 +170,49 @@ module.exports = router => {
     } 
 });
 
+    router.post('/approveReject',(req, res) => {
+      if (checkToken(req)) {
+
+        
+         if(req.body.status === "approved"){
+
+        const rapidID = getrapidID(req);
+        const docTypes = req.body.docTypes;
+        const OrgID = req.body.rapidOrgID;
+        const status = req.body.status;
+
+
+        if (!rapidID || !docTypes || !status ) {
+
+            res.status(400).json({
+                message: 'Invalid Request !'
+            });
+
+        } else {
+
+            approvedReject.approvedReject(rapidID,OrgID,status,docTypes)
+
+                .then(result => {
+
+                    res.status(result.status).json({
+                        message: result.message,
+                       
+                    })
+                })
+
+                .catch(err => res.status(err.status).json({
+                    message: err.message
+                }).json({
+                    status: err.status
+                }));
+        }
+    }else{res.status(403).json({message:"request rejected"})};
+      }
+    else {
+        res.status(401).json({message:"invalid token"})
+    } 
+});
+
      router.get('/fetchrequests',(req, res) => {
           if (checkToken(req)) {
         const email = getemail(req);
@@ -319,6 +364,39 @@ module.exports = router => {
         }
 
     });
+
+    router.get('/auditUser',cors(), (req, res) => {
+        if (checkToken(req)) {
+            const rapidID = getrapidID(req);
+            if (!rapidID) {
+
+                res.status(400).json({
+                    message: 'invalid user,token not valid or found'
+                });
+
+            } else {
+
+                auditUser.auditUser(rapidID)
+
+                    .then(result => {
+
+
+                        res.status(result.status).json({
+                            org: result.organizations,
+                            dates :result.dates,
+                            doctypes:result.docTypes,
+                            message: "fetched successfully"
+                        })
+                    })
+
+                    .catch(err => res.status(err.status).json({
+                        message: err.message
+                    }));
+
+            }
+        }
+
+    });
     router.post('/removedocs',cors(), (req, res) => {
         if (checkToken(req)) {
 
@@ -356,7 +434,7 @@ module.exports = router => {
 
     });
 
-
+/*
     router.post('/shareDocument',cors(), (req, res) => {
         const rapidID = getrapidID(req);
         const rapid_doc_ID = req.body.rapid_doc_ID;
@@ -382,7 +460,7 @@ module.exports = router => {
 
         }
     });
-
+*/
     router.get('/getSharedDocs',cors(), (req, res) => {
         if (checkToken(req)) {
             const rapidID = getrapidID(req);
@@ -412,6 +490,7 @@ module.exports = router => {
         }
 
     });
+   
 
 
     router.post('/revokeAccess',cors(),(req, res) => {
