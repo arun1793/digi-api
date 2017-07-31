@@ -18,7 +18,7 @@ exports.removedocs = (rapidID, rapid_doc_ID) =>
                 user: user,
                 deleteDocs: deleteDocs
             })
-               docs.deleteMany({"rapid_doc_ID" : rapid_doc_ID})     
+               doc.deleteMany({"rapid_doc_ID" : rapid_doc_ID})     
            
             .then(() => resolve({
                 status: 201,

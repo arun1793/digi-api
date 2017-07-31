@@ -130,7 +130,7 @@ function shareDocument(params) {
 
     console.log("calling SDK for sharedocs");
     return new Promise(function(resolve, reject){
-        var sharedocs;
+        var sharedDocs;
         try{
             logHelper.logEntryAndInput(logger, 'sharedocs', params);
 
@@ -145,9 +145,9 @@ function shareDocument(params) {
                 return reject({statusCode: constants.INVALID_INPUT, body: 'Could not sharedocs. Invalid user' })
             }
 
-            sharedocs = params.sharedDocDetails;
+              sharedDocs = params.sharedDocs;
           
-            if(!validate.isValidJson(sharedocs)){
+            if(!validate.isValidJson(sharedDocs)){
                 logHelper.logError(logger, 'sharedocs', 'Invalid json ');
                 return reject({statusCode: constants.INVALID_INPUT, body: 'Could not sharedocs. Invalid json object' })
             }
@@ -156,16 +156,16 @@ function shareDocument(params) {
             var reqSpec = getRequestSpec({functionName: 'shareDocument',args: [
                
 			
-			sharedocs.rapidID,
-			sharedocs.rapid_doc_ID,
-            sharedocs.orgID
+			sharedDocs.rapidID,
+			sharedDocs.rapid_doc_ID,
+            sharedDocs.orgID
             
             ]});
           
             recursiveInvoke({requestSpec: reqSpec, user: user})
             .then(function(resp){
                 logHelper.logMessage(logger, 'sharedocument', 'Successfully shared your doc', resp.body);
-                return resolve({statusCode: constants.SUCCESS, body: sharedocs});
+                return resolve({statusCode: constants.SUCCESS, body: sharedDocs});
             })
             .catch(function(err){   
                 logHelper.logError(logger, 'sharedocument', 'Could not share your doc', err);

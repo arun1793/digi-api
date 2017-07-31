@@ -178,7 +178,7 @@ module.exports = router => {
 
         const rapidID = getrapidID(req);
         const docTypes = req.body.docTypes;
-        const OrgID = req.body.rapidOrgID;
+        const OrgID = req.body.orgID;
         const status = req.body.status;
 
 
@@ -401,8 +401,8 @@ module.exports = router => {
         if (checkToken(req)) {
 
             const rapidID = getrapidID(req);
-            const rapid_doc_ID1 = req.body.rapid_doc_ID;
-            const rapid_doc_ID = crypto.createHash('sha256').update(rapid_doc_ID1).digest('base64');
+            const rapid_doc_ID = req.body.rapid_doc_ID;
+        //    const rapid_doc_ID = crypto.createHash('sha256').update(rapid_doc_ID1).digest('base64');
             if (!rapidID || !rapid_doc_ID) {
 
                 res.status(400).json({

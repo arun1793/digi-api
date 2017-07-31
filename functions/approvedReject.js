@@ -1,45 +1,44 @@
-
 'use strict';
 
-//const user = require('../models/user');
 const doc = require('../models/doc')
 var bcSdk = require('../src/blockchain/blockchain_sdk');
 const users = 'risabh.s';
+const request = require('../models/request');
 
 
 
-exports.approvedReject = (rapidID,OrgID,status,docTypes) =>{
-                       
-    new Promise((resolve, reject) => {
-        
-      for (i=0;i<docTypes.length;i++){
-          doc.find( { "$elemMatch": { "rapidID": rapidID, "docType": docType[i]  } })
-          .then((docs) =>
-          rapid_doc_ID=docs.rapid_doc_ID
-        ) 
+exports.approvedReject = (rapidID, OrgID, status, docTypes) => {
 
-        const sharedDocDetails = new request({
+    return new Promise((resolve, reject) => {
 
-            rapidID: rapidID,
-            rapid_doc_ID: rapid_doc_ID,
-            OrgID: rapidOrgID,
-            created_at: new Date(),
-        });
+        doc.find({
+                "rapidID": rapidID
+            }) .then((docs) =>{
+                console.log(docs)
+                for (var i = 0; i < docs.length; i++) {
+                    if (docs[i]._doc.docType === docTypes[i]) {
+                        var doc1 = docs[i].rapid_doc_ID;
+                        console.log(doc1);
+                        var rapid_doc_ID = doc1;
 
-        approved.save()
-        
+                        const sharedDocDetails = ({
 
-         bcSdk.shareDocument({
-                user: users,
-                UserDetails: sharedDocDetails
-        })} 
-               console.log("wow its done")
+                            rapidID: rapidID,
+                            rapid_doc_ID: doc1,
+                            OrgID: OrgID,
+                            status: status
 
-            .then(() => resolve({
-                status: 201,
-                message: 'User Registered Sucessfully !'
-            }))
-
+                        });
+                    }
+                
+                    bcSdk.shareDocument({
+                        user: users,
+                        sharedDocs: sharedDocDetails
+                  }).then((Sdkresponse)=>{
+                        return Sdkresponse
+                        });
+                            
+                }})//find then ends here    
             .catch(err => {
 
                 if (err.code == 11000) {
@@ -57,4 +56,6 @@ exports.approvedReject = (rapidID,OrgID,status,docTypes) =>{
                     });
                 }
             });
-    })};
+    
+    })
+};
