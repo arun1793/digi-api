@@ -12,7 +12,7 @@ const doc = require('./functions/addDoc');
 const fetchRequests = require('./functions/fetchRequests');
 const registerOrg = require('./functions/registerorg');
 const login = require('./functions/login');
-const profile = require('./functions/profile'); 
+const profile = require('./functions/profile');
 const password = require('./functions/password');
 const config = require('./config/config.json');
 const user = require('./models/user');
@@ -27,11 +27,13 @@ module.exports = router => {
     router.get('/', (req, res) => res.send("Welcome to digital identity !"));
 
 
-    router.get('/rapidID',cors() ,(req,res)=>{
-     const rapidID = getrapidID(req);
-    res.send({"rapidId" : rapidID} )
-    
-     } );
+    router.get('/rapidID', cors(), (req, res) => {
+        const rapidID = getrapidID(req);
+        res.send({
+            "rapidId": rapidID
+        })
+
+    });
 
 
 
@@ -53,39 +55,39 @@ module.exports = router => {
 
             login.loginUser(email, pin)
 
-                .then(result => {
+            .then(result => {
 
 
 
-                    if ('orgname' in result.users._doc) {
+                if ('orgname' in result.users._doc) {
 
-                        const token = jwt.sign(result, config.secret, {
-                            expiresIn: 60000000000
-                        })
+                    const token = jwt.sign(result, config.secret, {
+                        expiresIn: 60000000000
+                    })
 
 
-                        res.status(result.status).json({
-                            message: result.message,
-                            token: token,
-                            usertype: "org"
-                        });
+                    res.status(result.status).json({
+                        message: result.message,
+                        token: token,
+                        usertype: "org"
+                    });
 
-                    } else {
-                        const token = jwt.sign(result, config.secret, {
-                            expiresIn: 600000000000
-                        })
+                } else {
+                    const token = jwt.sign(result, config.secret, {
+                        expiresIn: 600000000000
+                    })
 
-                        res.status(result.status).json({
-                            message: result.message,
-                            token: token,
-                            usertype: "ind"
-                        });
-                    }
-                })
+                    res.status(result.status).json({
+                        message: result.message,
+                        token: token,
+                        usertype: "ind"
+                    });
+                }
+            })
 
-                .catch(err => res.status(err.status).json({
-                    message: err.message
-                }));
+            .catch(err => res.status(err.status).json({
+                message: err.message
+            }));
         }
     });
 
@@ -112,50 +114,50 @@ module.exports = router => {
 
             register.registerUser(firstname, lastname, email, phone, pin, rapidID)
 
-                .then(result => {
+            .then(result => {
 
-                    res.status(result.status).json({
-                        message: result.message,
-                        ind: true
-                    })
+                res.status(result.status).json({
+                    message: result.message,
+                    ind: true
                 })
+            })
 
-                .catch(err => res.status(err.status).json({
-                    message: err.message
-                }).json({
-                    status: err.status
-                }));
+            .catch(err => res.status(err.status).json({
+                message: err.message
+            }).json({
+                status: err.status
+            }));
         }
     });
 
 
-    router.post('/requestdocs',(req, res) => {
-      if (checkToken(req)) {
-
-        
-        const email = req.body.email;
-        const rapidID = getrapidID(req);
-        const orgname = getorgname(req);
-        const docs = req.body.docs;
-        const status = req.body.status;
-       
+    router.post('/requestdocs', (req, res) => {
+        if (checkToken(req)) {
 
 
-        if (!orgname || !email || !status || !rapidID ) {
+            const email = req.body.email;
+            const rapidID = getrapidID(req);
+            const orgname = getorgname(req);
+            const docs = req.body.docs;
+            const status = req.body.status;
 
-            res.status(400).json({
-                message: 'Invalid Request !'
-            });
 
-        } else {
-               console.log(requestDocs);
-            requestDocs.reqstDocs(email,rapidID,orgname,docs,status)
+
+            if (!orgname || !email || !status || !rapidID) {
+
+                res.status(400).json({
+                    message: 'Invalid Request !'
+                });
+
+            } else {
+                console.log(requestDocs);
+                requestDocs.reqstDocs(email, rapidID, orgname, docs, status)
 
                 .then(result => {
 
                     res.status(result.status).json({
                         message: result.message,
-                       
+
                     })
                 })
 
@@ -164,39 +166,98 @@ module.exports = router => {
                 }).json({
                     status: err.status
                 }));
+            }
+        } else {
+            res.status(401).json({
+                message: "invalid token"
+            })
         }
-    }else {
-        res.status(401).json({message:"invalid token"})
-    } 
-});
+    });
 
-    router.post('/approveReject',(req, res) => {
-      if (checkToken(req)) {
-
-        
-         if(req.body.status === "approved"){
-
+    router.post('/approveReject', (req, res) => {
+        //token validation
         const rapidID = getrapidID(req);
         const docTypes = req.body.docTypes;
         const OrgID = req.body.orgID;
         const status = req.body.status;
 
+        if (!checkToken(req)) {
+            console.log("invalid token")
+            return res.status(401).json({
+                message: "invalid token"
+            })
+        }
 
-        if (!rapidID || !docTypes || !status ) {
+        //status validation
+        if (status !== "approved") {
+            console.log(" status already approved ")
+            return res.status(403).json({
+                message: "request rejected"
+            })
+        }
 
-            res.status(400).json({
+
+
+        //body required field validation
+        if (!rapidID || !docTypes || !status) {
+            console.log(" invalid body ")
+            return res.status(400).json({
                 message: 'Invalid Request !'
             });
 
-        } else {
+        }
 
-            approvedReject.approvedReject(rapidID,OrgID,status,docTypes)
+        approvedReject.approvedReject(rapidID, OrgID, status, docTypes)
+            .then((result) => {
+                console.log("approval was successfull" + JSON.stringify(result))
+                res.status(200).json({
+                    message: result,
+                })
+            }).catch((err) => {
+                res.status(502).json({
+                        message: err.message
+                    }).json({
+                        status: err.status
+                    }) // end of json
+            }); // end of catch
+
+    });
+
+    router.get('/fetchrequests', (req, res) => {
+        if (checkToken(req)) {
+            const email = getemail(req);
+            if (!email) {
+
+                res.status(400).json({
+                    message: 'Invalid Request !'
+                });
+
+            } else {
+                fetchRequests.fetchrequest(email)
 
                 .then(result => {
+                    var activeRequest = [];
+                    //  console.log("length of result array"+result.campaignlist.body.campaignlist.length);
+                    for (let i = 0; i < result.notifications.length; i++) {
 
+                        if (result.notifications[i].status === "approved") {
+
+                            activeRequest.push(result.notifications[i]);
+
+
+                        } else if (result.notifications[i].status !== "active") {
+
+                            return res.json({
+                                status: 409,
+                                message: 'requests not found'
+                            });
+
+
+                        }
+                    }
                     res.status(result.status).json({
                         message: result.message,
-                       
+                        requests: activeRequest
                     })
                 })
 
@@ -205,62 +266,15 @@ module.exports = router => {
                 }).json({
                     status: err.status
                 }));
-        }
-    }else{res.status(403).json({message:"request rejected"})};
-      }
-    else {
-        res.status(401).json({message:"invalid token"})
-    } 
-});
-
-     router.get('/fetchrequests',(req, res) => {
-          if (checkToken(req)) {
-        const email = getemail(req);
-
-
-       
-        if ( !email ) {
-
-            res.status(400).json({
-                message: 'Invalid Request !'
-            });
-
+            }
         } else {
-            fetchRequests.fetchrequest(email)
-
-                .then(result => {
-                     var activeRequest=[];
-				 //  console.log("length of result array"+result.campaignlist.body.campaignlist.length);
-                    for(let i=0;i<result.notifications.length;i++){
-	 
-	         if(result.notifications[i].status==="approved"){
-     
-		 activeRequest.push(result.notifications[i]);
-			
-
-	} else if (result.notifications[i].status !=="active") {
-
-        return res.json({status:409,message:'requests not found'});
-
-                    
-                    }
-                }res.status(result.status).json({
-                        message: result.message,
-                        requests:activeRequest
-                       })})
-
-                .catch(err => res.status(err.status).json({
-                    message: err.message
-                }).json({
-                    status: err.status
-                }));
+            res.status(401).json({
+                message: "invalid token"
+            })
         }
-    }else {
-        res.status(401).json({message:"invalid token"})
-    } 
-     });
+    });
 
-    router.post('/registerOrg', cors(), (req,res) => {
+    router.post('/registerOrg', cors(), (req, res) => {
 
         const orgname = req.body.orgname;
         const email = req.body.email;
@@ -279,19 +293,19 @@ module.exports = router => {
 
             registerOrg.registerOrg(orgname, email, orgcontact, pin, rapidID)
 
-                .then(result => {
+            .then(result => {
 
-                    res.setHeader('Location', '/org/' + email);
-                    res.status(result.status).json({
-                        message: result.message,
-                        org: true
-                    })
+                res.setHeader('Location', '/org/' + email);
+                res.status(result.status).json({
+                    message: result.message,
+                    org: true
                 })
+            })
 
-                .catch(err => res.status(err.status).json({
-                    message: err.message,
-                    status: err.status
-                }));
+            .catch(err => res.status(err.status).json({
+                message: err.message,
+                status: err.status
+            }));
         }
     });
     router.post('/addDoc', cors(), (req, res) => {
@@ -312,17 +326,17 @@ module.exports = router => {
 
                 doc.addDoc(docType, docNo, rapid_doc_ID, rapidID, docinfo)
 
-                    .then(result => {
+                .then(result => {
 
 
-                        res.status(result.status).json({
-                            message: result.message
-                        })
+                    res.status(result.status).json({
+                        message: result.message
                     })
+                })
 
-                    .catch(err => res.status(err.status).json({
-                        message: err.message
-                    }));
+                .catch(err => res.status(err.status).json({
+                    message: err.message
+                }));
 
             }
         } else {
@@ -332,9 +346,9 @@ module.exports = router => {
         }
     });
 
-   
 
-    router.get('/getMydocs',cors(), (req, res) => {
+
+    router.get('/getMydocs', cors(), (req, res) => {
         if (checkToken(req)) {
             const rapidID = getrapidID(req);
             if (!rapidID) {
@@ -347,25 +361,25 @@ module.exports = router => {
 
                 fetchUsersdocs.fetchUsersdocs(rapidID)
 
-                    .then(result => {
+                .then(result => {
 
 
-                        res.status(result.status).json({
-                            docObj: result.docArray,
-                            message: "fetched successfully"
-                        })
+                    res.status(result.status).json({
+                        docObj: result.docArray,
+                        message: "fetched successfully"
                     })
+                })
 
-                    .catch(err => res.status(err.status).json({
-                        message: err.message
-                    }));
+                .catch(err => res.status(err.status).json({
+                    message: err.message
+                }));
 
             }
         }
 
     });
 
-    router.get('/auditUser',cors(), (req, res) => {
+    router.get('/auditUser', cors(), (req, res) => {
         if (checkToken(req)) {
             const rapidID = getrapidID(req);
             if (!rapidID) {
@@ -378,31 +392,31 @@ module.exports = router => {
 
                 auditUser.auditUser(rapidID)
 
-                    .then(result => {
+                .then(result => {
 
 
-                        res.status(result.status).json({
-                            org: result.organizations,
-                            dates :result.dates,
-                            doctypes:result.docTypes,
-                            message: "fetched successfully"
-                        })
+                    res.status(result.status).json({
+                        org: result.organizations,
+                        dates: result.dates,
+                        doctypes: result.docTypes,
+                        message: "fetched successfully"
                     })
+                })
 
-                    .catch(err => res.status(err.status).json({
-                        message: err.message
-                    }));
+                .catch(err => res.status(err.status).json({
+                    message: err.message
+                }));
 
             }
         }
 
     });
-    router.post('/removedocs',cors(), (req, res) => {
+    router.post('/removedocs', cors(), (req, res) => {
         if (checkToken(req)) {
 
             const rapidID = getrapidID(req);
             const rapid_doc_ID = req.body.rapid_doc_ID;
-        //    const rapid_doc_ID = crypto.createHash('sha256').update(rapid_doc_ID1).digest('base64');
+            //    const rapid_doc_ID = crypto.createHash('sha256').update(rapid_doc_ID1).digest('base64');
             if (!rapidID || !rapid_doc_ID) {
 
                 res.status(400).json({
@@ -412,6 +426,39 @@ module.exports = router => {
             } else {
 
                 removedocs.removedocs(rapidID, rapid_doc_ID)
+
+                .then(result => {
+
+
+                    res.status(result.status).json({
+                        message: result.message
+                    })
+                })
+
+                .catch(err => res.status(err.status).json({
+                    message: err.message
+                }));
+
+            }
+        } else {
+            res.status(401).json({
+                message: "invalid token"
+            });
+        }
+
+    });
+
+    /*
+        router.post('/shareDocument',cors(), (req, res) => {
+            const rapidID = getrapidID(req);
+            const rapid_doc_ID = req.body.rapid_doc_ID;
+            const orgID = req.body.orgID;
+            if (!rapidID || !rapid_doc_ID || !orgID) {
+                res.status(400).json({
+                    message: 'invalid user,token not valid or found'
+                });
+            } else {
+                shareDocument.shareDocument(rapidID, rapid_doc_ID, orgID)
 
                     .then(result => {
 
@@ -426,42 +473,9 @@ module.exports = router => {
                     }));
 
             }
-        } else {
-            res.status(401).json({
-                message: "invalid token"
-            });
-        }
-
-    });
-
-/*
-    router.post('/shareDocument',cors(), (req, res) => {
-        const rapidID = getrapidID(req);
-        const rapid_doc_ID = req.body.rapid_doc_ID;
-        const orgID = req.body.orgID;
-        if (!rapidID || !rapid_doc_ID || !orgID) {
-            res.status(400).json({
-                message: 'invalid user,token not valid or found'
-            });
-        } else {
-            shareDocument.shareDocument(rapidID, rapid_doc_ID, orgID)
-
-                .then(result => {
-
-
-                    res.status(result.status).json({
-                        message: result.message
-                    })
-                })
-
-                .catch(err => res.status(err.status).json({
-                    message: err.message
-                }));
-
-        }
-    });
-*/
-    router.get('/getSharedDocs',cors(), (req, res) => {
+        });
+    */
+    router.get('/getSharedDocs', cors(), (req, res) => {
         if (checkToken(req)) {
             const rapidID = getrapidID(req);
             if (!rapidID) {
@@ -474,26 +488,26 @@ module.exports = router => {
 
                 getSharedDocs.getSharedDocs(rapidID)
 
-                    .then(result => {
+                .then(result => {
 
 
-                        res.status(result.status).json({
-                            message: result.sharedDocs
-                        })
+                    res.status(result.status).json({
+                        message: result.sharedDocs
                     })
+                })
 
-                    .catch(err => res.status(err.status).json({
-                        message: err.message
-                    }));
+                .catch(err => res.status(err.status).json({
+                    message: err.message
+                }));
 
             }
         }
 
     });
-   
 
 
-    router.post('/revokeAccess',cors(),(req, res) => {
+
+    router.post('/revokeAccess', cors(), (req, res) => {
         const rapidID = getrapidID(req);
         const orgID = req.body.orgID;
         const rapid_doc_ID = req.body.rapid_doc_ID;
@@ -505,21 +519,21 @@ module.exports = router => {
         } else {
             revokeAccess.revokeAccess(rapidID, rapid_doc_ID, orgID)
 
-                .then(result => {
+            .then(result => {
 
 
-                    res.status(result.status).json({
-                        message: result.message
-                    })
+                res.status(result.status).json({
+                    message: result.message
                 })
+            })
 
-                .catch(err => res.status(err.status).json({
-                    message: err.message
-                }));
+            .catch(err => res.status(err.status).json({
+                message: err.message
+            }));
 
         }
     });
-    router.get('/audit',cors(), function(req, res) {
+    router.get('/audit', cors(), function(req, res) {
         if (checkToken(req)) {
 
             console.log(req.body)
@@ -571,13 +585,13 @@ module.exports = router => {
 
                 password.changePassword(req.params.id, oldPassword, newPassword)
 
-                    .then(result => res.status(result.status).json({
-                        message: result.message
-                    }))
+                .then(result => res.status(result.status).json({
+                    message: result.message
+                }))
 
-                    .catch(err => res.status(err.status).json({
-                        message: err.message
-                    }));
+                .catch(err => res.status(err.status).json({
+                    message: err.message
+                }));
 
             }
         } else {
@@ -599,25 +613,25 @@ module.exports = router => {
 
             password.resetPasswordInit(email)
 
-                .then(result => res.status(result.status).json({
-                    message: result.message
-                }))
+            .then(result => res.status(result.status).json({
+                message: result.message
+            }))
 
-                .catch(err => res.status(err.status).json({
-                    message: err.message
-                }));
+            .catch(err => res.status(err.status).json({
+                message: err.message
+            }));
 
         } else {
 
             password.resetPasswordFinish(email, token, newPassword)
 
-                .then(result => res.status(result.status).json({
-                    message: result.message
-                }))
+            .then(result => res.status(result.status).json({
+                message: result.message
+            }))
 
-                .catch(err => res.status(err.status).json({
-                    message: err.message
-                }));
+            .catch(err => res.status(err.status).json({
+                message: err.message
+            }));
         }
     });
 
@@ -668,7 +682,7 @@ module.exports = router => {
         }
     }
 
-         function getorgname(req) {
+    function getorgname(req) {
 
         const token = req.headers['x-access-token'];
 
@@ -677,12 +691,10 @@ module.exports = router => {
             try {
 
                 var decoded = jwt.verify(token, config.secret);
-               var orgname = decoded.users.orgname;
-               // var rapidID = decoded.users.rapidID;
-                
-                return orgname
-                       
+                var orgname = decoded.users.orgname;
+                // var rapidID = decoded.users.rapidID;
 
+                return orgname
 
             } catch (err) {
 
@@ -694,6 +706,7 @@ module.exports = router => {
             return false;
         }
     }
+
     function getemail(req) {
 
         const token = req.headers['x-access-token'];
@@ -703,11 +716,11 @@ module.exports = router => {
             try {
 
                 var decoded = jwt.verify(token, config.secret);
-               var email = decoded.users.email;
-    
-                
+                var email = decoded.users.email;
+
+
                 return email
-                       
+
 
 
             } catch (err) {
