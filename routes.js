@@ -4,8 +4,9 @@ var cors = require('cors');
 const jwt = require('jsonwebtoken');
 var fs = require('fs');
 
-const auditUser = require('./functions/auditUser')
-const approvedReject = require('./functions/approvedReject')
+const auditUser = require('./functions/auditUser');
+const getMongoDocs = require('./functions/getMongoDocs');
+const approvedReject = require('./functions/approvedReject');
 const requestDocs = require('./functions/requestDocs');
 const register = require('./functions/register');
 const doc = require('./functions/addDoc');
@@ -132,26 +133,29 @@ module.exports = router => {
 
 
     router.post('/requestdocs', (req, res) => {
-        if (checkToken(req)) {
-
-
+       
             const email = req.body.email;
             const rapidID = getrapidID(req);
             const orgname = getorgname(req);
             const docs = req.body.docs;
             const status = req.body.status;
+         //check if token is valid
+            if (!checkToken(req)) {
+            console.log("invalid token")
+            return res.status(401).json({
+                message: "invalid token"
+            })
+        }
+             //body required field validation
+        if (!rapidID || !email || !status||!orgname) {
+            console.log(" invalid body ")
+            return res.status(400).json({
+                message: 'Invalid Request !'
+            });
 
-
-
-            if (!orgname || !email || !status || !rapidID) {
-
-                res.status(400).json({
-                    message: 'Invalid Request !'
-                });
-
-            } else {
-                console.log(requestDocs);
-                requestDocs.reqstDocs(email, rapidID, orgname, docs, status)
+        }
+             
+        requestDocs.reqstDocs(email, rapidID, orgname, docs, status)
 
                 .then(result => {
 
@@ -166,21 +170,15 @@ module.exports = router => {
                 }).json({
                     status: err.status
                 }));
-            }
-        } else {
-            res.status(401).json({
-                message: "invalid token"
-            })
-        }
-    });
+            });
 
     router.post('/approveReject', (req, res) => {
-        //token validation
+     
         const rapidID = getrapidID(req);
         const docTypes = req.body.docTypes;
         const OrgID = req.body.orgID;
         const status = req.body.status;
-
+          //token validation
         if (!checkToken(req)) {
             console.log("invalid token")
             return res.status(401).json({
@@ -222,17 +220,58 @@ module.exports = router => {
             }); // end of catch
 
     });
+        router.get('/getMongodocs',(req,res)=>{
+                   
+                 if (!checkToken(req)) {
+            console.log("invalid token")
+            return res.status(401).json({
+                message: "invalid token"
+            })
+        }
+                const rapidID = getrapidID(req)
+
+                if (!rapidID) {
+            console.log(" invalid body ")
+            return res.status(400).json({
+                message: 'Invalid Request !'
+            });
+
+        }
+                    getMongoDocs.getMongoDocs(rapidID)
+                    .then(result=>{
+                       res.status(result.status).json({
+                        docs: result.docs
+                    })
+                })
+                
+                .catch(err => res.status(err.status).json({
+                    message: err.message
+                }).json({
+                    status: err.status
+                }));
+            
+        
+    });
+
 
     router.get('/fetchrequests', (req, res) => {
-        if (checkToken(req)) {
+           
+                   if (!checkToken(req)) {
+            console.log("invalid token")
+            return res.status(401).json({
+                message: "invalid token"
+            })
+        }
+
             const email = getemail(req);
-            if (!email) {
 
-                res.status(400).json({
-                    message: 'Invalid Request !'
-                });
+             if (!email) {
+            console.log(" invalid body ")
+            return res.status(400).json({
+                message: 'Invalid Request !'
+            });
 
-            } else {
+        }
                 fetchRequests.fetchrequest(email)
 
                 .then(result => {
@@ -240,7 +279,7 @@ module.exports = router => {
                     //  console.log("length of result array"+result.campaignlist.body.campaignlist.length);
                     for (let i = 0; i < result.notifications.length; i++) {
 
-                        if (result.notifications[i].status === "approved") {
+                        if (result.notifications[i].status === "request sent") {
 
                             activeRequest.push(result.notifications[i]);
 
@@ -266,13 +305,10 @@ module.exports = router => {
                 }).json({
                     status: err.status
                 }));
-            }
-        } else {
-            res.status(401).json({
-                message: "invalid token"
-            })
-        }
+            
+      
     });
+    
 
     router.post('/registerOrg', cors(), (req, res) => {
 
@@ -309,20 +345,27 @@ module.exports = router => {
         }
     });
     router.post('/addDoc', cors(), (req, res) => {
-        if (checkToken(req)) {
+
             const docType = req.body.docType;
             const docNo = req.body.docNo;
             const rapid_doc_ID = crypto.createHash('sha256').update(docNo).digest('base64');
             const rapidID = getrapidID(req);
             const docinfo = req.body.docinfo;
+            
+             if (!checkToken(req)) {
+            console.log("invalid token")
+            return res.status(401).json({
+                message: "invalid token"
+            })
+        }
 
-            if (!docType || !docNo || !rapid_doc_ID) {
+             if (!docType||!docNo||!rapidID) {
+            console.log(" invalid body ")
+            return res.status(400).json({
+                message: 'Invalid Request !'
+            });
 
-                res.status(400).json({
-                    message: 'Invalid Request !'
-                });
-
-            } else {
+        }
 
                 doc.addDoc(docType, docNo, rapid_doc_ID, rapidID, docinfo)
 
@@ -338,26 +381,27 @@ module.exports = router => {
                     message: err.message
                 }));
 
-            }
-        } else {
-            res.status(401).json({
-                message: 'Invalid Token !'
-            });
-        }
+        
     });
 
 
 
     router.get('/getMydocs', cors(), (req, res) => {
-        if (checkToken(req)) {
+        //token validation
+        if (!checkToken(req)) {
+            console.log("invalid token")
+            return res.status(401).json({
+                message: "invalid token"
+            })
+        }
             const rapidID = getrapidID(req);
-            if (!rapidID) {
 
-                res.status(400).json({
-                    message: 'invalid user,token not valid or found'
-                });
-
-            } else {
+                if (!rapidID) {
+                console.log("invalid json input")
+                return res.status(400).json({
+                message: 'invalid user,token not valid or found'
+                })
+                }
 
                 fetchUsersdocs.fetchUsersdocs(rapidID)
 
@@ -374,21 +418,24 @@ module.exports = router => {
                     message: err.message
                 }));
 
-            }
-        }
-
-    });
+            })
+            
 
     router.get('/auditUser', cors(), (req, res) => {
-        if (checkToken(req)) {
+        if (!checkToken(req)) {
+            console.log("invalid token")
+            return res.status(401).json({
+                message: "invalid token"
+            })
+        }
             const rapidID = getrapidID(req);
+
             if (!rapidID) {
-
-                res.status(400).json({
-                    message: 'invalid user,token not valid or found'
-                });
-
-            } else {
+                console.log("invalid json input")
+                return res.status(400).json({
+                message: 'invalid user,token not valid or found'
+                })
+                }
 
                 auditUser.auditUser(rapidID)
 
@@ -406,25 +453,27 @@ module.exports = router => {
                 .catch(err => res.status(err.status).json({
                     message: err.message
                 }));
-
-            }
-        }
-
     });
+
+
     router.post('/removedocs', cors(), (req, res) => {
-        if (checkToken(req)) {
-
+       if (!checkToken(req)) {
+            console.log("invalid token")
+            return res.status(401).json({
+                message: "invalid token"
+            })
+        }
             const rapidID = getrapidID(req);
-            const rapid_doc_ID = req.body.rapid_doc_ID;
-            //    const rapid_doc_ID = crypto.createHash('sha256').update(rapid_doc_ID1).digest('base64');
+            const rapid_doc_ID1 = req.body.rapid_doc_ID;
+            const rapid_doc_ID = crypto.createHash('sha256').update(rapid_doc_ID1).digest('base64');
+           
             if (!rapidID || !rapid_doc_ID) {
-
-                res.status(400).json({
+                console.log("invalid json")
+              return  res.status(400).json({
                     message: 'wrong json input'
                 });
 
-            } else {
-
+            }
                 removedocs.removedocs(rapidID, rapid_doc_ID)
 
                 .then(result => {
@@ -437,46 +486,14 @@ module.exports = router => {
 
                 .catch(err => res.status(err.status).json({
                     message: err.message
-                }));
-
-            }
-        } else {
-            res.status(401).json({
-                message: "invalid token"
-            });
-        }
+                }));           
 
     });
 
-    /*
-        router.post('/shareDocument',cors(), (req, res) => {
-            const rapidID = getrapidID(req);
-            const rapid_doc_ID = req.body.rapid_doc_ID;
-            const orgID = req.body.orgID;
-            if (!rapidID || !rapid_doc_ID || !orgID) {
-                res.status(400).json({
-                    message: 'invalid user,token not valid or found'
-                });
-            } else {
-                shareDocument.shareDocument(rapidID, rapid_doc_ID, orgID)
-
-                    .then(result => {
-
-
-                        res.status(result.status).json({
-                            message: result.message
-                        })
-                    })
-
-                    .catch(err => res.status(err.status).json({
-                        message: err.message
-                    }));
-
-            }
-        });
-    */
+   
     router.get('/getSharedDocs', cors(), (req, res) => {
         if (checkToken(req)) {
+            console.log("invalid token")
             const rapidID = getrapidID(req);
             if (!rapidID) {
 
