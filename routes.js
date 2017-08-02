@@ -91,7 +91,40 @@ module.exports = router => {
             }));
         }
     });
+      
+     router.get('/getMongodocs',(req,res)=>{
+                   
+                 if (!checkToken(req)) {
+            console.log("invalid token")
+            return res.status(401).json({
+                message: "invalid token"
+            })
+        }
+                const rapidID = getrapidID(req)
 
+                if (!rapidID) {
+            console.log(" invalid body ")
+            return res.status(400).json({
+                message: 'Invalid Request !'
+            });
+
+        }
+                    getMongoDocs.getMongoDocs(rapidID)
+                    .then(result=>{
+                       res.status(result.status).json({
+                        docs: result.docs
+                    })
+                })
+                
+                .catch(err => res.status(err.status).json({
+                    message: err.message
+                }).json({
+                    status: err.status
+                }));
+            
+        
+    });
+    
     router.post('/registerUser', cors(), (req, res) => {
 
         const firstname = req.body.firstname;
