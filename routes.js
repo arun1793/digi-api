@@ -253,6 +253,54 @@ module.exports = router => {
             }); // end of catch
 
     });
+    router.post('/approveRejectDirect', (req, res) => {
+     
+        const rapidID = getrapidID(req);
+        const docTypes = req.body.docTypes;
+        const OrgID = req.body.OrgID;
+        const status = req.body.status;
+          //token validation
+        if (!checkToken(req)) {
+            console.log("invalid token")
+            return res.status(401).json({
+                message: "invalid token"
+            })
+        }
+
+        //status validation
+        if (status !== "approved") {
+            console.log(" status already approved ")
+            return res.status(403).json({
+                message: "request rejected"
+            })
+        }
+
+
+
+        //body required field validation
+        if (!rapidID || !docTypes || !status) {
+            console.log(" invalid body ")
+            return res.status(400).json({
+                message: 'Invalid Request !'
+            });
+
+        }
+
+        approvedReject.approvedReject(rapidID, OrgID, status, docTypes)
+            .then((result) => {
+                console.log("approval was successfull" + JSON.stringify(result))
+                res.status(200).json({
+                    message: result,
+                })
+            }).catch((err) => {
+                res.status(502).json({
+                        message: err.message
+                    }).json({
+                        status: err.status
+                    }) // end of json
+            }); // end of catch
+
+    });
         router.get('/getMongodocs',(req,res)=>{
                    
                  if (!checkToken(req)) {
