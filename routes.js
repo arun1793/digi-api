@@ -317,7 +317,7 @@ module.exports = router => {
                             activeRequest.push(result.notifications[i]);
 
 
-                        } else if (result.notifications[i].status !== "active") {
+                        } else if (result.notifications[i].status == "active") {
 
                             return res.json({
                                 status: 409,
