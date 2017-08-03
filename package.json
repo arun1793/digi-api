@@ -5,6 +5,9 @@
     "engines": {
         "node": "6.11.0"
     },
+    "scripts": {
+        "start": "node app.js"
+    },
     "dependencies": {
         "bcryptjs": "^2.4.3",
         "bluebird": "^3.3.5",
