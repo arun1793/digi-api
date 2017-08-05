@@ -70,7 +70,8 @@ module.exports = router => {
                     res.status(result.status).json({
                         message: result.message,
                         token: token,
-                        usertype: "org"
+                        usertype: "org",
+                        rapidID : result.users.rapidID
                     });
 
                 } else {
@@ -81,7 +82,8 @@ module.exports = router => {
                     res.status(result.status).json({
                         message: result.message,
                         token: token,
-                        usertype: "ind"
+                        usertype: "ind",
+                        rapidID : result.users.rapidID
                     });
                 }
             })
