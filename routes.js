@@ -666,6 +666,30 @@ module.exports = router => {
 
         }
     });
+    router.get('/mockgetSharedDocs',function(req,res) {
+        console.log(req.body)
+        res.send([{
+                    "user":"uma",
+                    "docType": "aadhar",
+                    "org": "icici"
+                },
+                {
+                    "user":"uma",
+                    "docType": "pan",
+                    "org": "icici"
+                },
+                {
+                    "user": "uma",
+                    "docType": "passport",
+                    "org": "icici"
+                },
+                {
+                    "user": "shraddha",
+                    "docType": "passport",
+                    "org": "icici"
+                }
+            ])
+     });
 
 
     router.put('changePassword', (req, res) => {
