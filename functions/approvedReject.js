@@ -15,15 +15,18 @@ exports.approvedReject = (rapidID, OrgID, status, docTypes) => {
                 "rapidID": rapidID
             }).then((docs) => {
                 console.log(docs)
-                var sharedDocDetails;
+               var sharedDocDetails;
                 var counter = 0;
                 for (var i = 0; i < docs.length; i++) {
+                    console.log(docs[i]._doc.docType);
+                    console.log(docTypes);
                     if (docs[i]._doc.docType === docTypes[i]) {
+                        
                         var doc1 = docs[i].rapid_doc_ID;
                         console.log(doc1);
                         var rapid_doc_ID = doc1;
 
-                        sharedDocDetails = {
+                          sharedDocDetails = {
 
                             "rapidID": rapidID,
                             "rapid_doc_ID": doc1,
