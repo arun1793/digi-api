@@ -1,29 +1,3 @@
-/*
-'use strict';
-var user = "risabh.s";
-const doc = require('../models/doc');
-const bcSdk=require('../src/blockchain/blockchain_sdk');
-
-exports.getSharedDocs = (rapidID) => {
-    return new Promise((resolve,reject) => {
-
-    bcSdk.getSharedDocs({user: user, rapidID: rapidID})
-    
-	.then((sharedDocs) =>{ 
-		return resolve({status:201,"sharedDocs":sharedDocs.body})
-    })
-	
-
-    
-		.catch(err => {
-
-				console.log("error occurred" + err);
-
-				return reject({ status: 500, message: 'Internal Server Error !' });
-			}
-		)}
-	)};
-	*/
 
 'use strict';
 var user = "risabh.s";
@@ -44,21 +18,51 @@ exports.getSharedDocs = (rapidID) => {
 
 
             .then((userdocs) => {
-
-                ownsLedgerData = userdocs.body.sharedwithme
-
-                doc.find({
-                        "rapid_doc_ID": ownsLedgerData
+                 var docs2 = [];
+             
+                var shareLedgerData = userdocs.body.sharedwithme
+                console.log(shareLedgerData);
+               var userkeys =Object.keys(shareLedgerData)
+               console.log(userkeys);
+               
+    
+         doc.find({
+                       "rapidID": userkeys
                     })
-
+                        
                     .then((docs) => {
+            for(let i=0;i<shareLedgerData[userkeys].length;i++){
+              
 
-                        resolve({
-                            status: 201,
-                            sharedDocs: docs
-                        })
+              var userkey = userkeys
+
+           console.log("array of doc no got from ledger"+shareLedgerData[userkey][i])
+                       
+                        for(let j=0;j<docs.length;j++){
+                          
+                       
+                        if(docs[j]._doc.rapid_doc_ID === shareLedgerData[userkey][i] ){
+                              
+                            docs2.push(docs[j])
+                     
+                        }
+                        }
+            }
                     })
+
+            .then(() =>{        
+                 resolve({
+                            status: 201,
+                            sharedDocs: docs2
+                        }) 
             })
+            })
+                        
+           
+                            
+                     
+    
+
             .catch(err => {
 
                 console.log("error occurred" + err);
