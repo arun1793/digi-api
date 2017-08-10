@@ -1,7 +1,8 @@
 
 'use strict';
-var user = "risabh.s";
+var userss = "risabh.s";
 const doc = require('../models/doc');
+const user = require('../models/user');
 const bcSdk = require('../src/blockchain/blockchain_sdk');
 var ownsLedgerData = [];
 var docArray = [];
@@ -12,7 +13,7 @@ exports.auditUser = (rapidID) => {
     return new Promise((resolve, reject) => {
 
         bcSdk.getMydocs({
-                user: user,
+                user: userss,
                 rapidID: rapidID
             })
 
@@ -20,38 +21,61 @@ exports.auditUser = (rapidID) => {
 
             .then((userdocs) => {
 
-                AuditLedgerData = userdocs.body.audit
-                AuditLedgerData[0]
-                AuditLedgerData[1]
-                AuditLedgerData[2]
-                    doc.find({
-                            "rapidID": AuditLedgerData[0]
+                var AuditLedgerData = userdocs.body.audittrail
+                console.log(AuditLedgerData)
+                 var orgkeys =Object.keys(AuditLedgerData)
+                 console.log(orgkeys);
+             
+                    user.find({
+                            "rapidID": orgkeys
                         })
 
-                        .then((docs) => {
-                            var orgtn=[]
-                       for(i=0;i<docs.length;i++){
-                    orgtn = docs.orgname[i]
-                       }
-                })
-                    doc.find({
-                    "rapid_doc_ID": AuditLedgerData[2]
-                     })
-                .then((types)=>{
-                var type =[]
-                for (i=0;i<types.length;i++)
-                 type1 =types.docType[i]
-            })
-                return resolve ({
-                    status:201,
-                    organizations :orgtn,
-                    dates  :AuditLedgerData[1],
-                    docTypes : type1
+                        .then((users) => {
+                            var orgnames = [];
+                            var orgname = users[0]._doc.orgname
+                            orgnames.push(orgname)
+                            console.log(orgnames)
+                        console.log( AuditLedgerData[orgkeys])
+                        
+                        var timestamps=[];
+                        var rapiddocIDs =[];
+                        for(var i=0;i<AuditLedgerData[orgkeys].length;i++){
+                             if ( i % 2 == 0){
+                                  timestamps.push(AuditLedgerData[orgkeys][i])
+                                 }
+                                else {
+                            rapiddocIDs.push(AuditLedgerData[orgkeys][i])
+                        }      
+                        }
+                        console.log("timestamps            "+timestamps);        
+                        console.log("rapiddocIDs           "+ rapiddocIDs);
+                           const docids = rapiddocIDs
+                           console.log(docids)
+                        doc.find({"rapid_doc_ID":docids})
+
+                        .then((docs)=>{
+                            var doctype=[];
+                            for(var i=0;i<docs.length;i++){
+                              if(1 === 1){
+                                doctype.push(docs[i]._doc.docType)
+                              }
+                            }
+                            console.log(doctype)
+                            
+                             return resolve ({
+                             status:201,
+                             orgname :orgnames,
+                            documentid :doctype,
+                           timestamp : timestamps
+                    
                     
                 })
-               
-
+                                  
+                })
+            })  
             })
+             
+                
 			
           
                   .catch(err => {
@@ -60,9 +84,9 @@ exports.auditUser = (rapidID) => {
 
                 return reject({
                     status: 500,
-                    message: 'Internal Server Error !'
+                    message: ' invalid usertype tried to get into service !'
                 });
             })
-    })
-};
-
+    
+})
+    };
