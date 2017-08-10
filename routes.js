@@ -5,6 +5,7 @@ const jwt = require('jsonwebtoken');
 var fs = require('fs');
 
 const auditUser = require('./functions/auditUser');
+
 const getMongoDocs = require('./functions/getMongoDocs');
 const approvedReject = require('./functions/approvedReject');
 const requestDocs = require('./functions/requestDocs');
@@ -70,8 +71,7 @@ module.exports = router => {
                     res.status(result.status).json({
                         message: result.message,
                         token: token,
-                        usertype: "org",
-                        rapidID : result.users.rapidID
+                        usertype: "org"
                     });
 
                 } else {
@@ -82,8 +82,7 @@ module.exports = router => {
                     res.status(result.status).json({
                         message: result.message,
                         token: token,
-                        usertype: "ind",
-                        rapidID : result.users.rapidID
+                        usertype: "ind"
                     });
                 }
             })
@@ -255,7 +254,7 @@ module.exports = router => {
             }); // end of catch
 
     });
-    router.post('/approveRejectDirect', (req, res) => {
+         router.post('/approveRejectDirect', (req, res) => {
      
         const rapidID = getrapidID(req);
         const docTypes = req.body.docTypes;
@@ -303,39 +302,10 @@ module.exports = router => {
             }); // end of catch
 
     });
-        router.get('/getMongodocs',(req,res)=>{
-                   
-                 if (!checkToken(req)) {
-            console.log("invalid token")
-            return res.status(401).json({
-                message: "invalid token"
-            })
-        }
-                const rapidID = getrapidID(req)
 
-                if (!rapidID) {
-            console.log(" invalid body ")
-            return res.status(400).json({
-                message: 'Invalid Request !'
-            });
 
-        }
-                    getMongoDocs.getMongoDocs(rapidID)
-                    .then(result=>{
-                       res.status(result.status).json({
-                        docs: result.docs
-                    })
-                })
-                
-                .catch(err => res.status(err.status).json({
-                    message: err.message
-                }).json({
-                    status: err.status
-                }));
-            
-        
-    });
-
+    
+       
 
     router.get('/fetchrequests', (req, res) => {
            
@@ -367,7 +337,7 @@ module.exports = router => {
                             activeRequest.push(result.notifications[i]);
 
 
-                        } else if (result.notifications[i].status == "active") {
+                        } else if (result.notifications[i].status === "active") {
 
                             return res.json({
                                 status: 409,
@@ -526,9 +496,9 @@ module.exports = router => {
 
 
                     res.status(result.status).json({
-                        org: result.organizations,
-                        dates: result.dates,
-                        doctypes: result.docTypes,
+                        org: result.orgname,
+                        dates: result.timestamp,
+                        doctypes: result.documentid,
                         message: "fetched successfully"
                     })
                 })
@@ -666,30 +636,6 @@ module.exports = router => {
 
         }
     });
-    router.get('/mockgetSharedDocs',function(req,res) {
-        console.log(req.body)
-        res.send([{
-                    "user":"uma",
-                    "docType": "aadhar",
-                    "org": "icici"
-                },
-                {
-                    "user":"uma",
-                    "docType": "pan",
-                    "org": "icici"
-                },
-                {
-                    "user": "uma",
-                    "docType": "passport",
-                    "org": "icici"
-                },
-                {
-                    "user": "shraddha",
-                    "docType": "passport",
-                    "org": "icici"
-                }
-            ])
-     });
 
 
     router.put('changePassword', (req, res) => {
