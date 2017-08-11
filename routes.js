@@ -71,6 +71,7 @@ module.exports = router => {
                     res.status(result.status).json({
                         message: result.message,
                         token: token,
+                         rapidID : result.users.rapidID,
                         usertype: "org"
                     });
 
@@ -82,6 +83,7 @@ module.exports = router => {
                     res.status(result.status).json({
                         message: result.message,
                         token: token,
+                         rapidID : result.users.rapidID,
                         usertype: "ind"
                     });
                 }
