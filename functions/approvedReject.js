@@ -20,7 +20,11 @@ exports.approvedReject = (rapidID, OrgID, status, docTypes) => {
                 for (var i = 0; i < docs.length; i++) {
                     console.log(docs[i]._doc.docType);
                     console.log(docTypes);
-                    if (docs[i]._doc.docType === docTypes[i]) {
+                    for(let v=0;v< docTypes.length;v++){
+                        console.log(docTypes.length)
+                        console.log(docs[i]._doc.docType);
+                        console.log(docTypes[v]);
+                    if (docs[i]._doc.docType === docTypes[v]) {
                         
                         var doc1 = docs[i].rapid_doc_ID;
                         console.log(doc1);
@@ -56,7 +60,7 @@ exports.approvedReject = (rapidID, OrgID, status, docTypes) => {
                         });
 
                 }
-
+                }
 
             }) //find then ends here    
             .catch((err) => {

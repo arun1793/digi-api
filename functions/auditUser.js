@@ -32,7 +32,9 @@ exports.auditUser = (rapidID) => {
 
                         .then((users) => {
                             var orgnames = [];
-                            var orgname = users[0]._doc.orgname
+                            for (let u=0;u<orgkeys.length;u++){
+                                
+                            var orgname = users[u]._doc.orgname
                             orgnames.push(orgname)
                             console.log(orgnames)
                         console.log( AuditLedgerData[orgkeys])
@@ -46,6 +48,7 @@ exports.auditUser = (rapidID) => {
                                 else {
                             rapiddocIDs.push(AuditLedgerData[orgkeys][i])
                         }      
+                        }
                         }
                         console.log("timestamps            "+timestamps);        
                         console.log("rapiddocIDs           "+ rapiddocIDs);

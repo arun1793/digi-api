@@ -24,6 +24,7 @@ exports.getSharedDocs = (rapidID) => {
                 console.log(shareLedgerData);
                var userkeys =Object.keys(shareLedgerData)
                console.log(userkeys);
+               console.log(userkeys.length);
                
     
          doc.find({
@@ -31,6 +32,8 @@ exports.getSharedDocs = (rapidID) => {
                     })
                         
                     .then((docs) => {
+                        for(let u =0;u<userkeys.length;u++){
+
             for(let i=0;i<shareLedgerData[userkeys].length;i++){
               
 
@@ -48,6 +51,7 @@ exports.getSharedDocs = (rapidID) => {
                         }
                         }
             }
+                    }
                     })
 
             .then(() =>{        

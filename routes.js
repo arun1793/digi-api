@@ -212,7 +212,8 @@ module.exports = router => {
      
         const rapidID = getrapidID(req);
         const docTypes = req.body.docTypes;
-        const OrgID = req.body.OrgID.text;
+       const OrgID = req.body.OrgID.text;
+       //  const OrgID = req.body.OrgID;
         const status = req.body.status;
           //token validation
         if (!checkToken(req)) {
