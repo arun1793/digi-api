@@ -32,21 +32,24 @@ exports.auditUser = (rapidID) => {
 
                         .then((users) => {
                             var orgnames = [];
-                            for (let u=0;u<orgkeys.length;u++){
+                             var timestamps=[];
+                             var rapiddocIDs =[];
+                             var doctype=[];
+                            for (let u=0;u< orgkeys.length;u++){
                                 
                             var orgname = users[u]._doc.orgname
-                            orgnames.push(orgname)
-                            console.log(orgnames)
-                        console.log( AuditLedgerData[orgkeys])
-                        
-                        var timestamps=[];
-                        var rapiddocIDs =[];
-                        for(var i=0;i<AuditLedgerData[orgkeys].length;i++){
+                       //     orgnames.push(orgname)
+                         //   console.log(orgnames)
+                            var orgkey = orgkeys[u]
+                        console.log( AuditLedgerData[orgkey])
+
+                        for(var i=0;i<AuditLedgerData[orgkey].length;i++){
                              if ( i % 2 == 0){
-                                  timestamps.push(AuditLedgerData[orgkeys][i])
+                                  timestamps.push(AuditLedgerData[orgkey][i])
+                                   orgnames.push(orgname)
                                  }
                                 else {
-                            rapiddocIDs.push(AuditLedgerData[orgkeys][i])
+                            rapiddocIDs.push(AuditLedgerData[orgkey][i])
                         }      
                         }
                         }
@@ -54,10 +57,10 @@ exports.auditUser = (rapidID) => {
                         console.log("rapiddocIDs           "+ rapiddocIDs);
                            const docids = rapiddocIDs
                            console.log(docids)
+                           console.log(docids.length)
                         doc.find({"rapid_doc_ID":docids})
 
                         .then((docs)=>{
-                            var doctype=[];
                             for(var i=0;i<docs.length;i++){
                               if(1 === 1){
                                 doctype.push(docs[i]._doc.docType)

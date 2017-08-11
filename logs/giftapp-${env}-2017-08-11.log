@@ -1260,3 +1260,1121 @@
 [32m[2017-08-11 16:49:29.622] [INFO] blockchain_sdk - [39mgetSharedDocs : Successfully fetched shared docs - {"owns":[],"mymap":{},"audit":{}}
 [32m[2017-08-11 16:49:29.638] [INFO] console - [39mundefined
 [32m[2017-08-11 16:49:29.639] [INFO] console - [39merror occurredTypeError: Cannot convert undefined or null to object
+[32m[2017-08-11 22:46:33.309] [INFO] app - [39m
+[32m[2017-08-11 22:46:33.321] [INFO] app - [39m-----------------------------------------------------------------------------
+[32m[2017-08-11 22:46:33.326] [INFO] app - [39m>>> app env local, started Fri Aug 11 2017 22:46:33 GMT+0530 (India Standard Time) <<<
+[32m[2017-08-11 22:46:33.335] [INFO] app - [39m-----------------------------------------------------------------------------
+[32m[2017-08-11 22:46:33.336] [INFO] app - [39mNode started via(process.argv): C:\Program Files\nodejs\node.exe,E:\node_workspace\digital-identity\app.js
+[32m[2017-08-11 22:46:33.345] [INFO] app - [39mNode version: v6.10.3
+[32m[2017-08-11 22:46:33.346] [INFO] app - [39mNode and its dependency versions: {"http_parser":"2.7.0","node":"6.10.3","v8":"5.1.281.101","uv":"1.9.1","zlib":"1.2.11","ares":"1.10.1-DEV","icu":"58.2","modules":"48","openssl":"1.0.2k"}
+[32m[2017-08-11 22:46:33.346] [INFO] app - [39m
+[32m[2017-08-11 22:46:33.350] [INFO] loggingHelper - [39mCreated logger for app.js at level ALL
+[34m[2017-08-11 22:46:33.356] [TRACE] app.js - [39msetup : entry
+[34m[2017-08-11 22:46:33.359] [TRACE] datastore.js - [39minit : entry 
+[34m[2017-08-11 22:46:33.361] [TRACE] datastore.js - [39minit : params - {"name":"Cloudant NoSQL DB-vern","label":"cloudantNoSQLDB","plan":"Lite","credentials":{"username":"92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix","password":"91825f3f7792284c5772432ce05351a332213cd907d2fe5f0b17167bec6ca046","host":"92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix.cloudant.com","port":443,"url":"https://92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix:91825f3f7792284c5772432ce05351a332213cd907d2fe5f0b17167bec6ca046@92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix.cloudant.com"}} 
+[34m[2017-08-11 22:46:33.395] [TRACE] app.js - [39mgetCloudantKeyValStore : entry 
+[34m[2017-08-11 22:46:33.395] [TRACE] app.js - [39mgetCloudantKeyValStore : params - "devworks_app_master" 
+[34m[2017-08-11 22:46:33.399] [TRACE] datastore.js - [39mgetDbInstance : entry 
+[34m[2017-08-11 22:46:33.399] [TRACE] datastore.js - [39mgetDbInstance : params - "devworks_app_master" 
+[32m[2017-08-11 22:46:34.811] [INFO] datastore.js - [39mgetDbInstance : devworks_app_master already exists. - undefined
+[34m[2017-08-11 22:46:34.831] [TRACE] blockchain_network - [39msetupBlockchain : entry 
+[34m[2017-08-11 22:46:34.831] [TRACE] blockchain_network - [39msetupBlockchain : params - [Circular] 
+[34m[2017-08-11 22:46:34.835] [TRACE] blockchain_network - [39mchainInit : entry 
+[34m[2017-08-11 22:46:34.839] [TRACE] blockchain_network - [39mchainInit : params - [Circular] 
+[32m[2017-08-11 22:46:34.859] [INFO] blockchain_network - [39mchainInit : Chain Initialized - Chain {  peers: [],  securityEnabled: true,  members: {},  tcertBatchSize: 200,  devMode: false,  preFetchMode: true,  deployWaitTime: 100,  invokeWaitTime: 5,  name: 'sc_cc',  eventHub:    EventHub {     txCallback: [Function],     chaincodeRegistrants: HashTable {},     blockRegistrants: Set {},     txRegistrants: HashTable {},     ep: null,     connected: false },  keyValStore: CloudantKeyValStore { dbName: 'devworks_app_master', dbInstance: [Object] } }
+[32m[2017-08-11 22:46:34.867] [INFO] blockchain_network - [39mloadNetworkConfiguration : Successfully loaded network configuration - undefined
+[34m[2017-08-11 22:46:35.339] [TRACE] blockchain_network - [39mdoLogin : entry
+[34m[2017-08-11 22:46:35.391] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-08-11 22:46:35.395] [TRACE] kv_store_model - [39mget : params - {"id":"member.WebAppAdmin"} 
+[32m[2017-08-11 22:46:35.719] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.WebAppAdmin - undefined
+[32m[2017-08-11 22:46:35.775] [INFO] blockchain_network - [39mdoLogin : Successfully logged in user on blockchain: WebAppAdmin - undefined
+[32m[2017-08-11 22:46:35.815] [INFO] blockchain_network - [39mconfigureNetwork : Successfully enrolled registrar: WebAppAdmin - undefined
+[32m[2017-08-11 22:46:35.819] [INFO] blockchain_network - [39msetupBlockchain : blockchain setup complete - undefined
+[34m[2017-08-11 22:46:35.839] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-08-11 22:46:35.839] [TRACE] kv_store_model - [39mget : params - {"id":"member.risabh.s"} 
+[32m[2017-08-11 22:46:36.163] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.risabh.s - undefined
+[32m[2017-08-11 22:46:36.195] [INFO] blockchain_sdk - [39mregisterUser : Successfully registered user on blockchain: risabh.s - undefined
+[34m[2017-08-11 22:46:36.199] [TRACE] blockchain_sdk - [39mdoLogin : entry
+[32m[2017-08-11 22:46:36.215] [INFO] blockchain_sdk - [39mdoLogin : Successfully logged in user on blockchain: risabh.s - undefined
+[32m[2017-08-11 22:46:36.219] [INFO] console - [39mserver is running on8080
+[32m[2017-08-11 22:48:20.880] [INFO] console - [39m123
+[32m[2017-08-11 22:48:20.896] [INFO] console - [39m123   123
+[32m[2017-08-11 22:48:20.988] [INFO] console - [39mundefined
+[32m[2017-08-11 22:48:58.724] [INFO] console - [39m{ user: 'risabh.s',
+  rapidID: 'BjS8i08h6sfg2Ffn7JET4uODuEqydtqovXgh7IOyRVE=' } 'data in params for query method'
+[34m[2017-08-11 22:48:58.732] [TRACE] blockchain_sdk - [39mgetMydocs : entry 
+[34m[2017-08-11 22:48:58.748] [TRACE] blockchain_sdk - [39mgetMydocs : params - {"user":"risabh.s","rapidID":"BjS8i08h6sfg2Ffn7JET4uODuEqydtqovXgh7IOyRVE="} 
+[34m[2017-08-11 22:48:58.752] [TRACE] blockchain_sdk - [39mdoQuery : entry 
+[34m[2017-08-11 22:48:58.752] [TRACE] blockchain_sdk - [39mdoQuery : params - {"requestSpec":{"chaincodeID":"664b2ca390f298d5111dd9f093edcfc473d332837664374e157b1dc1dc9579183ea6ce701cd333a1c25b4719ab88abed66cf9b0f1718b729af6c7b400028c73e","fcn":"getMydocs","args":["BjS8i08h6sfg2Ffn7JET4uODuEqydtqovXgh7IOyRVE="]},"user":"risabh.s","retryCounter":0} 
+[32m[2017-08-11 22:49:12.491] [INFO] blockchain_sdk - [39mdoQuery : data in data.result  - <Buffer 7b 22 6f 77 6e 73 22 3a 5b 22 35 35 72 75 58 6b 4f 70 53 66 35 39 79 6b 54 78 75 55 59 65 61 36 66 49 46 62 53 4a 4a 56 77 65 34 55 45 71 64 6a 44 56 ... >
+[32m[2017-08-11 22:49:12.495] [INFO] blockchain_sdk - [39mdoQuery : data in buffer.tostring  - '{"owns":["55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM="],"sharedwithme":null,"audittrail":{"3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=":["2017-08-11T11:40:35.206261+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","2017-08-11T11:40:35.226744+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg="],"DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=":["2017-08-09T10:25:21.487192+00:00","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=","2017-08-09T10:45:41.478089+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=","2017-08-09T10:45:41.48256+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4="]}}'
+[32m[2017-08-11 22:49:12.499] [INFO] blockchain_sdk - [39mgetMydocs : Successfully fetched docs - {"owns":["55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM="],"sharedwithme":null,"audittrail":{"3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=":["2017-08-11T11:40:35.206261+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","2017-08-11T11:40:35.226744+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg="],"DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=":["2017-08-09T10:25:21.487192+00:00","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=","2017-08-09T10:45:41.478089+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=","2017-08-09T10:45:41.48256+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4="]}}
+[32m[2017-08-11 22:49:12.503] [INFO] console - [39m{ '3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=': 
+   [ '2017-08-11T11:40:35.206261+00:00',
+     '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=',
+     '2017-08-11T11:40:35.226744+00:00',
+     '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=' ],
+  'DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=': 
+   [ '2017-08-09T10:25:21.487192+00:00',
+     'i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=',
+     '2017-08-09T10:45:41.478089+00:00',
+     '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=',
+     '2017-08-09T10:45:41.48256+00:00',
+     '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=' ] }
+[32m[2017-08-11 22:49:12.507] [INFO] console - [39m[ '3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=',
+  'DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=' ]
+[32m[2017-08-11 22:49:12.755] [INFO] console - [39m[ 'org' ]
+[32m[2017-08-11 22:49:12.755] [INFO] console - [39mundefined
+[31m[2017-08-11 22:49:12.787] [ERROR] console - [39m(node:9564) UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 1): TypeError: Cannot read property 'length' of undefined
+[32m[2017-08-11 22:50:45.870] [INFO] app - [39m
+[32m[2017-08-11 22:50:45.886] [INFO] app - [39m-----------------------------------------------------------------------------
+[32m[2017-08-11 22:50:45.890] [INFO] app - [39m>>> app env local, started Fri Aug 11 2017 22:50:45 GMT+0530 (India Standard Time) <<<
+[32m[2017-08-11 22:50:45.894] [INFO] app - [39m-----------------------------------------------------------------------------
+[32m[2017-08-11 22:50:45.898] [INFO] app - [39mNode started via(process.argv): C:\Program Files\nodejs\node.exe,E:\node_workspace\digital-identity\app.js
+[32m[2017-08-11 22:50:45.898] [INFO] app - [39mNode version: v6.10.3
+[32m[2017-08-11 22:50:45.898] [INFO] app - [39mNode and its dependency versions: {"http_parser":"2.7.0","node":"6.10.3","v8":"5.1.281.101","uv":"1.9.1","zlib":"1.2.11","ares":"1.10.1-DEV","icu":"58.2","modules":"48","openssl":"1.0.2k"}
+[32m[2017-08-11 22:50:45.902] [INFO] app - [39m
+[32m[2017-08-11 22:50:45.906] [INFO] loggingHelper - [39mCreated logger for app.js at level ALL
+[34m[2017-08-11 22:50:45.910] [TRACE] app.js - [39msetup : entry
+[34m[2017-08-11 22:50:45.914] [TRACE] datastore.js - [39minit : entry 
+[34m[2017-08-11 22:50:45.914] [TRACE] datastore.js - [39minit : params - {"name":"Cloudant NoSQL DB-vern","label":"cloudantNoSQLDB","plan":"Lite","credentials":{"username":"92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix","password":"91825f3f7792284c5772432ce05351a332213cd907d2fe5f0b17167bec6ca046","host":"92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix.cloudant.com","port":443,"url":"https://92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix:91825f3f7792284c5772432ce05351a332213cd907d2fe5f0b17167bec6ca046@92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix.cloudant.com"}} 
+[34m[2017-08-11 22:50:45.946] [TRACE] app.js - [39mgetCloudantKeyValStore : entry 
+[34m[2017-08-11 22:50:45.946] [TRACE] app.js - [39mgetCloudantKeyValStore : params - "devworks_app_master" 
+[34m[2017-08-11 22:50:45.950] [TRACE] datastore.js - [39mgetDbInstance : entry 
+[34m[2017-08-11 22:50:45.954] [TRACE] datastore.js - [39mgetDbInstance : params - "devworks_app_master" 
+[32m[2017-08-11 22:50:47.326] [INFO] datastore.js - [39mgetDbInstance : devworks_app_master already exists. - undefined
+[34m[2017-08-11 22:50:47.342] [TRACE] blockchain_network - [39msetupBlockchain : entry 
+[34m[2017-08-11 22:50:47.345] [TRACE] blockchain_network - [39msetupBlockchain : params - [Circular] 
+[34m[2017-08-11 22:50:47.349] [TRACE] blockchain_network - [39mchainInit : entry 
+[34m[2017-08-11 22:50:47.350] [TRACE] blockchain_network - [39mchainInit : params - [Circular] 
+[32m[2017-08-11 22:50:47.366] [INFO] blockchain_network - [39mchainInit : Chain Initialized - Chain {  peers: [],  securityEnabled: true,  members: {},  tcertBatchSize: 200,  devMode: false,  preFetchMode: true,  deployWaitTime: 100,  invokeWaitTime: 5,  name: 'sc_cc',  eventHub:    EventHub {     txCallback: [Function],     chaincodeRegistrants: HashTable {},     blockRegistrants: Set {},     txRegistrants: HashTable {},     ep: null,     connected: false },  keyValStore: CloudantKeyValStore { dbName: 'devworks_app_master', dbInstance: [Object] } }
+[32m[2017-08-11 22:50:47.374] [INFO] blockchain_network - [39mloadNetworkConfiguration : Successfully loaded network configuration - undefined
+[34m[2017-08-11 22:50:47.814] [TRACE] blockchain_network - [39mdoLogin : entry
+[34m[2017-08-11 22:50:47.882] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-08-11 22:50:47.890] [TRACE] kv_store_model - [39mget : params - {"id":"member.WebAppAdmin"} 
+[32m[2017-08-11 22:50:48.214] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.WebAppAdmin - undefined
+[32m[2017-08-11 22:50:48.258] [INFO] blockchain_network - [39mdoLogin : Successfully logged in user on blockchain: WebAppAdmin - undefined
+[32m[2017-08-11 22:50:48.258] [INFO] blockchain_network - [39mconfigureNetwork : Successfully enrolled registrar: WebAppAdmin - undefined
+[32m[2017-08-11 22:50:48.262] [INFO] blockchain_network - [39msetupBlockchain : blockchain setup complete - undefined
+[34m[2017-08-11 22:50:48.274] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-08-11 22:50:48.274] [TRACE] kv_store_model - [39mget : params - {"id":"member.risabh.s"} 
+[32m[2017-08-11 22:50:48.571] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.risabh.s - undefined
+[32m[2017-08-11 22:50:48.603] [INFO] blockchain_sdk - [39mregisterUser : Successfully registered user on blockchain: risabh.s - undefined
+[34m[2017-08-11 22:50:48.609] [TRACE] blockchain_sdk - [39mdoLogin : entry
+[32m[2017-08-11 22:50:48.636] [INFO] blockchain_sdk - [39mdoLogin : Successfully logged in user on blockchain: risabh.s - undefined
+[32m[2017-08-11 22:50:48.636] [INFO] console - [39mserver is running on8080
+[32m[2017-08-11 22:51:25.120] [INFO] app - [39m
+[32m[2017-08-11 22:51:25.120] [INFO] app - [39m-----------------------------------------------------------------------------
+[32m[2017-08-11 22:51:25.120] [INFO] app - [39m>>> app env local, started Fri Aug 11 2017 22:51:25 GMT+0530 (India Standard Time) <<<
+[32m[2017-08-11 22:51:25.120] [INFO] app - [39m-----------------------------------------------------------------------------
+[32m[2017-08-11 22:51:25.120] [INFO] app - [39mNode started via(process.argv): C:\Program Files\nodejs\node.exe,e:\node_workspace\digital-identity\app.js
+[32m[2017-08-11 22:51:25.120] [INFO] app - [39mNode version: v6.10.3
+[32m[2017-08-11 22:51:25.120] [INFO] app - [39mNode and its dependency versions: {"http_parser":"2.7.0","node":"6.10.3","v8":"5.1.281.101","uv":"1.9.1","zlib":"1.2.11","ares":"1.10.1-DEV","icu":"58.2","modules":"48","openssl":"1.0.2k"}
+[32m[2017-08-11 22:51:25.120] [INFO] app - [39m
+[32m[2017-08-11 22:51:25.120] [INFO] loggingHelper - [39mCreated logger for app.js at level ALL
+[34m[2017-08-11 22:51:25.136] [TRACE] app.js - [39msetup : entry
+[34m[2017-08-11 22:51:25.136] [TRACE] datastore.js - [39minit : entry 
+[34m[2017-08-11 22:51:25.136] [TRACE] datastore.js - [39minit : params - {"name":"Cloudant NoSQL DB-vern","label":"cloudantNoSQLDB","plan":"Lite","credentials":{"username":"92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix","password":"91825f3f7792284c5772432ce05351a332213cd907d2fe5f0b17167bec6ca046","host":"92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix.cloudant.com","port":443,"url":"https://92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix:91825f3f7792284c5772432ce05351a332213cd907d2fe5f0b17167bec6ca046@92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix.cloudant.com"}} 
+[34m[2017-08-11 22:51:25.152] [TRACE] app.js - [39mgetCloudantKeyValStore : entry 
+[34m[2017-08-11 22:51:25.152] [TRACE] app.js - [39mgetCloudantKeyValStore : params - "devworks_app_master" 
+[34m[2017-08-11 22:51:25.152] [TRACE] datastore.js - [39mgetDbInstance : entry 
+[34m[2017-08-11 22:51:25.152] [TRACE] datastore.js - [39mgetDbInstance : params - "devworks_app_master" 
+[32m[2017-08-11 22:51:26.456] [INFO] datastore.js - [39mgetDbInstance : devworks_app_master already exists. - undefined
+[34m[2017-08-11 22:51:26.468] [TRACE] blockchain_network - [39msetupBlockchain : entry 
+[34m[2017-08-11 22:51:26.468] [TRACE] blockchain_network - [39msetupBlockchain : params - [Circular] 
+[34m[2017-08-11 22:51:26.472] [TRACE] blockchain_network - [39mchainInit : entry 
+[34m[2017-08-11 22:51:26.476] [TRACE] blockchain_network - [39mchainInit : params - [Circular] 
+[32m[2017-08-11 22:51:26.492] [INFO] blockchain_network - [39mchainInit : Chain Initialized - Chain {  peers: [],  securityEnabled: true,  members: {},  tcertBatchSize: 200,  devMode: false,  preFetchMode: true,  deployWaitTime: 100,  invokeWaitTime: 5,  name: 'sc_cc',  eventHub:    EventHub {     txCallback: [Function],     chaincodeRegistrants: HashTable {},     blockRegistrants: Set {},     txRegistrants: HashTable {},     ep: null,     connected: false },  keyValStore: CloudantKeyValStore { dbName: 'devworks_app_master', dbInstance: [Object] } }
+[32m[2017-08-11 22:51:26.496] [INFO] blockchain_network - [39mloadNetworkConfiguration : Successfully loaded network configuration - undefined
+[34m[2017-08-11 22:51:27.132] [TRACE] blockchain_network - [39mdoLogin : entry
+[34m[2017-08-11 22:51:27.280] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-08-11 22:51:27.280] [TRACE] kv_store_model - [39mget : params - {"id":"member.WebAppAdmin"} 
+[32m[2017-08-11 22:51:27.586] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.WebAppAdmin - undefined
+[32m[2017-08-11 22:51:27.694] [INFO] blockchain_network - [39mdoLogin : Successfully logged in user on blockchain: WebAppAdmin - undefined
+[32m[2017-08-11 22:51:27.694] [INFO] blockchain_network - [39mconfigureNetwork : Successfully enrolled registrar: WebAppAdmin - undefined
+[32m[2017-08-11 22:51:27.698] [INFO] blockchain_network - [39msetupBlockchain : blockchain setup complete - undefined
+[34m[2017-08-11 22:51:27.710] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-08-11 22:51:27.714] [TRACE] kv_store_model - [39mget : params - {"id":"member.risabh.s"} 
+[32m[2017-08-11 22:51:28.011] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.risabh.s - undefined
+[32m[2017-08-11 22:51:28.051] [INFO] blockchain_sdk - [39mregisterUser : Successfully registered user on blockchain: risabh.s - undefined
+[34m[2017-08-11 22:51:28.066] [TRACE] blockchain_sdk - [39mdoLogin : entry
+[32m[2017-08-11 22:51:28.066] [INFO] blockchain_sdk - [39mdoLogin : Successfully logged in user on blockchain: risabh.s - undefined
+[32m[2017-08-11 22:51:28.066] [INFO] console - [39mserver is running on8080
+[32m[2017-08-11 22:51:33.396] [INFO] console - [39m{ user: 'risabh.s',
+  rapidID: 'BjS8i08h6sfg2Ffn7JET4uODuEqydtqovXgh7IOyRVE=' } 'data in params for query method'
+[34m[2017-08-11 22:51:33.400] [TRACE] blockchain_sdk - [39mgetMydocs : entry 
+[34m[2017-08-11 22:51:33.400] [TRACE] blockchain_sdk - [39mgetMydocs : params - {"user":"risabh.s","rapidID":"BjS8i08h6sfg2Ffn7JET4uODuEqydtqovXgh7IOyRVE="} 
+[34m[2017-08-11 22:51:33.400] [TRACE] blockchain_sdk - [39mdoQuery : entry 
+[34m[2017-08-11 22:51:33.404] [TRACE] blockchain_sdk - [39mdoQuery : params - {"requestSpec":{"chaincodeID":"664b2ca390f298d5111dd9f093edcfc473d332837664374e157b1dc1dc9579183ea6ce701cd333a1c25b4719ab88abed66cf9b0f1718b729af6c7b400028c73e","fcn":"getMydocs","args":["BjS8i08h6sfg2Ffn7JET4uODuEqydtqovXgh7IOyRVE="]},"user":"risabh.s","retryCounter":0} 
+[32m[2017-08-11 22:51:47.040] [INFO] blockchain_sdk - [39mdoQuery : data in data.result  - <Buffer 7b 22 6f 77 6e 73 22 3a 5b 22 35 35 72 75 58 6b 4f 70 53 66 35 39 79 6b 54 78 75 55 59 65 61 36 66 49 46 62 53 4a 4a 56 77 65 34 55 45 71 64 6a 44 56 ... >
+[32m[2017-08-11 22:51:47.040] [INFO] blockchain_sdk - [39mdoQuery : data in buffer.tostring  - '{"owns":["55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM="],"sharedwithme":null,"audittrail":{"3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=":["2017-08-11T11:40:35.206261+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","2017-08-11T11:40:35.226744+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg="],"DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=":["2017-08-09T10:25:21.487192+00:00","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=","2017-08-09T10:45:41.478089+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=","2017-08-09T10:45:41.48256+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4="]}}'
+[32m[2017-08-11 22:51:47.044] [INFO] blockchain_sdk - [39mgetMydocs : Successfully fetched docs - {"owns":["55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM="],"sharedwithme":null,"audittrail":{"3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=":["2017-08-11T11:40:35.206261+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","2017-08-11T11:40:35.226744+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg="],"DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=":["2017-08-09T10:25:21.487192+00:00","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=","2017-08-09T10:45:41.478089+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=","2017-08-09T10:45:41.48256+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4="]}}
+[32m[2017-08-11 22:51:47.044] [INFO] console - [39m{ '3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=': 
+   [ '2017-08-11T11:40:35.206261+00:00',
+     '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=',
+     '2017-08-11T11:40:35.226744+00:00',
+     '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=' ],
+  'DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=': 
+   [ '2017-08-09T10:25:21.487192+00:00',
+     'i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=',
+     '2017-08-09T10:45:41.478089+00:00',
+     '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=',
+     '2017-08-09T10:45:41.48256+00:00',
+     '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=' ] }
+[32m[2017-08-11 22:51:47.052] [INFO] console - [39m[ '3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=',
+  'DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=' ]
+[32m[2017-08-11 22:52:02.638] [INFO] console - [39m[ 'org' ]
+[32m[2017-08-11 22:52:05.284] [INFO] console - [39mundefined
+[31m[2017-08-11 22:52:06.522] [ERROR] console - [39m(node:9876) UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 1): TypeError: Cannot read property 'length' of undefined
+[32m[2017-08-11 22:53:50.687] [INFO] app - [39m
+[32m[2017-08-11 22:53:50.687] [INFO] app - [39m-----------------------------------------------------------------------------
+[32m[2017-08-11 22:53:50.687] [INFO] app - [39m>>> app env local, started Fri Aug 11 2017 22:53:50 GMT+0530 (India Standard Time) <<<
+[32m[2017-08-11 22:53:50.687] [INFO] app - [39m-----------------------------------------------------------------------------
+[32m[2017-08-11 22:53:50.687] [INFO] app - [39mNode started via(process.argv): C:\Program Files\nodejs\node.exe,e:\node_workspace\digital-identity\app.js
+[32m[2017-08-11 22:53:50.687] [INFO] app - [39mNode version: v6.10.3
+[32m[2017-08-11 22:53:50.702] [INFO] app - [39mNode and its dependency versions: {"http_parser":"2.7.0","node":"6.10.3","v8":"5.1.281.101","uv":"1.9.1","zlib":"1.2.11","ares":"1.10.1-DEV","icu":"58.2","modules":"48","openssl":"1.0.2k"}
+[32m[2017-08-11 22:53:50.702] [INFO] app - [39m
+[32m[2017-08-11 22:53:50.702] [INFO] loggingHelper - [39mCreated logger for app.js at level ALL
+[34m[2017-08-11 22:53:50.702] [TRACE] app.js - [39msetup : entry
+[34m[2017-08-11 22:53:50.702] [TRACE] datastore.js - [39minit : entry 
+[34m[2017-08-11 22:53:50.702] [TRACE] datastore.js - [39minit : params - {"name":"Cloudant NoSQL DB-vern","label":"cloudantNoSQLDB","plan":"Lite","credentials":{"username":"92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix","password":"91825f3f7792284c5772432ce05351a332213cd907d2fe5f0b17167bec6ca046","host":"92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix.cloudant.com","port":443,"url":"https://92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix:91825f3f7792284c5772432ce05351a332213cd907d2fe5f0b17167bec6ca046@92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix.cloudant.com"}} 
+[34m[2017-08-11 22:53:50.734] [TRACE] app.js - [39mgetCloudantKeyValStore : entry 
+[34m[2017-08-11 22:53:50.734] [TRACE] app.js - [39mgetCloudantKeyValStore : params - "devworks_app_master" 
+[34m[2017-08-11 22:53:50.734] [TRACE] datastore.js - [39mgetDbInstance : entry 
+[34m[2017-08-11 22:53:50.734] [TRACE] datastore.js - [39mgetDbInstance : params - "devworks_app_master" 
+[32m[2017-08-11 22:53:52.054] [INFO] datastore.js - [39mgetDbInstance : devworks_app_master already exists. - undefined
+[34m[2017-08-11 22:53:52.062] [TRACE] blockchain_network - [39msetupBlockchain : entry 
+[34m[2017-08-11 22:53:52.062] [TRACE] blockchain_network - [39msetupBlockchain : params - [Circular] 
+[34m[2017-08-11 22:53:52.066] [TRACE] blockchain_network - [39mchainInit : entry 
+[34m[2017-08-11 22:53:52.066] [TRACE] blockchain_network - [39mchainInit : params - [Circular] 
+[32m[2017-08-11 22:53:52.078] [INFO] blockchain_network - [39mchainInit : Chain Initialized - Chain {  peers: [],  securityEnabled: true,  members: {},  tcertBatchSize: 200,  devMode: false,  preFetchMode: true,  deployWaitTime: 100,  invokeWaitTime: 5,  name: 'sc_cc',  eventHub:    EventHub {     txCallback: [Function],     chaincodeRegistrants: HashTable {},     blockRegistrants: Set {},     txRegistrants: HashTable {},     ep: null,     connected: false },  keyValStore: CloudantKeyValStore { dbName: 'devworks_app_master', dbInstance: [Object] } }
+[32m[2017-08-11 22:53:52.082] [INFO] blockchain_network - [39mloadNetworkConfiguration : Successfully loaded network configuration - undefined
+[34m[2017-08-11 22:53:52.470] [TRACE] blockchain_network - [39mdoLogin : entry
+[34m[2017-08-11 22:53:52.562] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-08-11 22:53:52.565] [TRACE] kv_store_model - [39mget : params - {"id":"member.WebAppAdmin"} 
+[32m[2017-08-11 22:53:52.861] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.WebAppAdmin - undefined
+[32m[2017-08-11 22:53:52.892] [INFO] blockchain_network - [39mdoLogin : Successfully logged in user on blockchain: WebAppAdmin - undefined
+[32m[2017-08-11 22:53:52.892] [INFO] blockchain_network - [39mconfigureNetwork : Successfully enrolled registrar: WebAppAdmin - undefined
+[32m[2017-08-11 22:53:52.892] [INFO] blockchain_network - [39msetupBlockchain : blockchain setup complete - undefined
+[34m[2017-08-11 22:53:52.907] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-08-11 22:53:52.907] [TRACE] kv_store_model - [39mget : params - {"id":"member.risabh.s"} 
+[32m[2017-08-11 22:53:53.260] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.risabh.s - undefined
+[32m[2017-08-11 22:53:53.291] [INFO] blockchain_sdk - [39mregisterUser : Successfully registered user on blockchain: risabh.s - undefined
+[34m[2017-08-11 22:53:53.291] [TRACE] blockchain_sdk - [39mdoLogin : entry
+[32m[2017-08-11 22:53:53.307] [INFO] blockchain_sdk - [39mdoLogin : Successfully logged in user on blockchain: risabh.s - undefined
+[32m[2017-08-11 22:53:53.307] [INFO] console - [39mserver is running on8080
+[32m[2017-08-11 22:53:56.224] [INFO] console - [39m{ user: 'risabh.s',
+  rapidID: 'BjS8i08h6sfg2Ffn7JET4uODuEqydtqovXgh7IOyRVE=' } 'data in params for query method'
+[34m[2017-08-11 22:53:56.252] [TRACE] blockchain_sdk - [39mgetMydocs : entry 
+[34m[2017-08-11 22:53:56.256] [TRACE] blockchain_sdk - [39mgetMydocs : params - {"user":"risabh.s","rapidID":"BjS8i08h6sfg2Ffn7JET4uODuEqydtqovXgh7IOyRVE="} 
+[34m[2017-08-11 22:53:56.268] [TRACE] blockchain_sdk - [39mdoQuery : entry 
+[34m[2017-08-11 22:53:56.268] [TRACE] blockchain_sdk - [39mdoQuery : params - {"requestSpec":{"chaincodeID":"664b2ca390f298d5111dd9f093edcfc473d332837664374e157b1dc1dc9579183ea6ce701cd333a1c25b4719ab88abed66cf9b0f1718b729af6c7b400028c73e","fcn":"getMydocs","args":["BjS8i08h6sfg2Ffn7JET4uODuEqydtqovXgh7IOyRVE="]},"user":"risabh.s","retryCounter":0} 
+[32m[2017-08-11 22:54:13.413] [INFO] blockchain_sdk - [39mdoQuery : data in data.result  - <Buffer 7b 22 6f 77 6e 73 22 3a 5b 22 35 35 72 75 58 6b 4f 70 53 66 35 39 79 6b 54 78 75 55 59 65 61 36 66 49 46 62 53 4a 4a 56 77 65 34 55 45 71 64 6a 44 56 ... >
+[32m[2017-08-11 22:54:13.421] [INFO] blockchain_sdk - [39mdoQuery : data in buffer.tostring  - '{"owns":["55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM="],"sharedwithme":null,"audittrail":{"3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=":["2017-08-11T11:40:35.206261+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","2017-08-11T11:40:35.226744+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg="],"DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=":["2017-08-09T10:25:21.487192+00:00","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=","2017-08-09T10:45:41.478089+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=","2017-08-09T10:45:41.48256+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4="]}}'
+[32m[2017-08-11 22:54:13.429] [INFO] blockchain_sdk - [39mgetMydocs : Successfully fetched docs - {"owns":["55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM="],"sharedwithme":null,"audittrail":{"3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=":["2017-08-11T11:40:35.206261+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","2017-08-11T11:40:35.226744+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg="],"DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=":["2017-08-09T10:25:21.487192+00:00","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=","2017-08-09T10:45:41.478089+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=","2017-08-09T10:45:41.48256+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4="]}}
+[32m[2017-08-11 22:54:18.054] [INFO] console - [39m{ '3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=': 
+   [ '2017-08-11T11:40:35.206261+00:00',
+     '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=',
+     '2017-08-11T11:40:35.226744+00:00',
+     '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=' ],
+  'DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=': 
+   [ '2017-08-09T10:25:21.487192+00:00',
+     'i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=',
+     '2017-08-09T10:45:41.478089+00:00',
+     '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=',
+     '2017-08-09T10:45:41.48256+00:00',
+     '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=' ] }
+[32m[2017-08-11 22:54:37.357] [INFO] console - [39m[ '3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=',
+  'DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=' ]
+[32m[2017-08-11 22:55:36.394] [INFO] console - [39m[ 'org' ]
+[32m[2017-08-11 22:57:01.460] [INFO] app - [39m
+[32m[2017-08-11 22:57:01.460] [INFO] app - [39m-----------------------------------------------------------------------------
+[32m[2017-08-11 22:57:01.460] [INFO] app - [39m>>> app env local, started Fri Aug 11 2017 22:57:01 GMT+0530 (India Standard Time) <<<
+[32m[2017-08-11 22:57:01.460] [INFO] app - [39m-----------------------------------------------------------------------------
+[32m[2017-08-11 22:57:01.460] [INFO] app - [39mNode started via(process.argv): C:\Program Files\nodejs\node.exe,e:\node_workspace\digital-identity\app.js
+[32m[2017-08-11 22:57:01.476] [INFO] app - [39mNode version: v6.10.3
+[32m[2017-08-11 22:57:01.476] [INFO] app - [39mNode and its dependency versions: {"http_parser":"2.7.0","node":"6.10.3","v8":"5.1.281.101","uv":"1.9.1","zlib":"1.2.11","ares":"1.10.1-DEV","icu":"58.2","modules":"48","openssl":"1.0.2k"}
+[32m[2017-08-11 22:57:01.476] [INFO] app - [39m
+[32m[2017-08-11 22:57:01.476] [INFO] loggingHelper - [39mCreated logger for app.js at level ALL
+[34m[2017-08-11 22:57:01.476] [TRACE] app.js - [39msetup : entry
+[34m[2017-08-11 22:57:01.476] [TRACE] datastore.js - [39minit : entry 
+[34m[2017-08-11 22:57:01.476] [TRACE] datastore.js - [39minit : params - {"name":"Cloudant NoSQL DB-vern","label":"cloudantNoSQLDB","plan":"Lite","credentials":{"username":"92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix","password":"91825f3f7792284c5772432ce05351a332213cd907d2fe5f0b17167bec6ca046","host":"92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix.cloudant.com","port":443,"url":"https://92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix:91825f3f7792284c5772432ce05351a332213cd907d2fe5f0b17167bec6ca046@92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix.cloudant.com"}} 
+[34m[2017-08-11 22:57:01.507] [TRACE] app.js - [39mgetCloudantKeyValStore : entry 
+[34m[2017-08-11 22:57:01.507] [TRACE] app.js - [39mgetCloudantKeyValStore : params - "devworks_app_master" 
+[34m[2017-08-11 22:57:01.507] [TRACE] datastore.js - [39mgetDbInstance : entry 
+[34m[2017-08-11 22:57:01.507] [TRACE] datastore.js - [39mgetDbInstance : params - "devworks_app_master" 
+[32m[2017-08-11 22:57:02.882] [INFO] datastore.js - [39mgetDbInstance : devworks_app_master already exists. - undefined
+[34m[2017-08-11 22:57:02.906] [TRACE] blockchain_network - [39msetupBlockchain : entry 
+[34m[2017-08-11 22:57:02.906] [TRACE] blockchain_network - [39msetupBlockchain : params - [Circular] 
+[34m[2017-08-11 22:57:02.910] [TRACE] blockchain_network - [39mchainInit : entry 
+[34m[2017-08-11 22:57:02.910] [TRACE] blockchain_network - [39mchainInit : params - [Circular] 
+[32m[2017-08-11 22:57:02.930] [INFO] blockchain_network - [39mchainInit : Chain Initialized - Chain {  peers: [],  securityEnabled: true,  members: {},  tcertBatchSize: 200,  devMode: false,  preFetchMode: true,  deployWaitTime: 100,  invokeWaitTime: 5,  name: 'sc_cc',  eventHub:    EventHub {     txCallback: [Function],     chaincodeRegistrants: HashTable {},     blockRegistrants: Set {},     txRegistrants: HashTable {},     ep: null,     connected: false },  keyValStore: CloudantKeyValStore { dbName: 'devworks_app_master', dbInstance: [Object] } }
+[32m[2017-08-11 22:57:02.946] [INFO] blockchain_network - [39mloadNetworkConfiguration : Successfully loaded network configuration - undefined
+[34m[2017-08-11 22:57:03.722] [TRACE] blockchain_network - [39mdoLogin : entry
+[34m[2017-08-11 22:57:03.869] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-08-11 22:57:03.869] [TRACE] kv_store_model - [39mget : params - {"id":"member.WebAppAdmin"} 
+[32m[2017-08-11 22:57:04.201] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.WebAppAdmin - undefined
+[32m[2017-08-11 22:57:04.261] [INFO] blockchain_network - [39mdoLogin : Successfully logged in user on blockchain: WebAppAdmin - undefined
+[32m[2017-08-11 22:57:04.261] [INFO] blockchain_network - [39mconfigureNetwork : Successfully enrolled registrar: WebAppAdmin - undefined
+[32m[2017-08-11 22:57:04.261] [INFO] blockchain_network - [39msetupBlockchain : blockchain setup complete - undefined
+[34m[2017-08-11 22:57:04.289] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-08-11 22:57:04.289] [TRACE] kv_store_model - [39mget : params - {"id":"member.risabh.s"} 
+[32m[2017-08-11 22:57:04.615] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.risabh.s - undefined
+[32m[2017-08-11 22:57:04.661] [INFO] blockchain_sdk - [39mregisterUser : Successfully registered user on blockchain: risabh.s - undefined
+[34m[2017-08-11 22:57:04.661] [TRACE] blockchain_sdk - [39mdoLogin : entry
+[32m[2017-08-11 22:57:04.693] [INFO] blockchain_sdk - [39mdoLogin : Successfully logged in user on blockchain: risabh.s - undefined
+[32m[2017-08-11 22:57:04.693] [INFO] console - [39mserver is running on8080
+[32m[2017-08-11 22:57:08.140] [INFO] console - [39m{ user: 'risabh.s',
+  rapidID: 'BjS8i08h6sfg2Ffn7JET4uODuEqydtqovXgh7IOyRVE=' } 'data in params for query method'
+[34m[2017-08-11 22:57:08.144] [TRACE] blockchain_sdk - [39mgetMydocs : entry 
+[34m[2017-08-11 22:57:08.144] [TRACE] blockchain_sdk - [39mgetMydocs : params - {"user":"risabh.s","rapidID":"BjS8i08h6sfg2Ffn7JET4uODuEqydtqovXgh7IOyRVE="} 
+[34m[2017-08-11 22:57:08.152] [TRACE] blockchain_sdk - [39mdoQuery : entry 
+[34m[2017-08-11 22:57:08.152] [TRACE] blockchain_sdk - [39mdoQuery : params - {"requestSpec":{"chaincodeID":"664b2ca390f298d5111dd9f093edcfc473d332837664374e157b1dc1dc9579183ea6ce701cd333a1c25b4719ab88abed66cf9b0f1718b729af6c7b400028c73e","fcn":"getMydocs","args":["BjS8i08h6sfg2Ffn7JET4uODuEqydtqovXgh7IOyRVE="]},"user":"risabh.s","retryCounter":0} 
+[32m[2017-08-11 22:57:29.212] [INFO] blockchain_sdk - [39mdoQuery : data in data.result  - <Buffer 7b 22 6f 77 6e 73 22 3a 5b 22 35 35 72 75 58 6b 4f 70 53 66 35 39 79 6b 54 78 75 55 59 65 61 36 66 49 46 62 53 4a 4a 56 77 65 34 55 45 71 64 6a 44 56 ... >
+[32m[2017-08-11 22:57:29.224] [INFO] blockchain_sdk - [39mdoQuery : data in buffer.tostring  - '{"owns":["55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM="],"sharedwithme":null,"audittrail":{"3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=":["2017-08-11T11:40:35.206261+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","2017-08-11T11:40:35.226744+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg="],"DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=":["2017-08-09T10:25:21.487192+00:00","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=","2017-08-09T10:45:41.478089+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=","2017-08-09T10:45:41.48256+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4="]}}'
+[32m[2017-08-11 22:57:29.264] [INFO] blockchain_sdk - [39mgetMydocs : Successfully fetched docs - {"owns":["55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM="],"sharedwithme":null,"audittrail":{"3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=":["2017-08-11T11:40:35.206261+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","2017-08-11T11:40:35.226744+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg="],"DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=":["2017-08-09T10:25:21.487192+00:00","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=","2017-08-09T10:45:41.478089+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=","2017-08-09T10:45:41.48256+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4="]}}
+[32m[2017-08-11 22:57:32.580] [INFO] console - [39m{ '3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=': 
+   [ '2017-08-11T11:40:35.206261+00:00',
+     '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=',
+     '2017-08-11T11:40:35.226744+00:00',
+     '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=' ],
+  'DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=': 
+   [ '2017-08-09T10:25:21.487192+00:00',
+     'i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=',
+     '2017-08-09T10:45:41.478089+00:00',
+     '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=',
+     '2017-08-09T10:45:41.48256+00:00',
+     '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=' ] }
+[32m[2017-08-11 22:57:34.360] [INFO] console - [39m[ '3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=',
+  'DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=' ]
+[32m[2017-08-11 22:57:42.375] [INFO] console - [39m[ 'org' ]
+[32m[2017-08-11 22:57:43.465] [INFO] console - [39mundefined
+[31m[2017-08-11 22:57:57.145] [ERROR] console - [39m(node:7600) UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 1): TypeError: Cannot read property '0' of undefined
+[32m[2017-08-11 22:59:49.043] [INFO] app - [39m
+[32m[2017-08-11 22:59:49.059] [INFO] app - [39m-----------------------------------------------------------------------------
+[32m[2017-08-11 22:59:49.059] [INFO] app - [39m>>> app env local, started Fri Aug 11 2017 22:59:49 GMT+0530 (India Standard Time) <<<
+[32m[2017-08-11 22:59:49.060] [INFO] app - [39m-----------------------------------------------------------------------------
+[32m[2017-08-11 22:59:49.060] [INFO] app - [39mNode started via(process.argv): C:\Program Files\nodejs\node.exe,e:\node_workspace\digital-identity\app.js
+[32m[2017-08-11 22:59:49.060] [INFO] app - [39mNode version: v6.10.3
+[32m[2017-08-11 22:59:49.060] [INFO] app - [39mNode and its dependency versions: {"http_parser":"2.7.0","node":"6.10.3","v8":"5.1.281.101","uv":"1.9.1","zlib":"1.2.11","ares":"1.10.1-DEV","icu":"58.2","modules":"48","openssl":"1.0.2k"}
+[32m[2017-08-11 22:59:49.064] [INFO] app - [39m
+[32m[2017-08-11 22:59:49.064] [INFO] loggingHelper - [39mCreated logger for app.js at level ALL
+[34m[2017-08-11 22:59:49.064] [TRACE] app.js - [39msetup : entry
+[34m[2017-08-11 22:59:49.068] [TRACE] datastore.js - [39minit : entry 
+[34m[2017-08-11 22:59:49.068] [TRACE] datastore.js - [39minit : params - {"name":"Cloudant NoSQL DB-vern","label":"cloudantNoSQLDB","plan":"Lite","credentials":{"username":"92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix","password":"91825f3f7792284c5772432ce05351a332213cd907d2fe5f0b17167bec6ca046","host":"92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix.cloudant.com","port":443,"url":"https://92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix:91825f3f7792284c5772432ce05351a332213cd907d2fe5f0b17167bec6ca046@92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix.cloudant.com"}} 
+[34m[2017-08-11 22:59:49.084] [TRACE] app.js - [39mgetCloudantKeyValStore : entry 
+[34m[2017-08-11 22:59:49.084] [TRACE] app.js - [39mgetCloudantKeyValStore : params - "devworks_app_master" 
+[34m[2017-08-11 22:59:49.084] [TRACE] datastore.js - [39mgetDbInstance : entry 
+[34m[2017-08-11 22:59:49.088] [TRACE] datastore.js - [39mgetDbInstance : params - "devworks_app_master" 
+[32m[2017-08-11 22:59:50.451] [INFO] datastore.js - [39mgetDbInstance : devworks_app_master already exists. - undefined
+[34m[2017-08-11 22:59:50.471] [TRACE] blockchain_network - [39msetupBlockchain : entry 
+[34m[2017-08-11 22:59:50.475] [TRACE] blockchain_network - [39msetupBlockchain : params - [Circular] 
+[34m[2017-08-11 22:59:50.479] [TRACE] blockchain_network - [39mchainInit : entry 
+[34m[2017-08-11 22:59:50.479] [TRACE] blockchain_network - [39mchainInit : params - [Circular] 
+[32m[2017-08-11 22:59:50.511] [INFO] blockchain_network - [39mchainInit : Chain Initialized - Chain {  peers: [],  securityEnabled: true,  members: {},  tcertBatchSize: 200,  devMode: false,  preFetchMode: true,  deployWaitTime: 100,  invokeWaitTime: 5,  name: 'sc_cc',  eventHub:    EventHub {     txCallback: [Function],     chaincodeRegistrants: HashTable {},     blockRegistrants: Set {},     txRegistrants: HashTable {},     ep: null,     connected: false },  keyValStore: CloudantKeyValStore { dbName: 'devworks_app_master', dbInstance: [Object] } }
+[32m[2017-08-11 22:59:50.515] [INFO] blockchain_network - [39mloadNetworkConfiguration : Successfully loaded network configuration - undefined
+[34m[2017-08-11 22:59:51.107] [TRACE] blockchain_network - [39mdoLogin : entry
+[34m[2017-08-11 22:59:51.299] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-08-11 22:59:51.299] [TRACE] kv_store_model - [39mget : params - {"id":"member.WebAppAdmin"} 
+[32m[2017-08-11 22:59:51.651] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.WebAppAdmin - undefined
+[32m[2017-08-11 22:59:51.759] [INFO] blockchain_network - [39mdoLogin : Successfully logged in user on blockchain: WebAppAdmin - undefined
+[32m[2017-08-11 22:59:51.759] [INFO] blockchain_network - [39mconfigureNetwork : Successfully enrolled registrar: WebAppAdmin - undefined
+[32m[2017-08-11 22:59:51.759] [INFO] blockchain_network - [39msetupBlockchain : blockchain setup complete - undefined
+[34m[2017-08-11 22:59:51.783] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-08-11 22:59:51.791] [TRACE] kv_store_model - [39mget : params - {"id":"member.risabh.s"} 
+[32m[2017-08-11 22:59:52.139] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.risabh.s - undefined
+[32m[2017-08-11 22:59:52.211] [INFO] blockchain_sdk - [39mregisterUser : Successfully registered user on blockchain: risabh.s - undefined
+[34m[2017-08-11 22:59:52.215] [TRACE] blockchain_sdk - [39mdoLogin : entry
+[32m[2017-08-11 22:59:52.231] [INFO] blockchain_sdk - [39mdoLogin : Successfully logged in user on blockchain: risabh.s - undefined
+[32m[2017-08-11 22:59:52.239] [INFO] console - [39mserver is running on8080
+[32m[2017-08-11 22:59:54.640] [INFO] console - [39m{ user: 'risabh.s',
+  rapidID: 'BjS8i08h6sfg2Ffn7JET4uODuEqydtqovXgh7IOyRVE=' } 'data in params for query method'
+[34m[2017-08-11 22:59:54.640] [TRACE] blockchain_sdk - [39mgetMydocs : entry 
+[34m[2017-08-11 22:59:54.644] [TRACE] blockchain_sdk - [39mgetMydocs : params - {"user":"risabh.s","rapidID":"BjS8i08h6sfg2Ffn7JET4uODuEqydtqovXgh7IOyRVE="} 
+[34m[2017-08-11 22:59:54.648] [TRACE] blockchain_sdk - [39mdoQuery : entry 
+[34m[2017-08-11 22:59:54.648] [TRACE] blockchain_sdk - [39mdoQuery : params - {"requestSpec":{"chaincodeID":"664b2ca390f298d5111dd9f093edcfc473d332837664374e157b1dc1dc9579183ea6ce701cd333a1c25b4719ab88abed66cf9b0f1718b729af6c7b400028c73e","fcn":"getMydocs","args":["BjS8i08h6sfg2Ffn7JET4uODuEqydtqovXgh7IOyRVE="]},"user":"risabh.s","retryCounter":0} 
+[32m[2017-08-11 23:00:06.279] [INFO] blockchain_sdk - [39mdoQuery : data in data.result  - <Buffer 7b 22 6f 77 6e 73 22 3a 5b 22 35 35 72 75 58 6b 4f 70 53 66 35 39 79 6b 54 78 75 55 59 65 61 36 66 49 46 62 53 4a 4a 56 77 65 34 55 45 71 64 6a 44 56 ... >
+[32m[2017-08-11 23:00:06.279] [INFO] blockchain_sdk - [39mdoQuery : data in buffer.tostring  - '{"owns":["55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM="],"sharedwithme":null,"audittrail":{"3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=":["2017-08-11T11:40:35.206261+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","2017-08-11T11:40:35.226744+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg="],"DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=":["2017-08-09T10:25:21.487192+00:00","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=","2017-08-09T10:45:41.478089+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=","2017-08-09T10:45:41.48256+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4="]}}'
+[32m[2017-08-11 23:00:06.295] [INFO] blockchain_sdk - [39mgetMydocs : Successfully fetched docs - {"owns":["55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM="],"sharedwithme":null,"audittrail":{"3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=":["2017-08-11T11:40:35.206261+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","2017-08-11T11:40:35.226744+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg="],"DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=":["2017-08-09T10:25:21.487192+00:00","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=","2017-08-09T10:45:41.478089+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=","2017-08-09T10:45:41.48256+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4="]}}
+[32m[2017-08-11 23:00:09.043] [INFO] console - [39m{ '3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=': 
+   [ '2017-08-11T11:40:35.206261+00:00',
+     '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=',
+     '2017-08-11T11:40:35.226744+00:00',
+     '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=' ],
+  'DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=': 
+   [ '2017-08-09T10:25:21.487192+00:00',
+     'i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=',
+     '2017-08-09T10:45:41.478089+00:00',
+     '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=',
+     '2017-08-09T10:45:41.48256+00:00',
+     '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=' ] }
+[32m[2017-08-11 23:00:11.221] [INFO] console - [39m[ '3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=',
+  'DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=' ]
+[32m[2017-08-11 23:00:15.979] [INFO] console - [39m[ 'org' ]
+[32m[2017-08-11 23:04:31.780] [INFO] app - [39m
+[32m[2017-08-11 23:04:31.795] [INFO] app - [39m-----------------------------------------------------------------------------
+[32m[2017-08-11 23:04:31.795] [INFO] app - [39m>>> app env local, started Fri Aug 11 2017 23:04:31 GMT+0530 (India Standard Time) <<<
+[32m[2017-08-11 23:04:31.795] [INFO] app - [39m-----------------------------------------------------------------------------
+[32m[2017-08-11 23:04:31.795] [INFO] app - [39mNode started via(process.argv): C:\Program Files\nodejs\node.exe,e:\node_workspace\digital-identity\app.js
+[32m[2017-08-11 23:04:31.795] [INFO] app - [39mNode version: v6.10.3
+[32m[2017-08-11 23:04:31.795] [INFO] app - [39mNode and its dependency versions: {"http_parser":"2.7.0","node":"6.10.3","v8":"5.1.281.101","uv":"1.9.1","zlib":"1.2.11","ares":"1.10.1-DEV","icu":"58.2","modules":"48","openssl":"1.0.2k"}
+[32m[2017-08-11 23:04:31.795] [INFO] app - [39m
+[32m[2017-08-11 23:04:31.795] [INFO] loggingHelper - [39mCreated logger for app.js at level ALL
+[34m[2017-08-11 23:04:31.811] [TRACE] app.js - [39msetup : entry
+[34m[2017-08-11 23:04:31.811] [TRACE] datastore.js - [39minit : entry 
+[34m[2017-08-11 23:04:31.811] [TRACE] datastore.js - [39minit : params - {"name":"Cloudant NoSQL DB-vern","label":"cloudantNoSQLDB","plan":"Lite","credentials":{"username":"92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix","password":"91825f3f7792284c5772432ce05351a332213cd907d2fe5f0b17167bec6ca046","host":"92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix.cloudant.com","port":443,"url":"https://92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix:91825f3f7792284c5772432ce05351a332213cd907d2fe5f0b17167bec6ca046@92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix.cloudant.com"}} 
+[34m[2017-08-11 23:04:31.827] [TRACE] app.js - [39mgetCloudantKeyValStore : entry 
+[34m[2017-08-11 23:04:31.827] [TRACE] app.js - [39mgetCloudantKeyValStore : params - "devworks_app_master" 
+[34m[2017-08-11 23:04:31.827] [TRACE] datastore.js - [39mgetDbInstance : entry 
+[34m[2017-08-11 23:04:31.827] [TRACE] datastore.js - [39mgetDbInstance : params - "devworks_app_master" 
+[32m[2017-08-11 23:04:33.194] [INFO] datastore.js - [39mgetDbInstance : devworks_app_master already exists. - undefined
+[34m[2017-08-11 23:04:33.210] [TRACE] blockchain_network - [39msetupBlockchain : entry 
+[34m[2017-08-11 23:04:33.210] [TRACE] blockchain_network - [39msetupBlockchain : params - [Circular] 
+[34m[2017-08-11 23:04:33.214] [TRACE] blockchain_network - [39mchainInit : entry 
+[34m[2017-08-11 23:04:33.214] [TRACE] blockchain_network - [39mchainInit : params - [Circular] 
+[32m[2017-08-11 23:04:33.234] [INFO] blockchain_network - [39mchainInit : Chain Initialized - Chain {  peers: [],  securityEnabled: true,  members: {},  tcertBatchSize: 200,  devMode: false,  preFetchMode: true,  deployWaitTime: 100,  invokeWaitTime: 5,  name: 'sc_cc',  eventHub:    EventHub {     txCallback: [Function],     chaincodeRegistrants: HashTable {},     blockRegistrants: Set {},     txRegistrants: HashTable {},     ep: null,     connected: false },  keyValStore: CloudantKeyValStore { dbName: 'devworks_app_master', dbInstance: [Object] } }
+[32m[2017-08-11 23:04:33.238] [INFO] blockchain_network - [39mloadNetworkConfiguration : Successfully loaded network configuration - undefined
+[34m[2017-08-11 23:04:33.828] [TRACE] blockchain_network - [39mdoLogin : entry
+[34m[2017-08-11 23:04:33.940] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-08-11 23:04:33.944] [TRACE] kv_store_model - [39mget : params - {"id":"member.WebAppAdmin"} 
+[32m[2017-08-11 23:04:34.287] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.WebAppAdmin - undefined
+[32m[2017-08-11 23:04:34.355] [INFO] blockchain_network - [39mdoLogin : Successfully logged in user on blockchain: WebAppAdmin - undefined
+[32m[2017-08-11 23:04:34.355] [INFO] blockchain_network - [39mconfigureNetwork : Successfully enrolled registrar: WebAppAdmin - undefined
+[32m[2017-08-11 23:04:34.359] [INFO] blockchain_network - [39msetupBlockchain : blockchain setup complete - undefined
+[34m[2017-08-11 23:04:34.371] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-08-11 23:04:34.371] [TRACE] kv_store_model - [39mget : params - {"id":"member.risabh.s"} 
+[32m[2017-08-11 23:04:34.676] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.risabh.s - undefined
+[32m[2017-08-11 23:04:34.723] [INFO] blockchain_sdk - [39mregisterUser : Successfully registered user on blockchain: risabh.s - undefined
+[34m[2017-08-11 23:04:34.723] [TRACE] blockchain_sdk - [39mdoLogin : entry
+[32m[2017-08-11 23:04:34.739] [INFO] blockchain_sdk - [39mdoLogin : Successfully logged in user on blockchain: risabh.s - undefined
+[32m[2017-08-11 23:04:34.739] [INFO] console - [39mserver is running on8080
+[32m[2017-08-11 23:04:37.936] [INFO] console - [39m{ user: 'risabh.s',
+  rapidID: 'BjS8i08h6sfg2Ffn7JET4uODuEqydtqovXgh7IOyRVE=' } 'data in params for query method'
+[34m[2017-08-11 23:04:37.940] [TRACE] blockchain_sdk - [39mgetMydocs : entry 
+[34m[2017-08-11 23:04:37.940] [TRACE] blockchain_sdk - [39mgetMydocs : params - {"user":"risabh.s","rapidID":"BjS8i08h6sfg2Ffn7JET4uODuEqydtqovXgh7IOyRVE="} 
+[34m[2017-08-11 23:04:37.944] [TRACE] blockchain_sdk - [39mdoQuery : entry 
+[34m[2017-08-11 23:04:37.944] [TRACE] blockchain_sdk - [39mdoQuery : params - {"requestSpec":{"chaincodeID":"664b2ca390f298d5111dd9f093edcfc473d332837664374e157b1dc1dc9579183ea6ce701cd333a1c25b4719ab88abed66cf9b0f1718b729af6c7b400028c73e","fcn":"getMydocs","args":["BjS8i08h6sfg2Ffn7JET4uODuEqydtqovXgh7IOyRVE="]},"user":"risabh.s","retryCounter":0} 
+[32m[2017-08-11 23:04:48.289] [INFO] blockchain_sdk - [39mdoQuery : data in data.result  - <Buffer 7b 22 6f 77 6e 73 22 3a 5b 22 35 35 72 75 58 6b 4f 70 53 66 35 39 79 6b 54 78 75 55 59 65 61 36 66 49 46 62 53 4a 4a 56 77 65 34 55 45 71 64 6a 44 56 ... >
+[32m[2017-08-11 23:04:48.289] [INFO] blockchain_sdk - [39mdoQuery : data in buffer.tostring  - '{"owns":["55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM="],"sharedwithme":null,"audittrail":{"3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=":["2017-08-11T11:40:35.206261+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","2017-08-11T11:40:35.226744+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg="],"DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=":["2017-08-09T10:25:21.487192+00:00","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=","2017-08-09T10:45:41.478089+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=","2017-08-09T10:45:41.48256+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4="]}}'
+[32m[2017-08-11 23:04:48.293] [INFO] blockchain_sdk - [39mgetMydocs : Successfully fetched docs - {"owns":["55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM="],"sharedwithme":null,"audittrail":{"3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=":["2017-08-11T11:40:35.206261+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","2017-08-11T11:40:35.226744+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg="],"DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=":["2017-08-09T10:25:21.487192+00:00","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=","2017-08-09T10:45:41.478089+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=","2017-08-09T10:45:41.48256+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4="]}}
+[32m[2017-08-11 23:04:51.901] [INFO] console - [39m{ '3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=': 
+   [ '2017-08-11T11:40:35.206261+00:00',
+     '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=',
+     '2017-08-11T11:40:35.226744+00:00',
+     '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=' ],
+  'DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=': 
+   [ '2017-08-09T10:25:21.487192+00:00',
+     'i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=',
+     '2017-08-09T10:45:41.478089+00:00',
+     '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=',
+     '2017-08-09T10:45:41.48256+00:00',
+     '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=' ] }
+[32m[2017-08-11 23:04:53.798] [INFO] console - [39m[ '3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=',
+  'DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=' ]
+[32m[2017-08-11 23:05:06.066] [INFO] console - [39m[ 'org' ]
+[32m[2017-08-11 23:05:13.085] [INFO] console - [39m[ '2017-08-11T11:40:35.206261+00:00',
+  '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=',
+  '2017-08-11T11:40:35.226744+00:00',
+  '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=' ]
+[32m[2017-08-11 23:05:20.655] [INFO] console - [39m[ 'org', 'Swetavahia' ]
+[32m[2017-08-11 23:05:21.461] [INFO] console - [39m[ '2017-08-09T10:25:21.487192+00:00',
+  'i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=',
+  '2017-08-09T10:45:41.478089+00:00',
+  '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=',
+  '2017-08-09T10:45:41.48256+00:00',
+  '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=' ]
+[32m[2017-08-11 23:05:24.758] [INFO] console - [39mtimestamps            2017-08-09T10:25:21.487192+00:00,2017-08-09T10:45:41.478089+00:00,2017-08-09T10:45:41.48256+00:00
+[32m[2017-08-11 23:05:24.758] [INFO] console - [39mrapiddocIDs           i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=,/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=,55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=
+[32m[2017-08-11 23:05:24.758] [INFO] console - [39m[ 'i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=',
+  '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=',
+  '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=' ]
+[32m[2017-08-11 23:05:25.331] [INFO] console - [39m[ 'aadhar', 'passport' ]
+[32m[2017-08-11 23:06:06.940] [INFO] app - [39m
+[32m[2017-08-11 23:06:06.952] [INFO] app - [39m-----------------------------------------------------------------------------
+[32m[2017-08-11 23:06:06.952] [INFO] app - [39m>>> app env local, started Fri Aug 11 2017 23:06:06 GMT+0530 (India Standard Time) <<<
+[32m[2017-08-11 23:06:06.956] [INFO] app - [39m-----------------------------------------------------------------------------
+[32m[2017-08-11 23:06:06.956] [INFO] app - [39mNode started via(process.argv): C:\Program Files\nodejs\node.exe,E:\node_workspace\digital-identity\app.js
+[32m[2017-08-11 23:06:06.964] [INFO] app - [39mNode version: v6.10.3
+[32m[2017-08-11 23:06:06.968] [INFO] app - [39mNode and its dependency versions: {"http_parser":"2.7.0","node":"6.10.3","v8":"5.1.281.101","uv":"1.9.1","zlib":"1.2.11","ares":"1.10.1-DEV","icu":"58.2","modules":"48","openssl":"1.0.2k"}
+[32m[2017-08-11 23:06:06.972] [INFO] app - [39m
+[32m[2017-08-11 23:06:06.972] [INFO] loggingHelper - [39mCreated logger for app.js at level ALL
+[34m[2017-08-11 23:06:06.976] [TRACE] app.js - [39msetup : entry
+[34m[2017-08-11 23:06:07.012] [TRACE] datastore.js - [39minit : entry 
+[34m[2017-08-11 23:06:07.020] [TRACE] datastore.js - [39minit : params - {"name":"Cloudant NoSQL DB-vern","label":"cloudantNoSQLDB","plan":"Lite","credentials":{"username":"92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix","password":"91825f3f7792284c5772432ce05351a332213cd907d2fe5f0b17167bec6ca046","host":"92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix.cloudant.com","port":443,"url":"https://92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix:91825f3f7792284c5772432ce05351a332213cd907d2fe5f0b17167bec6ca046@92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix.cloudant.com"}} 
+[34m[2017-08-11 23:06:07.068] [TRACE] app.js - [39mgetCloudantKeyValStore : entry 
+[34m[2017-08-11 23:06:07.068] [TRACE] app.js - [39mgetCloudantKeyValStore : params - "devworks_app_master" 
+[34m[2017-08-11 23:06:07.072] [TRACE] datastore.js - [39mgetDbInstance : entry 
+[34m[2017-08-11 23:06:07.072] [TRACE] datastore.js - [39mgetDbInstance : params - "devworks_app_master" 
+[32m[2017-08-11 23:06:08.525] [INFO] datastore.js - [39mgetDbInstance : devworks_app_master already exists. - undefined
+[34m[2017-08-11 23:06:08.563] [TRACE] blockchain_network - [39msetupBlockchain : entry 
+[34m[2017-08-11 23:06:08.563] [TRACE] blockchain_network - [39msetupBlockchain : params - [Circular] 
+[34m[2017-08-11 23:06:08.571] [TRACE] blockchain_network - [39mchainInit : entry 
+[34m[2017-08-11 23:06:08.587] [TRACE] blockchain_network - [39mchainInit : params - [Circular] 
+[32m[2017-08-11 23:06:08.607] [INFO] blockchain_network - [39mchainInit : Chain Initialized - Chain {  peers: [],  securityEnabled: true,  members: {},  tcertBatchSize: 200,  devMode: false,  preFetchMode: true,  deployWaitTime: 100,  invokeWaitTime: 5,  name: 'sc_cc',  eventHub:    EventHub {     txCallback: [Function],     chaincodeRegistrants: HashTable {},     blockRegistrants: Set {},     txRegistrants: HashTable {},     ep: null,     connected: false },  keyValStore: CloudantKeyValStore { dbName: 'devworks_app_master', dbInstance: [Object] } }
+[32m[2017-08-11 23:06:08.615] [INFO] blockchain_network - [39mloadNetworkConfiguration : Successfully loaded network configuration - undefined
+[34m[2017-08-11 23:06:09.091] [TRACE] blockchain_network - [39mdoLogin : entry
+[34m[2017-08-11 23:06:09.147] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-08-11 23:06:09.151] [TRACE] kv_store_model - [39mget : params - {"id":"member.WebAppAdmin"} 
+[32m[2017-08-11 23:06:09.471] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.WebAppAdmin - undefined
+[32m[2017-08-11 23:06:09.523] [INFO] blockchain_network - [39mdoLogin : Successfully logged in user on blockchain: WebAppAdmin - undefined
+[32m[2017-08-11 23:06:09.527] [INFO] blockchain_network - [39mconfigureNetwork : Successfully enrolled registrar: WebAppAdmin - undefined
+[32m[2017-08-11 23:06:09.531] [INFO] blockchain_network - [39msetupBlockchain : blockchain setup complete - undefined
+[34m[2017-08-11 23:06:09.571] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-08-11 23:06:09.571] [TRACE] kv_store_model - [39mget : params - {"id":"member.risabh.s"} 
+[32m[2017-08-11 23:06:09.904] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.risabh.s - undefined
+[32m[2017-08-11 23:06:09.928] [INFO] blockchain_sdk - [39mregisterUser : Successfully registered user on blockchain: risabh.s - undefined
+[34m[2017-08-11 23:06:09.932] [TRACE] blockchain_sdk - [39mdoLogin : entry
+[32m[2017-08-11 23:06:09.944] [INFO] blockchain_sdk - [39mdoLogin : Successfully logged in user on blockchain: risabh.s - undefined
+[32m[2017-08-11 23:06:09.948] [INFO] console - [39mserver is running on8080
+[32m[2017-08-11 23:06:12.323] [INFO] console - [39m{ user: 'risabh.s',
+  rapidID: 'BjS8i08h6sfg2Ffn7JET4uODuEqydtqovXgh7IOyRVE=' } 'data in params for query method'
+[34m[2017-08-11 23:06:12.331] [TRACE] blockchain_sdk - [39mgetMydocs : entry 
+[34m[2017-08-11 23:06:12.339] [TRACE] blockchain_sdk - [39mgetMydocs : params - {"user":"risabh.s","rapidID":"BjS8i08h6sfg2Ffn7JET4uODuEqydtqovXgh7IOyRVE="} 
+[34m[2017-08-11 23:06:12.351] [TRACE] blockchain_sdk - [39mdoQuery : entry 
+[34m[2017-08-11 23:06:12.363] [TRACE] blockchain_sdk - [39mdoQuery : params - {"requestSpec":{"chaincodeID":"664b2ca390f298d5111dd9f093edcfc473d332837664374e157b1dc1dc9579183ea6ce701cd333a1c25b4719ab88abed66cf9b0f1718b729af6c7b400028c73e","fcn":"getMydocs","args":["BjS8i08h6sfg2Ffn7JET4uODuEqydtqovXgh7IOyRVE="]},"user":"risabh.s","retryCounter":0} 
+[32m[2017-08-11 23:06:25.570] [INFO] blockchain_sdk - [39mdoQuery : data in data.result  - <Buffer 7b 22 6f 77 6e 73 22 3a 5b 22 35 35 72 75 58 6b 4f 70 53 66 35 39 79 6b 54 78 75 55 59 65 61 36 66 49 46 62 53 4a 4a 56 77 65 34 55 45 71 64 6a 44 56 ... >
+[32m[2017-08-11 23:06:25.582] [INFO] blockchain_sdk - [39mdoQuery : data in buffer.tostring  - '{"owns":["55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM="],"sharedwithme":null,"audittrail":{"3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=":["2017-08-11T11:40:35.206261+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","2017-08-11T11:40:35.226744+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg="],"DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=":["2017-08-09T10:25:21.487192+00:00","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=","2017-08-09T10:45:41.478089+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=","2017-08-09T10:45:41.48256+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4="]}}'
+[32m[2017-08-11 23:06:25.614] [INFO] blockchain_sdk - [39mgetMydocs : Successfully fetched docs - {"owns":["55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM="],"sharedwithme":null,"audittrail":{"3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=":["2017-08-11T11:40:35.206261+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","2017-08-11T11:40:35.226744+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg="],"DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=":["2017-08-09T10:25:21.487192+00:00","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=","2017-08-09T10:45:41.478089+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=","2017-08-09T10:45:41.48256+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4="]}}
+[32m[2017-08-11 23:06:25.626] [INFO] console - [39m{ '3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=': 
+   [ '2017-08-11T11:40:35.206261+00:00',
+     '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=',
+     '2017-08-11T11:40:35.226744+00:00',
+     '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=' ],
+  'DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=': 
+   [ '2017-08-09T10:25:21.487192+00:00',
+     'i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=',
+     '2017-08-09T10:45:41.478089+00:00',
+     '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=',
+     '2017-08-09T10:45:41.48256+00:00',
+     '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=' ] }
+[32m[2017-08-11 23:06:25.650] [INFO] console - [39m[ '3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=',
+  'DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=' ]
+[32m[2017-08-11 23:06:25.998] [INFO] console - [39m[ 'org' ]
+[32m[2017-08-11 23:06:26.006] [INFO] console - [39m[ '2017-08-11T11:40:35.206261+00:00',
+  '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=',
+  '2017-08-11T11:40:35.226744+00:00',
+  '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=' ]
+[32m[2017-08-11 23:06:26.058] [INFO] console - [39m[ 'org', 'Swetavahia' ]
+[32m[2017-08-11 23:06:26.138] [INFO] console - [39m[ '2017-08-09T10:25:21.487192+00:00',
+  'i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=',
+  '2017-08-09T10:45:41.478089+00:00',
+  '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=',
+  '2017-08-09T10:45:41.48256+00:00',
+  '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=' ]
+[32m[2017-08-11 23:06:26.190] [INFO] console - [39mtimestamps            2017-08-09T10:25:21.487192+00:00,2017-08-09T10:45:41.478089+00:00,2017-08-09T10:45:41.48256+00:00
+[32m[2017-08-11 23:06:26.190] [INFO] console - [39mrapiddocIDs           i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=,/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=,55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=
+[32m[2017-08-11 23:06:26.198] [INFO] console - [39m[ 'i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=',
+  '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=',
+  '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=' ]
+[32m[2017-08-11 23:06:26.410] [INFO] console - [39m[ 'aadhar', 'passport' ]
+[32m[2017-08-11 23:08:58.711] [INFO] app - [39m
+[32m[2017-08-11 23:08:58.727] [INFO] app - [39m-----------------------------------------------------------------------------
+[32m[2017-08-11 23:08:58.727] [INFO] app - [39m>>> app env local, started Fri Aug 11 2017 23:08:58 GMT+0530 (India Standard Time) <<<
+[32m[2017-08-11 23:08:58.727] [INFO] app - [39m-----------------------------------------------------------------------------
+[32m[2017-08-11 23:08:58.727] [INFO] app - [39mNode started via(process.argv): C:\Program Files\nodejs\node.exe,e:\node_workspace\digital-identity\app.js
+[32m[2017-08-11 23:08:58.727] [INFO] app - [39mNode version: v6.10.3
+[32m[2017-08-11 23:08:58.727] [INFO] app - [39mNode and its dependency versions: {"http_parser":"2.7.0","node":"6.10.3","v8":"5.1.281.101","uv":"1.9.1","zlib":"1.2.11","ares":"1.10.1-DEV","icu":"58.2","modules":"48","openssl":"1.0.2k"}
+[32m[2017-08-11 23:08:58.727] [INFO] app - [39m
+[32m[2017-08-11 23:08:58.727] [INFO] loggingHelper - [39mCreated logger for app.js at level ALL
+[34m[2017-08-11 23:08:58.727] [TRACE] app.js - [39msetup : entry
+[34m[2017-08-11 23:08:58.727] [TRACE] datastore.js - [39minit : entry 
+[34m[2017-08-11 23:08:58.727] [TRACE] datastore.js - [39minit : params - {"name":"Cloudant NoSQL DB-vern","label":"cloudantNoSQLDB","plan":"Lite","credentials":{"username":"92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix","password":"91825f3f7792284c5772432ce05351a332213cd907d2fe5f0b17167bec6ca046","host":"92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix.cloudant.com","port":443,"url":"https://92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix:91825f3f7792284c5772432ce05351a332213cd907d2fe5f0b17167bec6ca046@92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix.cloudant.com"}} 
+[34m[2017-08-11 23:08:58.727] [TRACE] app.js - [39mgetCloudantKeyValStore : entry 
+[34m[2017-08-11 23:08:58.727] [TRACE] app.js - [39mgetCloudantKeyValStore : params - "devworks_app_master" 
+[34m[2017-08-11 23:08:58.742] [TRACE] datastore.js - [39mgetDbInstance : entry 
+[34m[2017-08-11 23:08:58.742] [TRACE] datastore.js - [39mgetDbInstance : params - "devworks_app_master" 
+[32m[2017-08-11 23:09:00.067] [INFO] datastore.js - [39mgetDbInstance : devworks_app_master already exists. - undefined
+[34m[2017-08-11 23:09:00.071] [TRACE] blockchain_network - [39msetupBlockchain : entry 
+[34m[2017-08-11 23:09:00.071] [TRACE] blockchain_network - [39msetupBlockchain : params - [Circular] 
+[34m[2017-08-11 23:09:00.075] [TRACE] blockchain_network - [39mchainInit : entry 
+[34m[2017-08-11 23:09:00.079] [TRACE] blockchain_network - [39mchainInit : params - [Circular] 
+[32m[2017-08-11 23:09:00.095] [INFO] blockchain_network - [39mchainInit : Chain Initialized - Chain {  peers: [],  securityEnabled: true,  members: {},  tcertBatchSize: 200,  devMode: false,  preFetchMode: true,  deployWaitTime: 100,  invokeWaitTime: 5,  name: 'sc_cc',  eventHub:    EventHub {     txCallback: [Function],     chaincodeRegistrants: HashTable {},     blockRegistrants: Set {},     txRegistrants: HashTable {},     ep: null,     connected: false },  keyValStore: CloudantKeyValStore { dbName: 'devworks_app_master', dbInstance: [Object] } }
+[32m[2017-08-11 23:09:00.095] [INFO] blockchain_network - [39mloadNetworkConfiguration : Successfully loaded network configuration - undefined
+[34m[2017-08-11 23:09:00.555] [TRACE] blockchain_network - [39mdoLogin : entry
+[34m[2017-08-11 23:09:00.671] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-08-11 23:09:00.675] [TRACE] kv_store_model - [39mget : params - {"id":"member.WebAppAdmin"} 
+[32m[2017-08-11 23:09:01.019] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.WebAppAdmin - undefined
+[32m[2017-08-11 23:09:01.082] [INFO] blockchain_network - [39mdoLogin : Successfully logged in user on blockchain: WebAppAdmin - undefined
+[32m[2017-08-11 23:09:01.082] [INFO] blockchain_network - [39mconfigureNetwork : Successfully enrolled registrar: WebAppAdmin - undefined
+[32m[2017-08-11 23:09:01.093] [INFO] blockchain_network - [39msetupBlockchain : blockchain setup complete - undefined
+[34m[2017-08-11 23:09:01.105] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-08-11 23:09:01.105] [TRACE] kv_store_model - [39mget : params - {"id":"member.risabh.s"} 
+[32m[2017-08-11 23:09:01.409] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.risabh.s - undefined
+[32m[2017-08-11 23:09:01.456] [INFO] blockchain_sdk - [39mregisterUser : Successfully registered user on blockchain: risabh.s - undefined
+[34m[2017-08-11 23:09:01.456] [TRACE] blockchain_sdk - [39mdoLogin : entry
+[32m[2017-08-11 23:09:01.472] [INFO] blockchain_sdk - [39mdoLogin : Successfully logged in user on blockchain: risabh.s - undefined
+[32m[2017-08-11 23:09:01.472] [INFO] console - [39mserver is running on8080
+[32m[2017-08-11 23:09:41.340] [INFO] console - [39m{ user: 'risabh.s',
+  rapidID: 'BjS8i08h6sfg2Ffn7JET4uODuEqydtqovXgh7IOyRVE=' } 'data in params for query method'
+[34m[2017-08-11 23:09:41.344] [TRACE] blockchain_sdk - [39mgetMydocs : entry 
+[34m[2017-08-11 23:09:41.348] [TRACE] blockchain_sdk - [39mgetMydocs : params - {"user":"risabh.s","rapidID":"BjS8i08h6sfg2Ffn7JET4uODuEqydtqovXgh7IOyRVE="} 
+[34m[2017-08-11 23:09:41.348] [TRACE] blockchain_sdk - [39mdoQuery : entry 
+[34m[2017-08-11 23:09:41.348] [TRACE] blockchain_sdk - [39mdoQuery : params - {"requestSpec":{"chaincodeID":"664b2ca390f298d5111dd9f093edcfc473d332837664374e157b1dc1dc9579183ea6ce701cd333a1c25b4719ab88abed66cf9b0f1718b729af6c7b400028c73e","fcn":"getMydocs","args":["BjS8i08h6sfg2Ffn7JET4uODuEqydtqovXgh7IOyRVE="]},"user":"risabh.s","retryCounter":0} 
+[32m[2017-08-11 23:09:57.342] [INFO] blockchain_sdk - [39mdoQuery : data in data.result  - <Buffer 7b 22 6f 77 6e 73 22 3a 5b 22 35 35 72 75 58 6b 4f 70 53 66 35 39 79 6b 54 78 75 55 59 65 61 36 66 49 46 62 53 4a 4a 56 77 65 34 55 45 71 64 6a 44 56 ... >
+[32m[2017-08-11 23:09:57.346] [INFO] blockchain_sdk - [39mdoQuery : data in buffer.tostring  - '{"owns":["55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM="],"sharedwithme":null,"audittrail":{"3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=":["2017-08-11T11:40:35.206261+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","2017-08-11T11:40:35.226744+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg="],"DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=":["2017-08-09T10:25:21.487192+00:00","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=","2017-08-09T10:45:41.478089+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=","2017-08-09T10:45:41.48256+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4="]}}'
+[32m[2017-08-11 23:09:57.350] [INFO] blockchain_sdk - [39mgetMydocs : Successfully fetched docs - {"owns":["55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM="],"sharedwithme":null,"audittrail":{"3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=":["2017-08-11T11:40:35.206261+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","2017-08-11T11:40:35.226744+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg="],"DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=":["2017-08-09T10:25:21.487192+00:00","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=","2017-08-09T10:45:41.478089+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=","2017-08-09T10:45:41.48256+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4="]}}
+[32m[2017-08-11 23:09:57.350] [INFO] console - [39m{ '3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=': 
+   [ '2017-08-11T11:40:35.206261+00:00',
+     '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=',
+     '2017-08-11T11:40:35.226744+00:00',
+     '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=' ],
+  'DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=': 
+   [ '2017-08-09T10:25:21.487192+00:00',
+     'i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=',
+     '2017-08-09T10:45:41.478089+00:00',
+     '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=',
+     '2017-08-09T10:45:41.48256+00:00',
+     '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=' ] }
+[32m[2017-08-11 23:09:57.358] [INFO] console - [39m[ '3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=',
+  'DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=' ]
+[32m[2017-08-11 23:10:14.882] [INFO] console - [39m[ 'org' ]
+[32m[2017-08-11 23:12:36.026] [INFO] app - [39m
+[32m[2017-08-11 23:12:36.042] [INFO] app - [39m-----------------------------------------------------------------------------
+[32m[2017-08-11 23:12:36.042] [INFO] app - [39m>>> app env local, started Fri Aug 11 2017 23:12:36 GMT+0530 (India Standard Time) <<<
+[32m[2017-08-11 23:12:36.042] [INFO] app - [39m-----------------------------------------------------------------------------
+[32m[2017-08-11 23:12:36.042] [INFO] app - [39mNode started via(process.argv): C:\Program Files\nodejs\node.exe,e:\node_workspace\digital-identity\app.js
+[32m[2017-08-11 23:12:36.042] [INFO] app - [39mNode version: v6.10.3
+[32m[2017-08-11 23:12:36.042] [INFO] app - [39mNode and its dependency versions: {"http_parser":"2.7.0","node":"6.10.3","v8":"5.1.281.101","uv":"1.9.1","zlib":"1.2.11","ares":"1.10.1-DEV","icu":"58.2","modules":"48","openssl":"1.0.2k"}
+[32m[2017-08-11 23:12:36.057] [INFO] app - [39m
+[32m[2017-08-11 23:12:36.057] [INFO] loggingHelper - [39mCreated logger for app.js at level ALL
+[34m[2017-08-11 23:12:36.057] [TRACE] app.js - [39msetup : entry
+[34m[2017-08-11 23:12:36.057] [TRACE] datastore.js - [39minit : entry 
+[34m[2017-08-11 23:12:36.057] [TRACE] datastore.js - [39minit : params - {"name":"Cloudant NoSQL DB-vern","label":"cloudantNoSQLDB","plan":"Lite","credentials":{"username":"92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix","password":"91825f3f7792284c5772432ce05351a332213cd907d2fe5f0b17167bec6ca046","host":"92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix.cloudant.com","port":443,"url":"https://92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix:91825f3f7792284c5772432ce05351a332213cd907d2fe5f0b17167bec6ca046@92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix.cloudant.com"}} 
+[34m[2017-08-11 23:12:36.073] [TRACE] app.js - [39mgetCloudantKeyValStore : entry 
+[34m[2017-08-11 23:12:36.073] [TRACE] app.js - [39mgetCloudantKeyValStore : params - "devworks_app_master" 
+[34m[2017-08-11 23:12:36.073] [TRACE] datastore.js - [39mgetDbInstance : entry 
+[34m[2017-08-11 23:12:36.073] [TRACE] datastore.js - [39mgetDbInstance : params - "devworks_app_master" 
+[32m[2017-08-11 23:12:37.410] [INFO] datastore.js - [39mgetDbInstance : devworks_app_master already exists. - undefined
+[34m[2017-08-11 23:12:37.414] [TRACE] blockchain_network - [39msetupBlockchain : entry 
+[34m[2017-08-11 23:12:37.414] [TRACE] blockchain_network - [39msetupBlockchain : params - [Circular] 
+[34m[2017-08-11 23:12:37.418] [TRACE] blockchain_network - [39mchainInit : entry 
+[34m[2017-08-11 23:12:37.422] [TRACE] blockchain_network - [39mchainInit : params - [Circular] 
+[32m[2017-08-11 23:12:37.434] [INFO] blockchain_network - [39mchainInit : Chain Initialized - Chain {  peers: [],  securityEnabled: true,  members: {},  tcertBatchSize: 200,  devMode: false,  preFetchMode: true,  deployWaitTime: 100,  invokeWaitTime: 5,  name: 'sc_cc',  eventHub:    EventHub {     txCallback: [Function],     chaincodeRegistrants: HashTable {},     blockRegistrants: Set {},     txRegistrants: HashTable {},     ep: null,     connected: false },  keyValStore: CloudantKeyValStore { dbName: 'devworks_app_master', dbInstance: [Object] } }
+[32m[2017-08-11 23:12:37.438] [INFO] blockchain_network - [39mloadNetworkConfiguration : Successfully loaded network configuration - undefined
+[34m[2017-08-11 23:12:37.899] [TRACE] blockchain_network - [39mdoLogin : entry
+[34m[2017-08-11 23:12:38.005] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-08-11 23:12:38.005] [TRACE] kv_store_model - [39mget : params - {"id":"member.WebAppAdmin"} 
+[32m[2017-08-11 23:12:38.322] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.WebAppAdmin - undefined
+[32m[2017-08-11 23:12:38.384] [INFO] blockchain_network - [39mdoLogin : Successfully logged in user on blockchain: WebAppAdmin - undefined
+[32m[2017-08-11 23:12:38.384] [INFO] blockchain_network - [39mconfigureNetwork : Successfully enrolled registrar: WebAppAdmin - undefined
+[32m[2017-08-11 23:12:38.384] [INFO] blockchain_network - [39msetupBlockchain : blockchain setup complete - undefined
+[34m[2017-08-11 23:12:38.384] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-08-11 23:12:38.384] [TRACE] kv_store_model - [39mget : params - {"id":"member.risabh.s"} 
+[32m[2017-08-11 23:12:38.696] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.risabh.s - undefined
+[32m[2017-08-11 23:12:38.758] [INFO] blockchain_sdk - [39mregisterUser : Successfully registered user on blockchain: risabh.s - undefined
+[34m[2017-08-11 23:12:38.758] [TRACE] blockchain_sdk - [39mdoLogin : entry
+[32m[2017-08-11 23:12:38.758] [INFO] blockchain_sdk - [39mdoLogin : Successfully logged in user on blockchain: risabh.s - undefined
+[32m[2017-08-11 23:12:38.758] [INFO] console - [39mserver is running on8080
+[32m[2017-08-11 23:12:53.967] [INFO] console - [39m{ user: 'risabh.s',
+  rapidID: 'BjS8i08h6sfg2Ffn7JET4uODuEqydtqovXgh7IOyRVE=' } 'data in params for query method'
+[34m[2017-08-11 23:12:53.969] [TRACE] blockchain_sdk - [39mgetMydocs : entry 
+[34m[2017-08-11 23:12:53.970] [TRACE] blockchain_sdk - [39mgetMydocs : params - {"user":"risabh.s","rapidID":"BjS8i08h6sfg2Ffn7JET4uODuEqydtqovXgh7IOyRVE="} 
+[34m[2017-08-11 23:12:53.972] [TRACE] blockchain_sdk - [39mdoQuery : entry 
+[34m[2017-08-11 23:12:53.972] [TRACE] blockchain_sdk - [39mdoQuery : params - {"requestSpec":{"chaincodeID":"664b2ca390f298d5111dd9f093edcfc473d332837664374e157b1dc1dc9579183ea6ce701cd333a1c25b4719ab88abed66cf9b0f1718b729af6c7b400028c73e","fcn":"getMydocs","args":["BjS8i08h6sfg2Ffn7JET4uODuEqydtqovXgh7IOyRVE="]},"user":"risabh.s","retryCounter":0} 
+[32m[2017-08-11 23:13:10.495] [INFO] blockchain_sdk - [39mdoQuery : data in data.result  - <Buffer 7b 22 6f 77 6e 73 22 3a 5b 22 35 35 72 75 58 6b 4f 70 53 66 35 39 79 6b 54 78 75 55 59 65 61 36 66 49 46 62 53 4a 4a 56 77 65 34 55 45 71 64 6a 44 56 ... >
+[32m[2017-08-11 23:13:10.495] [INFO] blockchain_sdk - [39mdoQuery : data in buffer.tostring  - '{"owns":["55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM="],"sharedwithme":null,"audittrail":{"3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=":["2017-08-11T11:40:35.206261+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","2017-08-11T11:40:35.226744+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg="],"DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=":["2017-08-09T10:25:21.487192+00:00","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=","2017-08-09T10:45:41.478089+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=","2017-08-09T10:45:41.48256+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4="]}}'
+[32m[2017-08-11 23:13:10.495] [INFO] blockchain_sdk - [39mgetMydocs : Successfully fetched docs - {"owns":["55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM="],"sharedwithme":null,"audittrail":{"3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=":["2017-08-11T11:40:35.206261+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","2017-08-11T11:40:35.226744+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg="],"DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=":["2017-08-09T10:25:21.487192+00:00","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=","2017-08-09T10:45:41.478089+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=","2017-08-09T10:45:41.48256+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4="]}}
+[32m[2017-08-11 23:13:10.495] [INFO] console - [39m{ '3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=': 
+   [ '2017-08-11T11:40:35.206261+00:00',
+     '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=',
+     '2017-08-11T11:40:35.226744+00:00',
+     '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=' ],
+  'DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=': 
+   [ '2017-08-09T10:25:21.487192+00:00',
+     'i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=',
+     '2017-08-09T10:45:41.478089+00:00',
+     '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=',
+     '2017-08-09T10:45:41.48256+00:00',
+     '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=' ] }
+[32m[2017-08-11 23:13:10.495] [INFO] console - [39m[ '3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=',
+  'DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=' ]
+[32m[2017-08-11 23:13:14.298] [INFO] console - [39m[ 'org' ]
+[32m[2017-08-11 23:13:14.614] [INFO] console - [39m[ '2017-08-11T11:40:35.206261+00:00',
+  '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=',
+  '2017-08-11T11:40:35.226744+00:00',
+  '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=' ]
+[32m[2017-08-11 23:13:16.994] [INFO] console - [39m[ 'org', 'Swetavahia' ]
+[32m[2017-08-11 23:13:17.475] [INFO] console - [39m[ '2017-08-09T10:25:21.487192+00:00',
+  'i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=',
+  '2017-08-09T10:45:41.478089+00:00',
+  '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=',
+  '2017-08-09T10:45:41.48256+00:00',
+  '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=' ]
+[32m[2017-08-11 23:13:22.613] [INFO] console - [39mtimestamps            2017-08-11T11:40:35.206261+00:00,2017-08-11T11:40:35.226744+00:00,2017-08-09T10:25:21.487192+00:00,2017-08-09T10:45:41.478089+00:00,2017-08-09T10:45:41.48256+00:00
+[32m[2017-08-11 23:13:22.614] [INFO] console - [39mrapiddocIDs           55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=,/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=,i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=,/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=,55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=
+[32m[2017-08-11 23:13:22.615] [INFO] console - [39m[ '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=',
+  '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=',
+  'i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=',
+  '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=',
+  '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=' ]
+[32m[2017-08-11 23:13:22.856] [INFO] console - [39m[ 'aadhar', 'passport' ]
+[32m[2017-08-11 23:14:34.492] [INFO] app - [39m
+[32m[2017-08-11 23:14:34.492] [INFO] app - [39m-----------------------------------------------------------------------------
+[32m[2017-08-11 23:14:34.492] [INFO] app - [39m>>> app env local, started Fri Aug 11 2017 23:14:34 GMT+0530 (India Standard Time) <<<
+[32m[2017-08-11 23:14:34.492] [INFO] app - [39m-----------------------------------------------------------------------------
+[32m[2017-08-11 23:14:34.492] [INFO] app - [39mNode started via(process.argv): C:\Program Files\nodejs\node.exe,E:\node_workspace\digital-identity\app.js
+[32m[2017-08-11 23:14:34.492] [INFO] app - [39mNode version: v6.10.3
+[32m[2017-08-11 23:14:34.508] [INFO] app - [39mNode and its dependency versions: {"http_parser":"2.7.0","node":"6.10.3","v8":"5.1.281.101","uv":"1.9.1","zlib":"1.2.11","ares":"1.10.1-DEV","icu":"58.2","modules":"48","openssl":"1.0.2k"}
+[32m[2017-08-11 23:14:34.508] [INFO] app - [39m
+[32m[2017-08-11 23:14:34.513] [INFO] loggingHelper - [39mCreated logger for app.js at level ALL
+[34m[2017-08-11 23:14:34.515] [TRACE] app.js - [39msetup : entry
+[34m[2017-08-11 23:14:34.516] [TRACE] datastore.js - [39minit : entry 
+[34m[2017-08-11 23:14:34.518] [TRACE] datastore.js - [39minit : params - {"name":"Cloudant NoSQL DB-vern","label":"cloudantNoSQLDB","plan":"Lite","credentials":{"username":"92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix","password":"91825f3f7792284c5772432ce05351a332213cd907d2fe5f0b17167bec6ca046","host":"92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix.cloudant.com","port":443,"url":"https://92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix:91825f3f7792284c5772432ce05351a332213cd907d2fe5f0b17167bec6ca046@92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix.cloudant.com"}} 
+[34m[2017-08-11 23:14:34.531] [TRACE] app.js - [39mgetCloudantKeyValStore : entry 
+[34m[2017-08-11 23:14:34.532] [TRACE] app.js - [39mgetCloudantKeyValStore : params - "devworks_app_master" 
+[34m[2017-08-11 23:14:34.533] [TRACE] datastore.js - [39mgetDbInstance : entry 
+[34m[2017-08-11 23:14:34.534] [TRACE] datastore.js - [39mgetDbInstance : params - "devworks_app_master" 
+[32m[2017-08-11 23:14:35.844] [INFO] datastore.js - [39mgetDbInstance : devworks_app_master already exists. - undefined
+[34m[2017-08-11 23:14:35.850] [TRACE] blockchain_network - [39msetupBlockchain : entry 
+[34m[2017-08-11 23:14:35.851] [TRACE] blockchain_network - [39msetupBlockchain : params - [Circular] 
+[34m[2017-08-11 23:14:35.852] [TRACE] blockchain_network - [39mchainInit : entry 
+[34m[2017-08-11 23:14:35.852] [TRACE] blockchain_network - [39mchainInit : params - [Circular] 
+[32m[2017-08-11 23:14:35.852] [INFO] blockchain_network - [39mchainInit : Chain Initialized - Chain {  peers: [],  securityEnabled: true,  members: {},  tcertBatchSize: 200,  devMode: false,  preFetchMode: true,  deployWaitTime: 100,  invokeWaitTime: 5,  name: 'sc_cc',  eventHub:    EventHub {     txCallback: [Function],     chaincodeRegistrants: HashTable {},     blockRegistrants: Set {},     txRegistrants: HashTable {},     ep: null,     connected: false },  keyValStore: CloudantKeyValStore { dbName: 'devworks_app_master', dbInstance: [Object] } }
+[32m[2017-08-11 23:14:35.852] [INFO] blockchain_network - [39mloadNetworkConfiguration : Successfully loaded network configuration - undefined
+[34m[2017-08-11 23:14:35.999] [TRACE] blockchain_network - [39mdoLogin : entry
+[34m[2017-08-11 23:14:36.020] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-08-11 23:14:36.021] [TRACE] kv_store_model - [39mget : params - {"id":"member.WebAppAdmin"} 
+[32m[2017-08-11 23:14:36.354] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.WebAppAdmin - undefined
+[32m[2017-08-11 23:14:36.380] [INFO] blockchain_network - [39mdoLogin : Successfully logged in user on blockchain: WebAppAdmin - undefined
+[32m[2017-08-11 23:14:36.381] [INFO] blockchain_network - [39mconfigureNetwork : Successfully enrolled registrar: WebAppAdmin - undefined
+[32m[2017-08-11 23:14:36.382] [INFO] blockchain_network - [39msetupBlockchain : blockchain setup complete - undefined
+[34m[2017-08-11 23:14:36.387] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-08-11 23:14:36.388] [TRACE] kv_store_model - [39mget : params - {"id":"member.risabh.s"} 
+[32m[2017-08-11 23:14:36.723] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.risabh.s - undefined
+[32m[2017-08-11 23:14:36.734] [INFO] blockchain_sdk - [39mregisterUser : Successfully registered user on blockchain: risabh.s - undefined
+[34m[2017-08-11 23:14:36.736] [TRACE] blockchain_sdk - [39mdoLogin : entry
+[32m[2017-08-11 23:14:36.742] [INFO] blockchain_sdk - [39mdoLogin : Successfully logged in user on blockchain: risabh.s - undefined
+[32m[2017-08-11 23:14:36.743] [INFO] console - [39mserver is running on8080
+[32m[2017-08-11 23:14:40.076] [INFO] console - [39m{ user: 'risabh.s',
+  rapidID: 'BjS8i08h6sfg2Ffn7JET4uODuEqydtqovXgh7IOyRVE=' } 'data in params for query method'
+[34m[2017-08-11 23:14:40.077] [TRACE] blockchain_sdk - [39mgetMydocs : entry 
+[34m[2017-08-11 23:14:40.078] [TRACE] blockchain_sdk - [39mgetMydocs : params - {"user":"risabh.s","rapidID":"BjS8i08h6sfg2Ffn7JET4uODuEqydtqovXgh7IOyRVE="} 
+[34m[2017-08-11 23:14:40.080] [TRACE] blockchain_sdk - [39mdoQuery : entry 
+[34m[2017-08-11 23:14:40.081] [TRACE] blockchain_sdk - [39mdoQuery : params - {"requestSpec":{"chaincodeID":"664b2ca390f298d5111dd9f093edcfc473d332837664374e157b1dc1dc9579183ea6ce701cd333a1c25b4719ab88abed66cf9b0f1718b729af6c7b400028c73e","fcn":"getMydocs","args":["BjS8i08h6sfg2Ffn7JET4uODuEqydtqovXgh7IOyRVE="]},"user":"risabh.s","retryCounter":0} 
+[32m[2017-08-11 23:14:46.325] [INFO] blockchain_sdk - [39mdoQuery : data in data.result  - <Buffer 7b 22 6f 77 6e 73 22 3a 5b 22 35 35 72 75 58 6b 4f 70 53 66 35 39 79 6b 54 78 75 55 59 65 61 36 66 49 46 62 53 4a 4a 56 77 65 34 55 45 71 64 6a 44 56 ... >
+[32m[2017-08-11 23:14:46.327] [INFO] blockchain_sdk - [39mdoQuery : data in buffer.tostring  - '{"owns":["55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM="],"sharedwithme":null,"audittrail":{"3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=":["2017-08-11T11:40:35.206261+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","2017-08-11T11:40:35.226744+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg="],"DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=":["2017-08-09T10:25:21.487192+00:00","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=","2017-08-09T10:45:41.478089+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=","2017-08-09T10:45:41.48256+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4="]}}'
+[32m[2017-08-11 23:14:46.327] [INFO] blockchain_sdk - [39mgetMydocs : Successfully fetched docs - {"owns":["55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM="],"sharedwithme":null,"audittrail":{"3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=":["2017-08-11T11:40:35.206261+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","2017-08-11T11:40:35.226744+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg="],"DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=":["2017-08-09T10:25:21.487192+00:00","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=","2017-08-09T10:45:41.478089+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=","2017-08-09T10:45:41.48256+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4="]}}
+[32m[2017-08-11 23:14:46.328] [INFO] console - [39m{ '3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=': 
+   [ '2017-08-11T11:40:35.206261+00:00',
+     '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=',
+     '2017-08-11T11:40:35.226744+00:00',
+     '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=' ],
+  'DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=': 
+   [ '2017-08-09T10:25:21.487192+00:00',
+     'i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=',
+     '2017-08-09T10:45:41.478089+00:00',
+     '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=',
+     '2017-08-09T10:45:41.48256+00:00',
+     '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=' ] }
+[32m[2017-08-11 23:14:46.330] [INFO] console - [39m[ '3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=',
+  'DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=' ]
+[32m[2017-08-11 23:14:46.582] [INFO] console - [39m[ 'org' ]
+[32m[2017-08-11 23:14:46.600] [INFO] console - [39m[ '2017-08-11T11:40:35.206261+00:00',
+  '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=',
+  '2017-08-11T11:40:35.226744+00:00',
+  '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=' ]
+[32m[2017-08-11 23:14:46.606] [INFO] console - [39m[ 'org', 'Swetavahia' ]
+[32m[2017-08-11 23:14:46.609] [INFO] console - [39m[ '2017-08-09T10:25:21.487192+00:00',
+  'i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=',
+  '2017-08-09T10:45:41.478089+00:00',
+  '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=',
+  '2017-08-09T10:45:41.48256+00:00',
+  '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=' ]
+[32m[2017-08-11 23:14:46.611] [INFO] console - [39mtimestamps            2017-08-11T11:40:35.206261+00:00,2017-08-11T11:40:35.226744+00:00,2017-08-09T10:25:21.487192+00:00,2017-08-09T10:45:41.478089+00:00,2017-08-09T10:45:41.48256+00:00
+[32m[2017-08-11 23:14:46.612] [INFO] console - [39mrapiddocIDs           55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=,/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=,i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=,/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=,55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=
+[32m[2017-08-11 23:14:46.612] [INFO] console - [39m[ '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=',
+  '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=',
+  'i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=',
+  '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=',
+  '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=' ]
+[32m[2017-08-11 23:14:46.826] [INFO] console - [39m[ 'aadhar', 'passport' ]
+[32m[2017-08-11 23:16:28.760] [INFO] app - [39m
+[32m[2017-08-11 23:16:28.760] [INFO] app - [39m-----------------------------------------------------------------------------
+[32m[2017-08-11 23:16:28.760] [INFO] app - [39m>>> app env local, started Fri Aug 11 2017 23:16:28 GMT+0530 (India Standard Time) <<<
+[32m[2017-08-11 23:16:28.760] [INFO] app - [39m-----------------------------------------------------------------------------
+[32m[2017-08-11 23:16:28.760] [INFO] app - [39mNode started via(process.argv): C:\Program Files\nodejs\node.exe,e:\node_workspace\digital-identity\app.js
+[32m[2017-08-11 23:16:28.760] [INFO] app - [39mNode version: v6.10.3
+[32m[2017-08-11 23:16:28.760] [INFO] app - [39mNode and its dependency versions: {"http_parser":"2.7.0","node":"6.10.3","v8":"5.1.281.101","uv":"1.9.1","zlib":"1.2.11","ares":"1.10.1-DEV","icu":"58.2","modules":"48","openssl":"1.0.2k"}
+[32m[2017-08-11 23:16:28.760] [INFO] app - [39m
+[32m[2017-08-11 23:16:28.760] [INFO] loggingHelper - [39mCreated logger for app.js at level ALL
+[34m[2017-08-11 23:16:28.760] [TRACE] app.js - [39msetup : entry
+[34m[2017-08-11 23:16:28.760] [TRACE] datastore.js - [39minit : entry 
+[34m[2017-08-11 23:16:28.760] [TRACE] datastore.js - [39minit : params - {"name":"Cloudant NoSQL DB-vern","label":"cloudantNoSQLDB","plan":"Lite","credentials":{"username":"92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix","password":"91825f3f7792284c5772432ce05351a332213cd907d2fe5f0b17167bec6ca046","host":"92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix.cloudant.com","port":443,"url":"https://92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix:91825f3f7792284c5772432ce05351a332213cd907d2fe5f0b17167bec6ca046@92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix.cloudant.com"}} 
+[34m[2017-08-11 23:16:28.775] [TRACE] app.js - [39mgetCloudantKeyValStore : entry 
+[34m[2017-08-11 23:16:28.775] [TRACE] app.js - [39mgetCloudantKeyValStore : params - "devworks_app_master" 
+[34m[2017-08-11 23:16:28.775] [TRACE] datastore.js - [39mgetDbInstance : entry 
+[34m[2017-08-11 23:16:28.775] [TRACE] datastore.js - [39mgetDbInstance : params - "devworks_app_master" 
+[32m[2017-08-11 23:16:30.138] [INFO] datastore.js - [39mgetDbInstance : devworks_app_master already exists. - undefined
+[34m[2017-08-11 23:16:30.142] [TRACE] blockchain_network - [39msetupBlockchain : entry 
+[34m[2017-08-11 23:16:30.142] [TRACE] blockchain_network - [39msetupBlockchain : params - [Circular] 
+[34m[2017-08-11 23:16:30.144] [TRACE] blockchain_network - [39mchainInit : entry 
+[34m[2017-08-11 23:16:30.144] [TRACE] blockchain_network - [39mchainInit : params - [Circular] 
+[32m[2017-08-11 23:16:30.152] [INFO] blockchain_network - [39mchainInit : Chain Initialized - Chain {  peers: [],  securityEnabled: true,  members: {},  tcertBatchSize: 200,  devMode: false,  preFetchMode: true,  deployWaitTime: 100,  invokeWaitTime: 5,  name: 'sc_cc',  eventHub:    EventHub {     txCallback: [Function],     chaincodeRegistrants: HashTable {},     blockRegistrants: Set {},     txRegistrants: HashTable {},     ep: null,     connected: false },  keyValStore: CloudantKeyValStore { dbName: 'devworks_app_master', dbInstance: [Object] } }
+[32m[2017-08-11 23:16:30.155] [INFO] blockchain_network - [39mloadNetworkConfiguration : Successfully loaded network configuration - undefined
+[34m[2017-08-11 23:16:30.292] [TRACE] blockchain_network - [39mdoLogin : entry
+[34m[2017-08-11 23:16:30.325] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-08-11 23:16:30.325] [TRACE] kv_store_model - [39mget : params - {"id":"member.WebAppAdmin"} 
+[32m[2017-08-11 23:16:30.659] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.WebAppAdmin - undefined
+[32m[2017-08-11 23:16:30.685] [INFO] blockchain_network - [39mdoLogin : Successfully logged in user on blockchain: WebAppAdmin - undefined
+[32m[2017-08-11 23:16:30.685] [INFO] blockchain_network - [39mconfigureNetwork : Successfully enrolled registrar: WebAppAdmin - undefined
+[32m[2017-08-11 23:16:30.685] [INFO] blockchain_network - [39msetupBlockchain : blockchain setup complete - undefined
+[34m[2017-08-11 23:16:30.689] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-08-11 23:16:30.689] [TRACE] kv_store_model - [39mget : params - {"id":"member.risabh.s"} 
+[32m[2017-08-11 23:16:30.997] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.risabh.s - undefined
+[32m[2017-08-11 23:16:31.012] [INFO] blockchain_sdk - [39mregisterUser : Successfully registered user on blockchain: risabh.s - undefined
+[34m[2017-08-11 23:16:31.013] [TRACE] blockchain_sdk - [39mdoLogin : entry
+[32m[2017-08-11 23:16:31.016] [INFO] blockchain_sdk - [39mdoLogin : Successfully logged in user on blockchain: risabh.s - undefined
+[32m[2017-08-11 23:16:31.016] [INFO] console - [39mserver is running on8080
+[32m[2017-08-11 23:16:33.636] [INFO] console - [39m{ user: 'risabh.s',
+  rapidID: 'BjS8i08h6sfg2Ffn7JET4uODuEqydtqovXgh7IOyRVE=' } 'data in params for query method'
+[34m[2017-08-11 23:16:33.636] [TRACE] blockchain_sdk - [39mgetMydocs : entry 
+[34m[2017-08-11 23:16:33.637] [TRACE] blockchain_sdk - [39mgetMydocs : params - {"user":"risabh.s","rapidID":"BjS8i08h6sfg2Ffn7JET4uODuEqydtqovXgh7IOyRVE="} 
+[34m[2017-08-11 23:16:33.637] [TRACE] blockchain_sdk - [39mdoQuery : entry 
+[34m[2017-08-11 23:16:33.637] [TRACE] blockchain_sdk - [39mdoQuery : params - {"requestSpec":{"chaincodeID":"664b2ca390f298d5111dd9f093edcfc473d332837664374e157b1dc1dc9579183ea6ce701cd333a1c25b4719ab88abed66cf9b0f1718b729af6c7b400028c73e","fcn":"getMydocs","args":["BjS8i08h6sfg2Ffn7JET4uODuEqydtqovXgh7IOyRVE="]},"user":"risabh.s","retryCounter":0} 
+[32m[2017-08-11 23:16:39.472] [INFO] blockchain_sdk - [39mdoQuery : data in data.result  - <Buffer 7b 22 6f 77 6e 73 22 3a 5b 22 35 35 72 75 58 6b 4f 70 53 66 35 39 79 6b 54 78 75 55 59 65 61 36 66 49 46 62 53 4a 4a 56 77 65 34 55 45 71 64 6a 44 56 ... >
+[32m[2017-08-11 23:16:39.472] [INFO] blockchain_sdk - [39mdoQuery : data in buffer.tostring  - '{"owns":["55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM="],"sharedwithme":null,"audittrail":{"3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=":["2017-08-11T11:40:35.206261+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","2017-08-11T11:40:35.226744+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg="],"DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=":["2017-08-09T10:25:21.487192+00:00","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=","2017-08-09T10:45:41.478089+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=","2017-08-09T10:45:41.48256+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4="]}}'
+[32m[2017-08-11 23:16:39.472] [INFO] blockchain_sdk - [39mgetMydocs : Successfully fetched docs - {"owns":["55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM="],"sharedwithme":null,"audittrail":{"3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=":["2017-08-11T11:40:35.206261+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","2017-08-11T11:40:35.226744+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg="],"DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=":["2017-08-09T10:25:21.487192+00:00","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=","2017-08-09T10:45:41.478089+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=","2017-08-09T10:45:41.48256+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4="]}}
+[32m[2017-08-11 23:16:39.472] [INFO] console - [39m{ '3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=': 
+   [ '2017-08-11T11:40:35.206261+00:00',
+     '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=',
+     '2017-08-11T11:40:35.226744+00:00',
+     '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=' ],
+  'DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=': 
+   [ '2017-08-09T10:25:21.487192+00:00',
+     'i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=',
+     '2017-08-09T10:45:41.478089+00:00',
+     '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=',
+     '2017-08-09T10:45:41.48256+00:00',
+     '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=' ] }
+[32m[2017-08-11 23:16:39.472] [INFO] console - [39m[ '3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=',
+  'DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=' ]
+[32m[2017-08-11 23:16:39.690] [INFO] console - [39m[ 'org' ]
+[32m[2017-08-11 23:16:39.690] [INFO] console - [39m[ '2017-08-11T11:40:35.206261+00:00',
+  '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=',
+  '2017-08-11T11:40:35.226744+00:00',
+  '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=' ]
+[32m[2017-08-11 23:16:39.690] [INFO] console - [39m[ 'org', 'Swetavahia' ]
+[32m[2017-08-11 23:16:39.706] [INFO] console - [39m[ '2017-08-09T10:25:21.487192+00:00',
+  'i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=',
+  '2017-08-09T10:45:41.478089+00:00',
+  '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=',
+  '2017-08-09T10:45:41.48256+00:00',
+  '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=' ]
+[32m[2017-08-11 23:16:39.706] [INFO] console - [39mtimestamps            2017-08-11T11:40:35.206261+00:00,2017-08-11T11:40:35.226744+00:00,2017-08-09T10:25:21.487192+00:00,2017-08-09T10:45:41.478089+00:00,2017-08-09T10:45:41.48256+00:00
+[32m[2017-08-11 23:16:41.702] [INFO] console - [39mrapiddocIDs           55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=,/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=,i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=,/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=,55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=
+[32m[2017-08-11 23:16:52.902] [INFO] console - [39m[ '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=',
+  '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=',
+  'i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=',
+  '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=',
+  '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=' ]
+[32m[2017-08-11 23:22:03.485] [INFO] app - [39m
+[32m[2017-08-11 23:22:03.485] [INFO] app - [39m-----------------------------------------------------------------------------
+[32m[2017-08-11 23:22:03.485] [INFO] app - [39m>>> app env local, started Fri Aug 11 2017 23:22:03 GMT+0530 (India Standard Time) <<<
+[32m[2017-08-11 23:22:03.485] [INFO] app - [39m-----------------------------------------------------------------------------
+[32m[2017-08-11 23:22:03.485] [INFO] app - [39mNode started via(process.argv): C:\Program Files\nodejs\node.exe,E:\node_workspace\digital-identity\app.js
+[32m[2017-08-11 23:22:03.485] [INFO] app - [39mNode version: v6.10.3
+[32m[2017-08-11 23:22:03.485] [INFO] app - [39mNode and its dependency versions: {"http_parser":"2.7.0","node":"6.10.3","v8":"5.1.281.101","uv":"1.9.1","zlib":"1.2.11","ares":"1.10.1-DEV","icu":"58.2","modules":"48","openssl":"1.0.2k"}
+[32m[2017-08-11 23:22:03.501] [INFO] app - [39m
+[32m[2017-08-11 23:22:03.501] [INFO] loggingHelper - [39mCreated logger for app.js at level ALL
+[34m[2017-08-11 23:22:03.505] [TRACE] app.js - [39msetup : entry
+[34m[2017-08-11 23:22:03.505] [TRACE] datastore.js - [39minit : entry 
+[34m[2017-08-11 23:22:03.505] [TRACE] datastore.js - [39minit : params - {"name":"Cloudant NoSQL DB-vern","label":"cloudantNoSQLDB","plan":"Lite","credentials":{"username":"92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix","password":"91825f3f7792284c5772432ce05351a332213cd907d2fe5f0b17167bec6ca046","host":"92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix.cloudant.com","port":443,"url":"https://92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix:91825f3f7792284c5772432ce05351a332213cd907d2fe5f0b17167bec6ca046@92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix.cloudant.com"}} 
+[34m[2017-08-11 23:22:03.515] [TRACE] app.js - [39mgetCloudantKeyValStore : entry 
+[34m[2017-08-11 23:22:03.516] [TRACE] app.js - [39mgetCloudantKeyValStore : params - "devworks_app_master" 
+[34m[2017-08-11 23:22:03.517] [TRACE] datastore.js - [39mgetDbInstance : entry 
+[34m[2017-08-11 23:22:03.517] [TRACE] datastore.js - [39mgetDbInstance : params - "devworks_app_master" 
+[32m[2017-08-11 23:22:04.756] [INFO] datastore.js - [39mgetDbInstance : devworks_app_master already exists. - undefined
+[34m[2017-08-11 23:22:04.756] [TRACE] blockchain_network - [39msetupBlockchain : entry 
+[34m[2017-08-11 23:22:04.756] [TRACE] blockchain_network - [39msetupBlockchain : params - [Circular] 
+[34m[2017-08-11 23:22:04.756] [TRACE] blockchain_network - [39mchainInit : entry 
+[34m[2017-08-11 23:22:04.756] [TRACE] blockchain_network - [39mchainInit : params - [Circular] 
+[32m[2017-08-11 23:22:04.772] [INFO] blockchain_network - [39mchainInit : Chain Initialized - Chain {  peers: [],  securityEnabled: true,  members: {},  tcertBatchSize: 200,  devMode: false,  preFetchMode: true,  deployWaitTime: 100,  invokeWaitTime: 5,  name: 'sc_cc',  eventHub:    EventHub {     txCallback: [Function],     chaincodeRegistrants: HashTable {},     blockRegistrants: Set {},     txRegistrants: HashTable {},     ep: null,     connected: false },  keyValStore: CloudantKeyValStore { dbName: 'devworks_app_master', dbInstance: [Object] } }
+[32m[2017-08-11 23:22:04.772] [INFO] blockchain_network - [39mloadNetworkConfiguration : Successfully loaded network configuration - undefined
+[34m[2017-08-11 23:22:04.900] [TRACE] blockchain_network - [39mdoLogin : entry
+[34m[2017-08-11 23:22:04.927] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-08-11 23:22:04.928] [TRACE] kv_store_model - [39mget : params - {"id":"member.WebAppAdmin"} 
+[32m[2017-08-11 23:22:05.224] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.WebAppAdmin - undefined
+[32m[2017-08-11 23:22:05.224] [INFO] blockchain_network - [39mdoLogin : Successfully logged in user on blockchain: WebAppAdmin - undefined
+[32m[2017-08-11 23:22:05.224] [INFO] blockchain_network - [39mconfigureNetwork : Successfully enrolled registrar: WebAppAdmin - undefined
+[32m[2017-08-11 23:22:05.240] [INFO] blockchain_network - [39msetupBlockchain : blockchain setup complete - undefined
+[34m[2017-08-11 23:22:05.240] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-08-11 23:22:05.240] [TRACE] kv_store_model - [39mget : params - {"id":"member.risabh.s"} 
+[32m[2017-08-11 23:22:05.557] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.risabh.s - undefined
+[32m[2017-08-11 23:22:05.557] [INFO] blockchain_sdk - [39mregisterUser : Successfully registered user on blockchain: risabh.s - undefined
+[34m[2017-08-11 23:22:05.557] [TRACE] blockchain_sdk - [39mdoLogin : entry
+[32m[2017-08-11 23:22:05.557] [INFO] blockchain_sdk - [39mdoLogin : Successfully logged in user on blockchain: risabh.s - undefined
+[32m[2017-08-11 23:22:05.557] [INFO] console - [39mserver is running on8080
+[32m[2017-08-11 23:22:08.136] [INFO] console - [39m{ user: 'risabh.s',
+  rapidID: 'BjS8i08h6sfg2Ffn7JET4uODuEqydtqovXgh7IOyRVE=' } 'data in params for query method'
+[34m[2017-08-11 23:22:08.138] [TRACE] blockchain_sdk - [39mgetMydocs : entry 
+[34m[2017-08-11 23:22:08.138] [TRACE] blockchain_sdk - [39mgetMydocs : params - {"user":"risabh.s","rapidID":"BjS8i08h6sfg2Ffn7JET4uODuEqydtqovXgh7IOyRVE="} 
+[34m[2017-08-11 23:22:08.140] [TRACE] blockchain_sdk - [39mdoQuery : entry 
+[34m[2017-08-11 23:22:08.141] [TRACE] blockchain_sdk - [39mdoQuery : params - {"requestSpec":{"chaincodeID":"664b2ca390f298d5111dd9f093edcfc473d332837664374e157b1dc1dc9579183ea6ce701cd333a1c25b4719ab88abed66cf9b0f1718b729af6c7b400028c73e","fcn":"getMydocs","args":["BjS8i08h6sfg2Ffn7JET4uODuEqydtqovXgh7IOyRVE="]},"user":"risabh.s","retryCounter":0} 
+[32m[2017-08-11 23:22:15.325] [INFO] blockchain_sdk - [39mdoQuery : data in data.result  - <Buffer 7b 22 6f 77 6e 73 22 3a 5b 22 35 35 72 75 58 6b 4f 70 53 66 35 39 79 6b 54 78 75 55 59 65 61 36 66 49 46 62 53 4a 4a 56 77 65 34 55 45 71 64 6a 44 56 ... >
+[32m[2017-08-11 23:22:15.326] [INFO] blockchain_sdk - [39mdoQuery : data in buffer.tostring  - '{"owns":["55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM="],"sharedwithme":null,"audittrail":{"3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=":["2017-08-11T11:40:35.206261+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","2017-08-11T11:40:35.226744+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg="],"DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=":["2017-08-09T10:25:21.487192+00:00","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=","2017-08-09T10:45:41.478089+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=","2017-08-09T10:45:41.48256+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4="]}}'
+[32m[2017-08-11 23:22:15.327] [INFO] blockchain_sdk - [39mgetMydocs : Successfully fetched docs - {"owns":["55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM="],"sharedwithme":null,"audittrail":{"3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=":["2017-08-11T11:40:35.206261+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","2017-08-11T11:40:35.226744+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg="],"DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=":["2017-08-09T10:25:21.487192+00:00","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=","2017-08-09T10:45:41.478089+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=","2017-08-09T10:45:41.48256+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4="]}}
+[32m[2017-08-11 23:22:15.328] [INFO] console - [39m{ '3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=': 
+   [ '2017-08-11T11:40:35.206261+00:00',
+     '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=',
+     '2017-08-11T11:40:35.226744+00:00',
+     '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=' ],
+  'DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=': 
+   [ '2017-08-09T10:25:21.487192+00:00',
+     'i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=',
+     '2017-08-09T10:45:41.478089+00:00',
+     '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=',
+     '2017-08-09T10:45:41.48256+00:00',
+     '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=' ] }
+[32m[2017-08-11 23:22:15.330] [INFO] console - [39m[ '3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=',
+  'DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=' ]
+[32m[2017-08-11 23:22:15.576] [INFO] console - [39m[ 'org' ]
+[32m[2017-08-11 23:22:15.593] [INFO] console - [39m[ '2017-08-11T11:40:35.206261+00:00',
+  '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=',
+  '2017-08-11T11:40:35.226744+00:00',
+  '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=' ]
+[32m[2017-08-11 23:22:15.597] [INFO] console - [39m[ 'org', 'Swetavahia' ]
+[32m[2017-08-11 23:22:15.599] [INFO] console - [39m[ '2017-08-09T10:25:21.487192+00:00',
+  'i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=',
+  '2017-08-09T10:45:41.478089+00:00',
+  '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=',
+  '2017-08-09T10:45:41.48256+00:00',
+  '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=' ]
+[32m[2017-08-11 23:22:15.603] [INFO] console - [39mtimestamps            2017-08-11T11:40:35.206261+00:00,2017-08-11T11:40:35.226744+00:00,2017-08-09T10:25:21.487192+00:00,2017-08-09T10:45:41.478089+00:00,2017-08-09T10:45:41.48256+00:00
+[32m[2017-08-11 23:22:15.603] [INFO] console - [39mrapiddocIDs           55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=,/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=,i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=,/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=,55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=
+[32m[2017-08-11 23:22:15.611] [INFO] console - [39m[ '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=',
+  '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=',
+  'i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=',
+  '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=',
+  '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=' ]
+[32m[2017-08-11 23:22:15.613] [INFO] console - [39m5
+[32m[2017-08-11 23:22:15.851] [INFO] console - [39m[ 'aadhar', 'passport' ]
+[32m[2017-08-11 23:29:41.269] [INFO] app - [39m
+[32m[2017-08-11 23:29:41.269] [INFO] app - [39m-----------------------------------------------------------------------------
+[32m[2017-08-11 23:29:41.269] [INFO] app - [39m>>> app env local, started Fri Aug 11 2017 23:29:41 GMT+0530 (India Standard Time) <<<
+[32m[2017-08-11 23:29:41.269] [INFO] app - [39m-----------------------------------------------------------------------------
+[32m[2017-08-11 23:29:41.269] [INFO] app - [39mNode started via(process.argv): C:\Program Files\nodejs\node.exe,e:\node_workspace\digital-identity\app.js
+[32m[2017-08-11 23:29:41.269] [INFO] app - [39mNode version: v6.10.3
+[32m[2017-08-11 23:29:41.269] [INFO] app - [39mNode and its dependency versions: {"http_parser":"2.7.0","node":"6.10.3","v8":"5.1.281.101","uv":"1.9.1","zlib":"1.2.11","ares":"1.10.1-DEV","icu":"58.2","modules":"48","openssl":"1.0.2k"}
+[32m[2017-08-11 23:29:41.269] [INFO] app - [39m
+[32m[2017-08-11 23:29:41.269] [INFO] loggingHelper - [39mCreated logger for app.js at level ALL
+[34m[2017-08-11 23:29:41.269] [TRACE] app.js - [39msetup : entry
+[34m[2017-08-11 23:29:41.285] [TRACE] datastore.js - [39minit : entry 
+[34m[2017-08-11 23:29:41.285] [TRACE] datastore.js - [39minit : params - {"name":"Cloudant NoSQL DB-vern","label":"cloudantNoSQLDB","plan":"Lite","credentials":{"username":"92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix","password":"91825f3f7792284c5772432ce05351a332213cd907d2fe5f0b17167bec6ca046","host":"92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix.cloudant.com","port":443,"url":"https://92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix:91825f3f7792284c5772432ce05351a332213cd907d2fe5f0b17167bec6ca046@92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix.cloudant.com"}} 
+[34m[2017-08-11 23:29:41.285] [TRACE] app.js - [39mgetCloudantKeyValStore : entry 
+[34m[2017-08-11 23:29:41.285] [TRACE] app.js - [39mgetCloudantKeyValStore : params - "devworks_app_master" 
+[34m[2017-08-11 23:29:41.285] [TRACE] datastore.js - [39mgetDbInstance : entry 
+[34m[2017-08-11 23:29:41.285] [TRACE] datastore.js - [39mgetDbInstance : params - "devworks_app_master" 
+[32m[2017-08-11 23:29:42.567] [INFO] datastore.js - [39mgetDbInstance : devworks_app_master already exists. - undefined
+[34m[2017-08-11 23:29:42.572] [TRACE] blockchain_network - [39msetupBlockchain : entry 
+[34m[2017-08-11 23:29:42.572] [TRACE] blockchain_network - [39msetupBlockchain : params - [Circular] 
+[34m[2017-08-11 23:29:42.573] [TRACE] blockchain_network - [39mchainInit : entry 
+[34m[2017-08-11 23:29:42.574] [TRACE] blockchain_network - [39mchainInit : params - [Circular] 
+[32m[2017-08-11 23:29:42.579] [INFO] blockchain_network - [39mchainInit : Chain Initialized - Chain {  peers: [],  securityEnabled: true,  members: {},  tcertBatchSize: 200,  devMode: false,  preFetchMode: true,  deployWaitTime: 100,  invokeWaitTime: 5,  name: 'sc_cc',  eventHub:    EventHub {     txCallback: [Function],     chaincodeRegistrants: HashTable {},     blockRegistrants: Set {},     txRegistrants: HashTable {},     ep: null,     connected: false },  keyValStore: CloudantKeyValStore { dbName: 'devworks_app_master', dbInstance: [Object] } }
+[32m[2017-08-11 23:29:42.582] [INFO] blockchain_network - [39mloadNetworkConfiguration : Successfully loaded network configuration - undefined
+[34m[2017-08-11 23:29:42.732] [TRACE] blockchain_network - [39mdoLogin : entry
+[34m[2017-08-11 23:29:42.767] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-08-11 23:29:42.767] [TRACE] kv_store_model - [39mget : params - {"id":"member.WebAppAdmin"} 
+[32m[2017-08-11 23:29:43.071] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.WebAppAdmin - undefined
+[32m[2017-08-11 23:29:43.101] [INFO] blockchain_network - [39mdoLogin : Successfully logged in user on blockchain: WebAppAdmin - undefined
+[32m[2017-08-11 23:29:43.101] [INFO] blockchain_network - [39mconfigureNetwork : Successfully enrolled registrar: WebAppAdmin - undefined
+[32m[2017-08-11 23:29:43.102] [INFO] blockchain_network - [39msetupBlockchain : blockchain setup complete - undefined
+[34m[2017-08-11 23:29:43.108] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-08-11 23:29:43.109] [TRACE] kv_store_model - [39mget : params - {"id":"member.risabh.s"} 
+[32m[2017-08-11 23:29:43.405] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.risabh.s - undefined
+[32m[2017-08-11 23:29:43.421] [INFO] blockchain_sdk - [39mregisterUser : Successfully registered user on blockchain: risabh.s - undefined
+[34m[2017-08-11 23:29:43.421] [TRACE] blockchain_sdk - [39mdoLogin : entry
+[32m[2017-08-11 23:29:43.421] [INFO] blockchain_sdk - [39mdoLogin : Successfully logged in user on blockchain: risabh.s - undefined
+[32m[2017-08-11 23:29:43.421] [INFO] console - [39mserver is running on8080
+[32m[2017-08-11 23:29:51.644] [INFO] console - [39m{ user: 'risabh.s',
+  rapidID: 'BjS8i08h6sfg2Ffn7JET4uODuEqydtqovXgh7IOyRVE=' } 'data in params for query method'
+[34m[2017-08-11 23:29:51.654] [TRACE] blockchain_sdk - [39mgetMydocs : entry 
+[34m[2017-08-11 23:29:51.655] [TRACE] blockchain_sdk - [39mgetMydocs : params - {"user":"risabh.s","rapidID":"BjS8i08h6sfg2Ffn7JET4uODuEqydtqovXgh7IOyRVE="} 
+[34m[2017-08-11 23:29:51.656] [TRACE] blockchain_sdk - [39mdoQuery : entry 
+[34m[2017-08-11 23:29:51.657] [TRACE] blockchain_sdk - [39mdoQuery : params - {"requestSpec":{"chaincodeID":"664b2ca390f298d5111dd9f093edcfc473d332837664374e157b1dc1dc9579183ea6ce701cd333a1c25b4719ab88abed66cf9b0f1718b729af6c7b400028c73e","fcn":"getMydocs","args":["BjS8i08h6sfg2Ffn7JET4uODuEqydtqovXgh7IOyRVE="]},"user":"risabh.s","retryCounter":0} 
+[31m[2017-08-11 23:29:59.149] [ERROR] blockchain_sdk - [39mdoQuery : Could not perform query  - EventTransactionError {  error:    { Error       at e:\node_workspace\digital-identity\node_modules\hfc\node_modules\grpc\src\node\src\client.js:417:17 code: 14, metadata: [Object] },  msg: 'Error' }
+[31m[2017-08-11 23:30:01.158] [ERROR] blockchain_sdk - [39mrecursiveQuery : Query Retry 0 - {"statusCode":500,"body":"Could not perform query "}
+[34m[2017-08-11 23:30:01.158] [TRACE] blockchain_sdk - [39mdoQuery : entry 
+[34m[2017-08-11 23:30:01.159] [TRACE] blockchain_sdk - [39mdoQuery : params - {"requestSpec":{"chaincodeID":"664b2ca390f298d5111dd9f093edcfc473d332837664374e157b1dc1dc9579183ea6ce701cd333a1c25b4719ab88abed66cf9b0f1718b729af6c7b400028c73e","fcn":"getMydocs","args":["BjS8i08h6sfg2Ffn7JET4uODuEqydtqovXgh7IOyRVE="]},"user":"risabh.s","retryCounter":1} 
+[31m[2017-08-11 23:30:01.430] [ERROR] blockchain_sdk - [39mdoQuery : Could not perform query  - EventTransactionError {  error:    { Error       at e:\node_workspace\digital-identity\node_modules\hfc\node_modules\grpc\src\node\src\client.js:417:17 code: 14, metadata: [Object] },  msg: 'Error' }
+[31m[2017-08-11 23:30:03.431] [ERROR] blockchain_sdk - [39mrecursiveQuery : Query Retry 1 - {"statusCode":500,"body":"Could not perform query "}
+[34m[2017-08-11 23:30:03.431] [TRACE] blockchain_sdk - [39mdoQuery : entry 
+[34m[2017-08-11 23:30:03.431] [TRACE] blockchain_sdk - [39mdoQuery : params - {"requestSpec":{"chaincodeID":"664b2ca390f298d5111dd9f093edcfc473d332837664374e157b1dc1dc9579183ea6ce701cd333a1c25b4719ab88abed66cf9b0f1718b729af6c7b400028c73e","fcn":"getMydocs","args":["BjS8i08h6sfg2Ffn7JET4uODuEqydtqovXgh7IOyRVE="]},"user":"risabh.s","retryCounter":2} 
+[31m[2017-08-11 23:30:03.698] [ERROR] blockchain_sdk - [39mdoQuery : Could not perform query  - EventTransactionError {  error:    { Error       at e:\node_workspace\digital-identity\node_modules\hfc\node_modules\grpc\src\node\src\client.js:417:17 code: 14, metadata: [Object] },  msg: 'Error' }
+[31m[2017-08-11 23:30:05.720] [ERROR] blockchain_sdk - [39mrecursiveQuery : Query Retry 2 - {"statusCode":500,"body":"Could not perform query "}
+[34m[2017-08-11 23:30:05.720] [TRACE] blockchain_sdk - [39mdoQuery : entry 
+[34m[2017-08-11 23:30:05.720] [TRACE] blockchain_sdk - [39mdoQuery : params - {"requestSpec":{"chaincodeID":"664b2ca390f298d5111dd9f093edcfc473d332837664374e157b1dc1dc9579183ea6ce701cd333a1c25b4719ab88abed66cf9b0f1718b729af6c7b400028c73e","fcn":"getMydocs","args":["BjS8i08h6sfg2Ffn7JET4uODuEqydtqovXgh7IOyRVE="]},"user":"risabh.s","retryCounter":3} 
+[32m[2017-08-11 23:30:06.842] [INFO] blockchain_sdk - [39mdoQuery : data in data.result  - <Buffer 7b 22 6f 77 6e 73 22 3a 5b 22 35 35 72 75 58 6b 4f 70 53 66 35 39 79 6b 54 78 75 55 59 65 61 36 66 49 46 62 53 4a 4a 56 77 65 34 55 45 71 64 6a 44 56 ... >
+[32m[2017-08-11 23:30:06.842] [INFO] blockchain_sdk - [39mdoQuery : data in buffer.tostring  - '{"owns":["55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM="],"sharedwithme":null,"audittrail":{"3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=":["2017-08-11T11:40:35.206261+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","2017-08-11T11:40:35.226744+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg="],"DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=":["2017-08-09T10:25:21.487192+00:00","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=","2017-08-09T10:45:41.478089+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=","2017-08-09T10:45:41.48256+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4="]}}'
+[32m[2017-08-11 23:30:06.843] [INFO] blockchain_sdk - [39mgetMydocs : Successfully fetched docs - {"owns":["55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM="],"sharedwithme":null,"audittrail":{"3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=":["2017-08-11T11:40:35.206261+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","2017-08-11T11:40:35.226744+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg="],"DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=":["2017-08-09T10:25:21.487192+00:00","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=","2017-08-09T10:45:41.478089+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=","2017-08-09T10:45:41.48256+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4="]}}
+[32m[2017-08-11 23:30:09.627] [INFO] console - [39m{ '3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=': 
+   [ '2017-08-11T11:40:35.206261+00:00',
+     '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=',
+     '2017-08-11T11:40:35.226744+00:00',
+     '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=' ],
+  'DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=': 
+   [ '2017-08-09T10:25:21.487192+00:00',
+     'i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=',
+     '2017-08-09T10:45:41.478089+00:00',
+     '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=',
+     '2017-08-09T10:45:41.48256+00:00',
+     '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=' ] }
+[32m[2017-08-11 23:30:12.258] [INFO] console - [39m[ '3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=',
+  'DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=' ]
+[32m[2017-08-11 23:30:22.996] [INFO] console - [39m[ 'org' ]
+[32m[2017-08-11 23:31:52.740] [INFO] app - [39m
+[32m[2017-08-11 23:31:52.740] [INFO] app - [39m-----------------------------------------------------------------------------
+[32m[2017-08-11 23:31:52.740] [INFO] app - [39m>>> app env local, started Fri Aug 11 2017 23:31:52 GMT+0530 (India Standard Time) <<<
+[32m[2017-08-11 23:31:52.756] [INFO] app - [39m-----------------------------------------------------------------------------
+[32m[2017-08-11 23:31:52.757] [INFO] app - [39mNode started via(process.argv): C:\Program Files\nodejs\node.exe,e:\node_workspace\digital-identity\app.js
+[32m[2017-08-11 23:31:52.757] [INFO] app - [39mNode version: v6.10.3
+[32m[2017-08-11 23:31:52.757] [INFO] app - [39mNode and its dependency versions: {"http_parser":"2.7.0","node":"6.10.3","v8":"5.1.281.101","uv":"1.9.1","zlib":"1.2.11","ares":"1.10.1-DEV","icu":"58.2","modules":"48","openssl":"1.0.2k"}
+[32m[2017-08-11 23:31:52.758] [INFO] app - [39m
+[32m[2017-08-11 23:31:52.759] [INFO] loggingHelper - [39mCreated logger for app.js at level ALL
+[34m[2017-08-11 23:31:52.760] [TRACE] app.js - [39msetup : entry
+[34m[2017-08-11 23:31:52.760] [TRACE] datastore.js - [39minit : entry 
+[34m[2017-08-11 23:31:52.761] [TRACE] datastore.js - [39minit : params - {"name":"Cloudant NoSQL DB-vern","label":"cloudantNoSQLDB","plan":"Lite","credentials":{"username":"92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix","password":"91825f3f7792284c5772432ce05351a332213cd907d2fe5f0b17167bec6ca046","host":"92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix.cloudant.com","port":443,"url":"https://92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix:91825f3f7792284c5772432ce05351a332213cd907d2fe5f0b17167bec6ca046@92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix.cloudant.com"}} 
+[34m[2017-08-11 23:31:52.762] [TRACE] app.js - [39mgetCloudantKeyValStore : entry 
+[34m[2017-08-11 23:31:52.762] [TRACE] app.js - [39mgetCloudantKeyValStore : params - "devworks_app_master" 
+[34m[2017-08-11 23:31:52.762] [TRACE] datastore.js - [39mgetDbInstance : entry 
+[34m[2017-08-11 23:31:52.762] [TRACE] datastore.js - [39mgetDbInstance : params - "devworks_app_master" 
+[32m[2017-08-11 23:31:53.994] [INFO] datastore.js - [39mgetDbInstance : devworks_app_master already exists. - undefined
+[34m[2017-08-11 23:31:53.999] [TRACE] blockchain_network - [39msetupBlockchain : entry 
+[34m[2017-08-11 23:31:54.000] [TRACE] blockchain_network - [39msetupBlockchain : params - [Circular] 
+[34m[2017-08-11 23:31:54.001] [TRACE] blockchain_network - [39mchainInit : entry 
+[34m[2017-08-11 23:31:54.002] [TRACE] blockchain_network - [39mchainInit : params - [Circular] 
+[32m[2017-08-11 23:31:54.008] [INFO] blockchain_network - [39mchainInit : Chain Initialized - Chain {  peers: [],  securityEnabled: true,  members: {},  tcertBatchSize: 200,  devMode: false,  preFetchMode: true,  deployWaitTime: 100,  invokeWaitTime: 5,  name: 'sc_cc',  eventHub:    EventHub {     txCallback: [Function],     chaincodeRegistrants: HashTable {},     blockRegistrants: Set {},     txRegistrants: HashTable {},     ep: null,     connected: false },  keyValStore: CloudantKeyValStore { dbName: 'devworks_app_master', dbInstance: [Object] } }
+[32m[2017-08-11 23:31:54.011] [INFO] blockchain_network - [39mloadNetworkConfiguration : Successfully loaded network configuration - undefined
+[34m[2017-08-11 23:31:54.146] [TRACE] blockchain_network - [39mdoLogin : entry
+[34m[2017-08-11 23:31:54.174] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-08-11 23:31:54.175] [TRACE] kv_store_model - [39mget : params - {"id":"member.WebAppAdmin"} 
+[32m[2017-08-11 23:31:54.475] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.WebAppAdmin - undefined
+[32m[2017-08-11 23:31:54.499] [INFO] blockchain_network - [39mdoLogin : Successfully logged in user on blockchain: WebAppAdmin - undefined
+[32m[2017-08-11 23:31:54.499] [INFO] blockchain_network - [39mconfigureNetwork : Successfully enrolled registrar: WebAppAdmin - undefined
+[32m[2017-08-11 23:31:54.500] [INFO] blockchain_network - [39msetupBlockchain : blockchain setup complete - undefined
+[34m[2017-08-11 23:31:54.504] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-08-11 23:31:54.504] [TRACE] kv_store_model - [39mget : params - {"id":"member.risabh.s"} 
+[32m[2017-08-11 23:31:54.795] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.risabh.s - undefined
+[32m[2017-08-11 23:31:54.811] [INFO] blockchain_sdk - [39mregisterUser : Successfully registered user on blockchain: risabh.s - undefined
+[34m[2017-08-11 23:31:54.811] [TRACE] blockchain_sdk - [39mdoLogin : entry
+[32m[2017-08-11 23:31:54.811] [INFO] blockchain_sdk - [39mdoLogin : Successfully logged in user on blockchain: risabh.s - undefined
+[32m[2017-08-11 23:31:54.811] [INFO] console - [39mserver is running on8080
+[32m[2017-08-11 23:32:05.016] [INFO] console - [39m{ user: 'risabh.s',
+  rapidID: 'BjS8i08h6sfg2Ffn7JET4uODuEqydtqovXgh7IOyRVE=' } 'data in params for query method'
+[34m[2017-08-11 23:32:05.028] [TRACE] blockchain_sdk - [39mgetMydocs : entry 
+[34m[2017-08-11 23:32:05.029] [TRACE] blockchain_sdk - [39mgetMydocs : params - {"user":"risabh.s","rapidID":"BjS8i08h6sfg2Ffn7JET4uODuEqydtqovXgh7IOyRVE="} 
+[34m[2017-08-11 23:32:05.030] [TRACE] blockchain_sdk - [39mdoQuery : entry 
+[34m[2017-08-11 23:32:05.031] [TRACE] blockchain_sdk - [39mdoQuery : params - {"requestSpec":{"chaincodeID":"664b2ca390f298d5111dd9f093edcfc473d332837664374e157b1dc1dc9579183ea6ce701cd333a1c25b4719ab88abed66cf9b0f1718b729af6c7b400028c73e","fcn":"getMydocs","args":["BjS8i08h6sfg2Ffn7JET4uODuEqydtqovXgh7IOyRVE="]},"user":"risabh.s","retryCounter":0} 
+[32m[2017-08-11 23:32:11.747] [INFO] blockchain_sdk - [39mdoQuery : data in data.result  - <Buffer 7b 22 6f 77 6e 73 22 3a 5b 22 35 35 72 75 58 6b 4f 70 53 66 35 39 79 6b 54 78 75 55 59 65 61 36 66 49 46 62 53 4a 4a 56 77 65 34 55 45 71 64 6a 44 56 ... >
+[32m[2017-08-11 23:32:11.748] [INFO] blockchain_sdk - [39mdoQuery : data in buffer.tostring  - '{"owns":["55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM="],"sharedwithme":null,"audittrail":{"3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=":["2017-08-11T11:40:35.206261+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","2017-08-11T11:40:35.226744+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg="],"DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=":["2017-08-09T10:25:21.487192+00:00","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=","2017-08-09T10:45:41.478089+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=","2017-08-09T10:45:41.48256+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4="]}}'
+[32m[2017-08-11 23:32:11.749] [INFO] blockchain_sdk - [39mgetMydocs : Successfully fetched docs - {"owns":["55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM="],"sharedwithme":null,"audittrail":{"3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=":["2017-08-11T11:40:35.206261+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","2017-08-11T11:40:35.226744+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg="],"DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=":["2017-08-09T10:25:21.487192+00:00","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=","2017-08-09T10:45:41.478089+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=","2017-08-09T10:45:41.48256+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4="]}}
+[32m[2017-08-11 23:32:14.735] [INFO] console - [39m{ '3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=': 
+   [ '2017-08-11T11:40:35.206261+00:00',
+     '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=',
+     '2017-08-11T11:40:35.226744+00:00',
+     '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=' ],
+  'DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=': 
+   [ '2017-08-09T10:25:21.487192+00:00',
+     'i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=',
+     '2017-08-09T10:45:41.478089+00:00',
+     '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=',
+     '2017-08-09T10:45:41.48256+00:00',
+     '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=' ] }
+[32m[2017-08-11 23:32:16.701] [INFO] console - [39m[ '3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=',
+  'DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=' ]
+[32m[2017-08-11 23:32:24.527] [INFO] console - [39m[ '2017-08-11T11:40:35.206261+00:00',
+  '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=',
+  '2017-08-11T11:40:35.226744+00:00',
+  '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=' ]
+[32m[2017-08-11 23:32:35.023] [INFO] console - [39m[ '2017-08-09T10:25:21.487192+00:00',
+  'i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=',
+  '2017-08-09T10:45:41.478089+00:00',
+  '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=',
+  '2017-08-09T10:45:41.48256+00:00',
+  '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=' ]
+[32m[2017-08-11 23:32:39.563] [INFO] console - [39mtimestamps            2017-08-11T11:40:35.206261+00:00,2017-08-11T11:40:35.226744+00:00,2017-08-09T10:25:21.487192+00:00,2017-08-09T10:45:41.478089+00:00,2017-08-09T10:45:41.48256+00:00
+[32m[2017-08-11 23:32:39.939] [INFO] console - [39mrapiddocIDs           55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=,/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=,i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=,/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=,55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=
+[32m[2017-08-11 23:32:40.740] [INFO] console - [39m[ '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=',
+  '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=',
+  'i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=',
+  '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=',
+  '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=' ]
+[32m[2017-08-11 23:32:41.387] [INFO] console - [39m5
+[32m[2017-08-11 23:32:54.268] [INFO] app - [39m
+[32m[2017-08-11 23:32:54.285] [INFO] app - [39m-----------------------------------------------------------------------------
+[32m[2017-08-11 23:32:54.285] [INFO] app - [39m>>> app env local, started Fri Aug 11 2017 23:32:54 GMT+0530 (India Standard Time) <<<
+[32m[2017-08-11 23:32:54.285] [INFO] app - [39m-----------------------------------------------------------------------------
+[32m[2017-08-11 23:32:54.285] [INFO] app - [39mNode started via(process.argv): C:\Program Files\nodejs\node.exe,E:\node_workspace\digital-identity\app.js
+[32m[2017-08-11 23:32:54.285] [INFO] app - [39mNode version: v6.10.3
+[32m[2017-08-11 23:32:54.285] [INFO] app - [39mNode and its dependency versions: {"http_parser":"2.7.0","node":"6.10.3","v8":"5.1.281.101","uv":"1.9.1","zlib":"1.2.11","ares":"1.10.1-DEV","icu":"58.2","modules":"48","openssl":"1.0.2k"}
+[32m[2017-08-11 23:32:54.289] [INFO] app - [39m
+[32m[2017-08-11 23:32:54.290] [INFO] loggingHelper - [39mCreated logger for app.js at level ALL
+[34m[2017-08-11 23:32:54.291] [TRACE] app.js - [39msetup : entry
+[34m[2017-08-11 23:32:54.293] [TRACE] datastore.js - [39minit : entry 
+[34m[2017-08-11 23:32:54.294] [TRACE] datastore.js - [39minit : params - {"name":"Cloudant NoSQL DB-vern","label":"cloudantNoSQLDB","plan":"Lite","credentials":{"username":"92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix","password":"91825f3f7792284c5772432ce05351a332213cd907d2fe5f0b17167bec6ca046","host":"92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix.cloudant.com","port":443,"url":"https://92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix:91825f3f7792284c5772432ce05351a332213cd907d2fe5f0b17167bec6ca046@92abf240-48c3-4abb-bbca-88dffe9d2b74-bluemix.cloudant.com"}} 
+[34m[2017-08-11 23:32:54.303] [TRACE] app.js - [39mgetCloudantKeyValStore : entry 
+[34m[2017-08-11 23:32:54.304] [TRACE] app.js - [39mgetCloudantKeyValStore : params - "devworks_app_master" 
+[34m[2017-08-11 23:32:54.305] [TRACE] datastore.js - [39mgetDbInstance : entry 
+[34m[2017-08-11 23:32:54.305] [TRACE] datastore.js - [39mgetDbInstance : params - "devworks_app_master" 
+[32m[2017-08-11 23:32:55.539] [INFO] datastore.js - [39mgetDbInstance : devworks_app_master already exists. - undefined
+[34m[2017-08-11 23:32:55.539] [TRACE] blockchain_network - [39msetupBlockchain : entry 
+[34m[2017-08-11 23:32:55.539] [TRACE] blockchain_network - [39msetupBlockchain : params - [Circular] 
+[34m[2017-08-11 23:32:55.539] [TRACE] blockchain_network - [39mchainInit : entry 
+[34m[2017-08-11 23:32:55.539] [TRACE] blockchain_network - [39mchainInit : params - [Circular] 
+[32m[2017-08-11 23:32:55.558] [INFO] blockchain_network - [39mchainInit : Chain Initialized - Chain {  peers: [],  securityEnabled: true,  members: {},  tcertBatchSize: 200,  devMode: false,  preFetchMode: true,  deployWaitTime: 100,  invokeWaitTime: 5,  name: 'sc_cc',  eventHub:    EventHub {     txCallback: [Function],     chaincodeRegistrants: HashTable {},     blockRegistrants: Set {},     txRegistrants: HashTable {},     ep: null,     connected: false },  keyValStore: CloudantKeyValStore { dbName: 'devworks_app_master', dbInstance: [Object] } }
+[32m[2017-08-11 23:32:55.561] [INFO] blockchain_network - [39mloadNetworkConfiguration : Successfully loaded network configuration - undefined
+[34m[2017-08-11 23:32:55.697] [TRACE] blockchain_network - [39mdoLogin : entry
+[34m[2017-08-11 23:32:55.713] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-08-11 23:32:55.713] [TRACE] kv_store_model - [39mget : params - {"id":"member.WebAppAdmin"} 
+[32m[2017-08-11 23:32:56.016] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.WebAppAdmin - undefined
+[32m[2017-08-11 23:32:56.035] [INFO] blockchain_network - [39mdoLogin : Successfully logged in user on blockchain: WebAppAdmin - undefined
+[32m[2017-08-11 23:32:56.036] [INFO] blockchain_network - [39mconfigureNetwork : Successfully enrolled registrar: WebAppAdmin - undefined
+[32m[2017-08-11 23:32:56.037] [INFO] blockchain_network - [39msetupBlockchain : blockchain setup complete - undefined
+[34m[2017-08-11 23:32:56.039] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-08-11 23:32:56.039] [TRACE] kv_store_model - [39mget : params - {"id":"member.risabh.s"} 
+[32m[2017-08-11 23:32:56.351] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.risabh.s - undefined
+[32m[2017-08-11 23:32:56.363] [INFO] blockchain_sdk - [39mregisterUser : Successfully registered user on blockchain: risabh.s - undefined
+[34m[2017-08-11 23:32:56.365] [TRACE] blockchain_sdk - [39mdoLogin : entry
+[32m[2017-08-11 23:32:56.374] [INFO] blockchain_sdk - [39mdoLogin : Successfully logged in user on blockchain: risabh.s - undefined
+[32m[2017-08-11 23:32:56.375] [INFO] console - [39mserver is running on8080
+[32m[2017-08-11 23:32:57.605] [INFO] console - [39m{ user: 'risabh.s',
+  rapidID: 'BjS8i08h6sfg2Ffn7JET4uODuEqydtqovXgh7IOyRVE=' } 'data in params for query method'
+[34m[2017-08-11 23:32:57.607] [TRACE] blockchain_sdk - [39mgetMydocs : entry 
+[34m[2017-08-11 23:32:57.608] [TRACE] blockchain_sdk - [39mgetMydocs : params - {"user":"risabh.s","rapidID":"BjS8i08h6sfg2Ffn7JET4uODuEqydtqovXgh7IOyRVE="} 
+[34m[2017-08-11 23:32:57.609] [TRACE] blockchain_sdk - [39mdoQuery : entry 
+[34m[2017-08-11 23:32:57.610] [TRACE] blockchain_sdk - [39mdoQuery : params - {"requestSpec":{"chaincodeID":"664b2ca390f298d5111dd9f093edcfc473d332837664374e157b1dc1dc9579183ea6ce701cd333a1c25b4719ab88abed66cf9b0f1718b729af6c7b400028c73e","fcn":"getMydocs","args":["BjS8i08h6sfg2Ffn7JET4uODuEqydtqovXgh7IOyRVE="]},"user":"risabh.s","retryCounter":0} 
+[32m[2017-08-11 23:33:04.257] [INFO] blockchain_sdk - [39mdoQuery : data in data.result  - <Buffer 7b 22 6f 77 6e 73 22 3a 5b 22 35 35 72 75 58 6b 4f 70 53 66 35 39 79 6b 54 78 75 55 59 65 61 36 66 49 46 62 53 4a 4a 56 77 65 34 55 45 71 64 6a 44 56 ... >
+[32m[2017-08-11 23:33:04.259] [INFO] blockchain_sdk - [39mdoQuery : data in buffer.tostring  - '{"owns":["55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM="],"sharedwithme":null,"audittrail":{"3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=":["2017-08-11T11:40:35.206261+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","2017-08-11T11:40:35.226744+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg="],"DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=":["2017-08-09T10:25:21.487192+00:00","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=","2017-08-09T10:45:41.478089+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=","2017-08-09T10:45:41.48256+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4="]}}'
+[32m[2017-08-11 23:33:04.260] [INFO] blockchain_sdk - [39mgetMydocs : Successfully fetched docs - {"owns":["55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM="],"sharedwithme":null,"audittrail":{"3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=":["2017-08-11T11:40:35.206261+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=","2017-08-11T11:40:35.226744+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg="],"DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=":["2017-08-09T10:25:21.487192+00:00","i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=","2017-08-09T10:45:41.478089+00:00","/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=","2017-08-09T10:45:41.48256+00:00","55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4="]}}
+[32m[2017-08-11 23:33:04.261] [INFO] console - [39m{ '3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=': 
+   [ '2017-08-11T11:40:35.206261+00:00',
+     '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=',
+     '2017-08-11T11:40:35.226744+00:00',
+     '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=' ],
+  'DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=': 
+   [ '2017-08-09T10:25:21.487192+00:00',
+     'i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=',
+     '2017-08-09T10:45:41.478089+00:00',
+     '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=',
+     '2017-08-09T10:45:41.48256+00:00',
+     '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=' ] }
+[32m[2017-08-11 23:33:04.264] [INFO] console - [39m[ '3BABOiTg3R+9dx1MSnA1kY9R3He80Vpi+v1pLeKan/s=',
+  'DMiK41ZFBl9hDSAWWW6/sFLrdSsXnJoJVputD48D3CI=' ]
+[32m[2017-08-11 23:33:04.468] [INFO] console - [39m[ '2017-08-11T11:40:35.206261+00:00',
+  '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=',
+  '2017-08-11T11:40:35.226744+00:00',
+  '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=' ]
+[32m[2017-08-11 23:33:04.469] [INFO] console - [39m[ '2017-08-09T10:25:21.487192+00:00',
+  'i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=',
+  '2017-08-09T10:45:41.478089+00:00',
+  '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=',
+  '2017-08-09T10:45:41.48256+00:00',
+  '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=' ]
+[32m[2017-08-11 23:33:04.470] [INFO] console - [39mtimestamps            2017-08-11T11:40:35.206261+00:00,2017-08-11T11:40:35.226744+00:00,2017-08-09T10:25:21.487192+00:00,2017-08-09T10:45:41.478089+00:00,2017-08-09T10:45:41.48256+00:00
+[32m[2017-08-11 23:33:04.470] [INFO] console - [39mrapiddocIDs           55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=,/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=,i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=,/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=,55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=
+[32m[2017-08-11 23:33:04.471] [INFO] console - [39m[ '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=',
+  '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=',
+  'i6pUNYuwQDB+pCmbI0bzOQRuBWuNn4eB5UkFKwyBgzM=',
+  '/Jzsnj80fWJA7G32hFoHPqLcRE5uQCQ6E3Wi+n5MDrg=',
+  '55ruXkOpSf59ykTxuUYea6fIFbSJJVwe4UEqdjDVPq4=' ]
+[32m[2017-08-11 23:33:04.471] [INFO] console - [39m5
+[32m[2017-08-11 23:33:04.635] [INFO] console - [39m[ 'aadhar', 'passport' ]
