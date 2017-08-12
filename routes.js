@@ -72,7 +72,8 @@ module.exports = router => {
                         message: result.message,
                         token: token,
                          rapidID : result.users.rapidID,
-                        usertype: "org"
+                        usertype: "org",
+                        username: result.users.orgname
                     });
 
                 } else {
@@ -84,7 +85,8 @@ module.exports = router => {
                         message: result.message,
                         token: token,
                          rapidID : result.users.rapidID,
-                        usertype: "ind"
+                        usertype: "ind",
+                        username: result.users.firstname
                     });
                 }
             })
