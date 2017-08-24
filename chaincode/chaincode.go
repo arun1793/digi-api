@@ -32,7 +32,7 @@ func (t *SimpleChaincode) Query(stub shim.ChaincodeStubInterface, function strin
 	case "getMydocs":
 		return t.getMydocs(stub, args)
 	case "getSharedDocs":
-		return t.getSharedDocs(stub, args)
+		return t.getMydocs(stub, args)
 
 	}
 	return nil, nil
@@ -49,9 +49,45 @@ func (t *SimpleChaincode) Invoke(stub shim.ChaincodeStubInterface, function stri
 		return t.shareDocument(stub, args)
 	case "revokeAccess":
 		return t.revokeAccess(stub, args)
+	case "removeDocument":
+		return t.removeDocument(stub, args)
 	}
 	return nil, nil
 }
+
+func (t *SimpleChaincode) removeDocument(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
+	if len(args) < 2 {
+		fmt.Println("Expecting a minimum of three arguments Argument")
+		return nil, errors.New("Expected at least one arguments for adding a user")
+	}
+
+	var userhash = args[0]
+	var dochash = args[1]
+	var user User
+	var err error
+	user, err = readFromBlockchain(userhash, stub)
+	if err != nil {
+		return nil, errors.New("failed to read")
+	}
+
+	for i, v := range user.Owns {
+		if v == dochash {
+			user.Owns = append(user.Owns[:i], user.Owns[i+1:]...)
+			break
+		}
+	}
+
+	_, err = writeIntoBlockchain(userhash, user, stub)
+	if err != nil {
+		fmt.Println("Could not save add doc to user", err)
+		return nil, err
+	}
+
+	fmt.Println("Successfully removed the doc")
+	return nil, nil
+
+}
+
 func (t *SimpleChaincode) revokeAccess(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
 	if len(args) < 3 {
 		fmt.Println("Expecting a minimum of three arguments Argument")
@@ -62,33 +98,11 @@ func (t *SimpleChaincode) revokeAccess(stub shim.ChaincodeStubInterface, args []
 	var orghash = args[1]
 	var dochash = args[2]
 
-	var user User
 	var org User
 
-	//checking if the user exists
-	userbytes, err := stub.GetState(userhash)
+	org, err := readFromBlockchain(orghash, stub)
 	if err != nil {
-		fmt.Println("could not fetch user", err)
-		return nil, err
-	}
-
-	err = json.Unmarshal(userbytes, &user)
-	if err != nil {
-		fmt.Println("Unable to marshal data", err)
-		return nil, err
-	}
-
-	//checking if the user exists
-	orgbytes, orgerr := stub.GetState(orghash)
-	if orgerr != nil {
-		fmt.Println("could not fetch user", orgerr)
-		return nil, err
-	}
-
-	err = json.Unmarshal(orgbytes, &org)
-	if err != nil {
-		fmt.Println("Unable to marshal data", err)
-		return nil, err
+		return nil, errors.New("failed to read")
 	}
 
 	userDocsArray := org.SharedwithMe[userhash]
@@ -104,14 +118,7 @@ func (t *SimpleChaincode) revokeAccess(stub shim.ChaincodeStubInterface, args []
 	//assign that array to the user map key
 	org.SharedwithMe[userhash] = userDocsArray
 
-	bytesvalue, err := json.Marshal(&org)
-	if err != nil {
-		fmt.Println("Could not marshal personal info object", err)
-		return nil, err
-	}
-
-	//write back in blockchain
-	err = stub.PutState(userhash, bytesvalue)
+	_, err = writeIntoBlockchain(orghash, org, stub)
 	if err != nil {
 		fmt.Println("Could not save add doc to user", err)
 		return nil, err
@@ -158,7 +165,6 @@ func (t *SimpleChaincode) addDocument(stub shim.ChaincodeStubInterface, args []s
 	fmt.Println(docid)
 	bytes, err := stub.GetState(userid)
 	if err != nil {
-		//	fmt.Println("Could not fetch loan application with id "+loanApplicationId+" from ledger", err)
 		return nil, err
 	}
 
@@ -169,13 +175,8 @@ func (t *SimpleChaincode) addDocument(stub shim.ChaincodeStubInterface, args []s
 	}
 
 	user.Owns = append(user.Owns, docid)
-	bytesvalue, err := json.Marshal(&user)
-	if err != nil {
-		fmt.Println("Could not marshal personal info object", err)
-		return nil, err
-	}
 
-	err = stub.PutState(userid, bytesvalue)
+	_, err = writeIntoBlockchain(userid, user, stub)
 	if err != nil {
 		fmt.Println("Could not save add doc to user", err)
 		return nil, err
@@ -238,23 +239,25 @@ func (t *SimpleChaincode) shareDocument(stub shim.ChaincodeStubInterface, args [
 	}
 	//adding the document if it doesnt exists already
 	if !contains(org.SharedwithMe[userid], docid) {
-		org.SharedwithMe[userid] = append(org.SharedwithMe[userid], docid)
 		timestamp := makeTimestamp()
 		fmt.Println(timestamp)
+		//---------------Sharing the doc to Organisation-----------------------
+		org.SharedwithMe[userid] = append(org.SharedwithMe[userid], docid)
 
+		//-------------- Adding time stamp to user audit trail array-------------
 		user.Auditrail[orgid] = append(user.Auditrail[orgid], timestamp)
 		user.Auditrail[orgid] = append(user.Auditrail[orgid], docid)
 	}
 
-	bytes, err := json.Marshal(&org)
+	_, err = writeIntoBlockchain(orgid, org, stub)
 	if err != nil {
-		fmt.Println("Could not marshal personal info object", err)
+		fmt.Println("Could not save org Info", err)
 		return nil, err
 	}
 
-	err = stub.PutState(userid, bytes)
+	_, err = writeIntoBlockchain(userid, user, stub)
 	if err != nil {
-		fmt.Println("Could not save sharing info to org", err)
+		fmt.Println("Could not save user Info", err)
 		return nil, err
 	}
 
@@ -281,24 +284,6 @@ func (t *SimpleChaincode) getMydocs(stub shim.ChaincodeStubInterface, args []str
 	return idasbytes, nil
 }
 
-//getSharedDocs()
-func (t *SimpleChaincode) getSharedDocs(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
-	fmt.Println("Entering get shared docs")
-
-	if len(args) < 1 {
-		fmt.Println("Invalid number of arguments")
-		return nil, errors.New("Missing userid")
-	}
-
-	var userid = args[0]
-	bytes, err := stub.GetState(userid)
-	if err != nil {
-		fmt.Println("Could not user info", err)
-		return nil, err
-	}
-	return bytes, nil
-}
-
 func main() {
 	err := shim.Start(new(SimpleChaincode))
 
@@ -322,4 +307,38 @@ func makeTimestamp() string {
 
 	return t.Format(("2006-01-02T15:04:05.999999-07:00"))
 	//return time.Now().UnixNano() / (int64(time.Millisecond)/int64(time.Nanosecond))
+}
+
+//------------- reusable methods -------------------
+func writeIntoBlockchain(key string, value User, stub shim.ChaincodeStubInterface) ([]byte, error) {
+	bytes, err := json.Marshal(&value)
+	if err != nil {
+		fmt.Println("Could not marshal info object", err)
+		return nil, err
+	}
+
+	err = stub.PutState(key, bytes)
+	if err != nil {
+		fmt.Println("Could not save sharing info to org", err)
+		return nil, err
+	}
+
+	return nil, nil
+}
+
+func readFromBlockchain(key string, stub shim.ChaincodeStubInterface) (User, error) {
+	userbytes, err := stub.GetState(key)
+	var user User
+	if err != nil {
+		fmt.Println("could not fetch user", err)
+		return user, err
+	}
+
+	err = json.Unmarshal(userbytes, &user)
+	if err != nil {
+		fmt.Println("Unable to marshal data", err)
+		return user, err
+	}
+
+	return user, nil
 }
