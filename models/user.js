@@ -5,18 +5,13 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const userSchema = mongoose.Schema({
-
-    firstname: String,
-    lastname: String,
+    
     email: { type: String, unique: true },
-    phone: Number,
-    pin: String,
+    password: String,
     rapidID: String,
+    usertype : String,
     created_at: String,
-    temp_pin: Number,
-    temp_pin_time: String,
-    orgname: String,
-    orgcontact: Number,
+    userObject : Object,
 
 });
 

@@ -5,19 +5,19 @@ var bcSdk = require('../src/blockchain/blockchain_sdk');
 const users = 'risabh.s';
 
 
-exports.registerUser = (firstname, lastname, email, phone, pin, rapidID) =>
+exports.registerUser = (email, password, rapidID,userObject,usertype) =>
 
     new Promise((resolve, reject) => {
 
         const newUser = new user({
 
-            firstname: firstname,
-            lastname: lastname,
+         
             email: email,
-            phone: phone,
-            pin: pin,
+            password: password,
             rapidID: rapidID,
-            created_at: new Date()
+            userObject:userObject,
+             usertype :usertype,
+            created_at: new Date(),
         });
         newUser.save()
 

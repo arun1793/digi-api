@@ -43,7 +43,7 @@ module.exports = router => {
 
         const email = req.body.email;
 
-        const pin = req.body.pin;
+        const password = req.body.password;
 
 
         if (!email) {
@@ -55,28 +55,26 @@ module.exports = router => {
 
         } else {
 
-            login.loginUser(email, pin)
+            login.loginUser(email, password)
 
             .then(result => {
 
 
 
-                if ('orgname' in result.users._doc) {
+         //      if ('orgname' in result.users._doc) {
 
                     const token = jwt.sign(result, config.secret, {
-                        expiresIn: 60000000000
+                        expiresIn: 60000
                     })
 
 
                     res.status(result.status).json({
                         message: result.message,
                         token: token,
-                         rapidID : result.users.rapidID,
-                        usertype: "org",
-                        username: result.users.orgname
+                       userObject:result.users[0]
                     });
 
-                } else {
+               /* } else {
                     const token = jwt.sign(result, config.secret, {
                         expiresIn: 600000000000
                     })
@@ -88,7 +86,7 @@ module.exports = router => {
                         usertype: "ind",
                         username: result.users.firstname
                     });
-                }
+                }*/
             })
 
             .catch(err => res.status(err.status).json({
@@ -132,18 +130,18 @@ module.exports = router => {
     
     router.post('/registerUser', cors(), (req, res) => {
 
-        const firstname = req.body.firstname;
-        console.log(firstname);
-        const lastname = req.body.lastname;
         const email = req.body.email;
         console.log(email);
-        const phone = req.body.phone;
-        console.log(phone);
-        const pin = req.body.pin;
-        console.log(pin);
-        const rapidID = crypto.createHash('sha256').update(email.concat(phone)).digest('base64');
+        const password = req.body.password;
+        console.log(password);
+        const rapidID = crypto.createHash('sha256').update(email).digest('base64');
+          console.log(rapidID);
+        const userObject = req.body.userObject;
+          console.log(userObject);
+        const usertype = req.body.usertype;
+          console.log(usertype);
 
-        if (!firstname || !lastname || !email || !pin || !phone) {
+        if (!email || !password || !usertype) {
 
             res.status(400).json({
                 message: 'Invalid Request !'
@@ -151,7 +149,7 @@ module.exports = router => {
 
         } else {
 
-            register.registerUser(firstname, lastname, email, phone, pin, rapidID)
+            register.registerUser(email, password,rapidID,userObject,usertype)
 
             .then(result => {
 
@@ -367,7 +365,7 @@ module.exports = router => {
       
     });
     
-
+/*
     router.post('/registerOrg', cors(), (req, res) => {
 
         const orgname = req.body.orgname;
@@ -402,6 +400,7 @@ module.exports = router => {
             }));
         }
     });
+    */
     router.post('/addDoc', cors(), (req, res) => {
 
             const docType = req.body.docType;

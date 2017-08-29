@@ -2,7 +2,7 @@
 
 const user = require('../models/user');
 
-exports.loginUser = (email, pin) =>
+exports.loginUser = (email, password) =>
 
     new Promise((resolve, reject) => {
 
@@ -13,16 +13,16 @@ exports.loginUser = (email, pin) =>
             })
             .then(users => {
 
-                const dbpin = users[0].pin;
-                console.log(users[0].pin)
-                console.log(dbpin + "   " + users[0].pin)
+                const dbpin = users[0].password;
+                console.log(users[0].password)
+                console.log(dbpin + "   " + users[0].password)
 
-                if (String(pin) === String(dbpin)) {
+                if (String(password) === String(dbpin)) {
 
                     resolve({
                         status: 200,
                         message: email,
-                        users: users[0]
+                        users: users
                     });
 
                 } else {
