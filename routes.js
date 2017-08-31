@@ -71,7 +71,7 @@ module.exports = router => {
                     res.status(result.status).json({
                         message: result.message,
                         token: token,
-                       userObject:result.users[0]
+                       userDetails:result.users[0]
                     });
 
                /* } else {
