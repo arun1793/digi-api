@@ -21,7 +21,7 @@ exports.loginUser = (email, password) =>
 
                     resolve({
                         status: 200,
-                        message: email,
+                        message:"Logged in successfully",
                         users: users
                     });
 
